@@ -1,3 +1,6 @@
+
+VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS
+
 analytics
 galerija
 video
@@ -55,9 +58,17 @@ how to animate css grid repositioning
 https://www.youtube.com/results?search_query=css+grid+fade+in+animation
 
 https://www.monitis.com/blog/30-tips-to-optimize-htmlcssimages-for-smooth-web-experience/
-https://medium.com/front-end-weekly/how-to-optimize-image-loading-on-your-website-855020fb41ae
+
+https://medium.com/front-end-weekly/
+how-to-optimize-image-loading-on-your-website-855020fb41ae
+
 https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+
 https://www.youtube.com/watch?v=zWB219zf1og
 https://www.youtube.com/watch?v=69RRSEHWfCQ
 https://www.youtube.com/watch?v=UInN6O_nMKs
 https://www.youtube.com/results?search_query=html+grid+with+masonry
+
+minify everything
+
+VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS

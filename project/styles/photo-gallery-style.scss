@@ -1,0 +1,43 @@
+.container {
+    width: 1200px;
+    margin: 20px auto;
+    columns: 4;
+    column-gap: 8px;
+}
+
+.container .box {
+    width: 100%;
+    margin-bottom: 8px;
+    overflow: hidden;
+    break-inside: avoid;
+}
+
+.container .box img {
+    max-width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        columns: 3;
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        columns: 2;
+    }
+    .modal-content {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        columns: 1;
+    }
+    .modal-content {
+        max-width: 480px;
+    }
+}

@@ -1,0 +1,112 @@
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+    display: none;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 0 0;
+    width: 75%;
+    height: 75%;
+}
+
+.mySlides img {
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 46px;
+    margin-top: -50px;
+    color: black;
+    font-weight: bold;
+    font-size: 45px;
+    transition: 0.35s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(44, 44, 44, 0.8);
+    color: white;
+}
+
+.thumbnail-row {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    margin: 0 auto;
+    width: 75%;
+    background-color: blue;
+}
+
+.thumbnail-row > .column {
+    padding: 0 8px;
+    background-color: red;
+  }
+
+.thumbnail-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.lightbox-thumbnail img {
+    opacity: 0.6;
+}
+
+.active,
+.lightbox-thumbnail:hover {
+    opacity: 1;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+    
+}
