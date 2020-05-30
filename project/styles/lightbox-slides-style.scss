@@ -13,100 +13,87 @@
 
 /* The Close Button */
 .close {
-    color: black;
-    position: absolute;
     top: 10px;
-    right: 60px;
+    right: 48px;
     font-size: 45px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #999;
-    text-decoration: none;
-    cursor: pointer;
+    padding: 8px;
+    z-index: 2;
 }
 
 /* Hide the slides by default */
 .mySlides {
     display: none;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     margin: 0 auto;
-    padding: 50px 0 0;
-    width: 75%;
-    height: 75%;
+    padding: 6% 0 0;
+    width: 80%;
+    height: 70%;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        object-fit: cover;
+        z-index: 1;
+    }
 }
 
-.mySlides img {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    object-fit: cover;
+.close,
+.prev,
+.next {
+    position: absolute;
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    transition: 0.25s ease;
 }
 
 /* Next & previous buttons */
 .prev,
 .next {
-    cursor: pointer;
-    position: absolute;
     top: 50%;
     width: auto;
-    padding: 46px;
+    padding: 0 32px;
     margin-top: -50px;
-    color: black;
-    font-weight: bold;
-    font-size: 45px;
-    transition: 0.35s ease;
+    font-size: 36px;
     border-radius: 0 3px 3px 0;
     user-select: none;
     -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(44, 44, 44, 0.8);
-    color: white;
-}
-
-.thumbnail-row {
+.scrolling-thumbnail-row {
     display: flex;
     flex-direction: row;
-    vertical-align: middle;
+    justify-content: center;
+    flex-wrap: nowrap;
     margin: 0 auto;
-    width: 75%;
-    background-color: blue;
+    width: 68%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .column {
+        padding: 6px 0;
+    }
 }
 
-.thumbnail-row > .column {
-    padding: 0 8px;
-    background-color: red;
-  }
+img.lightbox-thumbnail  {
+    opacity: 0.5;
+    height: 70px;
+    width: 100px;
 
-.thumbnail-row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.lightbox-thumbnail img {
-    opacity: 0.6;
-}
-
-.active,
-.lightbox-thumbnail:hover {
-    opacity: 1;
-}
-
-/* Create four equal columns that floats next to eachother */
-.column {
-    
+    &.active,
+    &:hover {
+        opacity: 1;
+    }
 }

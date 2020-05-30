@@ -13,32 +13,24 @@
 
 /* The Close Button */
 .close {
-  color: black;
-  position: absolute;
   top: 10px;
-  right: 60px;
+  right: 48px;
   font-size: 45px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #999;
-  text-decoration: none;
-  cursor: pointer;
+  padding: 8px;
+  z-index: 2;
 }
 
 /* Hide the slides by default */
 .mySlides {
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   position: relative;
   margin: 0 auto;
-  padding: 50px 0 0;
-  width: 75%;
-  height: 75%;
+  padding: 6% 0 0;
+  width: 80%;
+  height: 70%;
 }
 
 .mySlides img {
@@ -47,22 +39,29 @@
   margin: 0 auto;
   -o-object-fit: cover;
      object-fit: cover;
+  z-index: 1;
+}
+
+.close,
+.prev,
+.next {
+  position: absolute;
+  border: none;
+  outline: none;
+  background: none;
+  color: black;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
 }
 
 /* Next & previous buttons */
 .prev,
 .next {
-  cursor: pointer;
-  position: absolute;
   top: 50%;
   width: auto;
-  padding: 46px;
+  padding: 0 32px;
   margin-top: -50px;
-  color: black;
-  font-weight: bold;
-  font-size: 45px;
-  -webkit-transition: 0.35s ease;
-  transition: 0.35s ease;
+  font-size: 36px;
   border-radius: 0 3px 3px 0;
   -moz-user-select: none;
    -ms-user-select: none;
@@ -70,20 +69,12 @@
   -webkit-user-select: none;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(44, 44, 44, 0.8);
-  color: white;
-}
-
-.thumbnail-row {
+.scrolling-thumbnail-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,31 +82,32 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  vertical-align: middle;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   margin: 0 auto;
-  width: 75%;
-  background-color: blue;
+  width: 68%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-.thumbnail-row > .column {
-  padding: 0 8px;
-  background-color: red;
+.scrolling-thumbnail-row::-webkit-scrollbar {
+  display: none;
 }
 
-.thumbnail-row:after {
-  content: "";
-  display: table;
-  clear: both;
+.scrolling-thumbnail-row .column {
+  padding: 6px 0;
 }
 
-.lightbox-thumbnail img {
-  opacity: 0.6;
+img.lightbox-thumbnail {
+  opacity: 0.5;
+  height: 70px;
+  width: 100px;
 }
 
-.active,
-.lightbox-thumbnail:hover {
+img.lightbox-thumbnail.active, img.lightbox-thumbnail:hover {
   opacity: 1;
 }
-
-/* Create four equal columns that floats next to eachother */
 /*# sourceMappingURL=lightbox-slides-style.css.map */

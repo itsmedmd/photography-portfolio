@@ -1,11 +1,13 @@
 // Open the Modal
 function openModal() {
     document.getElementById("myModal").style.display = "block";
+    document.getElementsByTagName("html")[0].classList.add("scroll-lock");
 }
     
 // Close the Modal
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
+    document.getElementsByTagName("html")[0].classList.remove("scroll-lock");
 }
     
 let slideIndex = 1;
@@ -26,16 +28,19 @@ function showSlides(n) {
     const slides = document.getElementsByClassName("mySlides");
     const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
     //const captionText = document.getElementById("caption");
+    //slides[slideIndex-1].removeEventListener("onclick");
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
     for (i = 0; i < thumbnails.length; i++) {
-        thumbnails[i].className = thumbnails[i].className.replace(" active", "");
+        thumbnails[i].classList.remove("active");
     }
     slides[slideIndex-1].style.display = "flex";
-    thumbnails[slideIndex-1].className += " active";
+    slides[slideIndex-1].classList.add("active");
+    thumbnails[slideIndex-1].classList.add("active");
+    //slides[slideIndex-1].addEventListener("onclick", plusSlides(1));
     //captionText.innerHTML = thumbnails[slideIndex-1].alt;
 }
 

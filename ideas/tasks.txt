@@ -1,3 +1,14 @@
+to do :
+
+big image on click go to next
+smooth scrolling
+resize images so all gaps fill in evenly
+horizontal scroll middle one focus 
+
+*---------------------*
+
+
+image resizer: https://bulkresizephotos.com/en
 
 VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS
 
@@ -72,3 +83,14 @@ https://www.youtube.com/results?search_query=html+grid+with+masonry
 minify everything
 
 VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS
+
+alt
+
+gtmetrix.com
+
+soft scroll do
+
+horizontal scrolling bar https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
+
+lazy loading: https://www.youtube.com/watch?v=JaA7jQoR1Jc
+https://github.com/verlok/vanilla-lazyload
