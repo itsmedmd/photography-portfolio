@@ -1,9 +1,15 @@
 to do :
 
+!!! create galleries page and render html pages for each gallery !!!
+
 big image on click go to next
 smooth scrolling
 resize images so all gaps fill in evenly
 horizontal scroll middle one focus 
+on phone scroll to side to change picture
+on phone when zooming in bad look - maybe display none on whole page when doing that?
+update code on server! + upload all new files (styles and shit)
+
 
 *---------------------*
 
@@ -94,3 +100,12 @@ horizontal scrolling bar https://codeburst.io/how-to-create-horizontal-scrolling
 
 lazy loading: https://www.youtube.com/watch?v=JaA7jQoR1Jc
 https://github.com/verlok/vanilla-lazyload
+
+'key' => 'AKIAXTFEUYXWHZCODQ6A',
+ 'secret' => 'WtIFEvSSHALqxIxNjZenou5fNKQV9',
+arn:aws:iam::522183820780:user/me
+
+        try cloudfront with SSL certification
+https://hackernoon.com/hosting-static-react-websites-on-aws-s3-cloudfront-with-ssl-924e5c134455
+start page creating
+https://aws.amazon.com/cloudfront/pricing/
