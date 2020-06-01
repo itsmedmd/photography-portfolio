@@ -1,14 +1,17 @@
 to do :
 
 !!! create galleries page and render html pages for each gallery !!!
+make thumbnails ALWAYS right below image like lilly
 
-big image on click go to next
-smooth scrolling
-resize images so all gaps fill in evenly
+small screen burger navigation bar
+
 horizontal scroll middle one focus 
 on phone scroll to side to change picture
 on phone when zooming in bad look - maybe display none on whole page when doing that?
 update code on server! + upload all new files (styles and shit)
+
+font family: inconsolata, monospace
+font family: "Benton Sans Regular", "Benton Sans Regular", sans-serif;
 
 
 *---------------------*

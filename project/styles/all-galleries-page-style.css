@@ -40,14 +40,13 @@
   .container {
     -webkit-columns: 3;
             columns: 3;
-    width: calc(100% - 20px);
-    padding: 20px 0;
+    width: calc(100% - 40px);
+    padding: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    width: 100%;
     -webkit-columns: 2;
             columns: 2;
   }
@@ -59,4 +58,4 @@
             columns: 1;
   }
 }
-/*# sourceMappingURL=photo-gallery-style.css.map */
+/*# sourceMappingURL=all-galleries-page-style.css.map */

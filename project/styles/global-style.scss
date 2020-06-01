@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&display=swap');
+
 @keyframes transitionIn {
     from {
         opacity: 0;
@@ -20,12 +22,60 @@ html, body {
 }
 
 header {
-    height:50px;
-    background:lightcyan;
+    font-family: 'Inconsolata', monospace;
+    height: 300px;
+    text-align: center;
+
+    ul {
+        padding: 0;
+
+        a {
+            text-decoration: none;
+            color: #919191;
+        }
+    }
+
+    h1 {
+        padding: 24px 0;
+    }
+
+    nav {
+        margin: 30px 0;
+
+        ul {
+
+            span.nav-dot {
+                margin: 0 18px;
+                height: 5px;
+                width: 5px;
+                border-radius: 50%;
+                display: inline-block;
+                background-color: #dedede;
+            }
+        }
+    }
+
+    div.social-media-icons {
+        padding-top: 16px;
+    }
+
+    nav,
+    div.social-media-icons {
+        color: #919191;
+        font-size: 15px;
+        font-weight: 600;
+
+        ul {
+            li {
+                display: inline;
+            }
+        }
+    }
 }
 
 footer {
-    height:50px;
+    font-family: 'Inconsolata', monospace;
+    height:80px;
     background:PapayaWhip;
     margin-top:auto; 
 }

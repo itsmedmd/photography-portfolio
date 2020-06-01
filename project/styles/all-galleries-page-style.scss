@@ -35,14 +35,13 @@
 @media (max-width: 1280px) {
     .container {
         columns: 3;
-        width: calc(100% - 20px);
-        padding: 20px 0;
+        width: calc(100% - 40px);
+        padding: 20px;
     }
 }
 
 @media (max-width: 768px) {
     .container {
-        width: 100%;
         columns: 2;
     }
 }
