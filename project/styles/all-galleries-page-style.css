@@ -1,61 +1,10 @@
-.container {
-  width: 1200px;
-  margin: 20px auto;
-  -webkit-columns: 3;
-          columns: 3;
-  -webkit-column-gap: 6px;
-          column-gap: 6px;
-}
-
 .container .box {
-  position: relative;
-  width: 100%;
-  margin-bottom: 6px;
-  overflow: auto;
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid;
+  text-align: center;
 }
 
-.container .box .hover-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
-}
-
-.container .box .hover-overlay:hover {
-  opacity: 0.7;
-}
-
-.container .box img {
-  width: 100%;
-  height: 100%;
-  vertical-align: top;
-}
-
-@media (max-width: 1280px) {
-  .container {
-    -webkit-columns: 3;
-            columns: 3;
-    width: calc(100% - 40px);
-    padding: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    -webkit-columns: 2;
-            columns: 2;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    -webkit-columns: 1;
-            columns: 1;
-  }
+.container .box h2 {
+  color: #616161;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 /*# sourceMappingURL=all-galleries-page-style.css.map */

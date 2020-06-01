@@ -1,21 +1,35 @@
 to do :
 
-!!! create galleries page and render html pages for each gallery !!!
+check SSL certificate
+
+made server side rendering in parts - header, footer to just pass as variable so code doesnt repeat.
+
+404 page look good
+
+fb like button loading kazkaip padaryt kad gal fixed width.
+
+gallery images when load hover-overlay opacity from dark to 0 and animation small slide up like adam
+
 make thumbnails ALWAYS right below image like lilly
 
 small screen burger navigation bar
 
 horizontal scroll middle one focus 
-on phone scroll to side to change picture
-on phone when zooming in bad look - maybe display none on whole page when doing that?
-update code on server! + upload all new files (styles and shit)
 
-font family: inconsolata, monospace
-font family: "Benton Sans Regular", "Benton Sans Regular", sans-serif;
+on phone scroll to side to change picture
+
+on phone when zooming in bad look - maybe display none on whole page when doing that?
+
+change meta tags of everything+ add apple-touch icons and other shit like that, description, url's.
+
+minify js and css !
+
+del favicon, logo page or just test ask. (maybe use auto generators)
 
 
 *---------------------*
-
+font family: inconsolata, monospace
+font family: "Benton Sans Regular", "Benton Sans Regular", sans-serif;
 
 image resizer: https://bulkresizephotos.com/en
 
