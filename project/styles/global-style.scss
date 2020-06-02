@@ -59,10 +59,16 @@ header {
         .fb-icon {
             position: relative;
             top: 3px;
-            color: black;
+
+            svg {
+                fill: black;
+                transition: all 0.15s;
+            }
 
             &:hover {
-                color: #1877f2;
+                svg {
+                    fill: #1877f2;
+                }
             }
         }
     }
@@ -94,8 +100,24 @@ main {
 
 footer {
     height:80px;
-    background:PapayaWhip;
-    margin-top:auto; 
+    margin-top:auto;
+    text-align: center;
+
+    div.footer-content {
+        padding: 24px;
+        color: #919191;
+        font-size: 15px;
+
+        span {
+            position: relative;
+            left: 4px;
+            font-size: 18px;
+        }
+
+        p {
+            display: inline;
+        }
+    }
 }
 
 .page-content {

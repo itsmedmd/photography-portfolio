@@ -48,12 +48,17 @@
 @media (max-width: 768px) {
   .container {
     width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
     -webkit-columns: 2;
             columns: 2;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
   .container {
     -webkit-columns: 1;
             columns: 1;

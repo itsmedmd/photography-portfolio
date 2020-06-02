@@ -1,6 +1,6 @@
 to do :
 
-check SSL certificate
+check SSL certificate (cloudFLARE)
 
 made server side rendering in parts - header, footer to just pass as variable so code doesnt repeat.
 

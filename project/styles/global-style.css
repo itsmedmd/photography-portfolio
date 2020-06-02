@@ -73,11 +73,16 @@ header div.social-media-icons {
 header div.social-media-icons .fb-icon {
   position: relative;
   top: 3px;
-  color: black;
 }
 
-header div.social-media-icons .fb-icon:hover {
-  color: #1877f2;
+header div.social-media-icons .fb-icon svg {
+  fill: black;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+}
+
+header div.social-media-icons .fb-icon:hover svg {
+  fill: #1877f2;
 }
 
 header nav,
@@ -103,8 +108,24 @@ main .box h2 {
 
 footer {
   height: 80px;
-  background: PapayaWhip;
   margin-top: auto;
+  text-align: center;
+}
+
+footer div.footer-content {
+  padding: 24px;
+  color: #919191;
+  font-size: 15px;
+}
+
+footer div.footer-content span {
+  position: relative;
+  left: 4px;
+  font-size: 18px;
+}
+
+footer div.footer-content p {
+  display: inline;
 }
 
 .page-content {
