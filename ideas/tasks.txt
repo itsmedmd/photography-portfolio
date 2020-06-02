@@ -1,12 +1,14 @@
 to do :
 
+on like button hover make it blue, but originally keep it black.
+
+normal load first 10 or something, count height and shit, and then lazyload all others. + make better quality images
+
 check SSL certificate (cloudFLARE)
 
 made server side rendering in parts - header, footer to just pass as variable so code doesnt repeat.
 
 404 page look good
-
-fb like button loading kazkaip padaryt kad gal fixed width.
 
 gallery images when load hover-overlay opacity from dark to 0 and animation small slide up like adam
 

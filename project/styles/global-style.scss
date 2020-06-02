@@ -24,8 +24,31 @@ header {
     height: 300px;
     text-align: center;
 
+    .mobile-navigation-bar {
+        display: none;
+        position: absolute;
+        right: 0;
+        margin: 36px 24px 0 0;
+
+        div {
+            width: 20px;
+            height: 3px;
+            background-color: #919191;
+            margin: 3px 0;
+            transition: all 0.25s;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            div {
+                background-color: black;
+            }
+        }
+    }
+
     h1 a,
-    ul a {
+    ul.navigation a {
         text-decoration: none;
         color: #919191;
     }
@@ -35,13 +58,21 @@ header {
     }
 
     h1 {
-        padding: 24px 0;
+        padding: 70px 0 30px;
     }
 
     nav {
         margin: 30px 0;
 
         ul {
+            li a {
+                transition: color 0.2s;
+
+                &:hover {
+                    color: black;
+                }
+            }
+
             span.nav-dot {
                 margin: 0 18px;
                 height: 5px;
@@ -54,22 +85,34 @@ header {
     }
 
     div.social-media-icons {
-        padding-top: 16px;
+        padding-top: 8px;
+
+        ul {
+            a {
+                text-decoration: none;
+
+                svg {
+                    color: black;
+    
+                    &:hover {
+                        color: #1877f2;
+                    }
+                }
+            }
+        }
 
         .fb-icon {
             position: relative;
             top: 3px;
 
             svg {
-                fill: black;
-                transition: all 0.15s;
+                transition: color 0.15s;
             }
+        }
 
-            &:hover {
-                svg {
-                    fill: #1877f2;
-                }
-            }
+        .fb-like {
+            position: relative;
+            right: 5px;
         }
     }
 
@@ -78,6 +121,7 @@ header {
         color: #919191;
         font-size: 15px;
         font-weight: 600;
+        margin-bottom: 8px;
 
         ul {
             li {
@@ -90,7 +134,6 @@ header {
 main {
     font-family: 'Open Sans', sans-serif !important;
     letter-spacing: -0.2px;
-
     .box {
         h2 {
             font-weight: 600;
@@ -106,7 +149,7 @@ footer {
     div.footer-content {
         padding: 24px;
         color: #919191;
-        font-size: 15px;
+        font-size: 13px;
 
         span {
             position: relative;
@@ -121,7 +164,11 @@ footer {
 }
 
 .page-content {
-    animation: transitionIn 0.75s;
+    animation: transitionIn 0.6s;
+}
+
+.displayOff {
+    display: none;
 }
 
 .scroll-lock {
@@ -130,4 +177,80 @@ footer {
 
 .cursor {
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    header {
+        text-align: left;
+        height: 100px;
+        border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+        box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
+
+        #top-navigation {
+            padding-top: 2px;
+        }
+
+        nav {
+            display: none;
+            margin: 15px 0;
+        }
+
+        .mobile-navigation-visible {
+            display: block;
+        }
+
+        .mobile-navigation-hidden {
+            display: none;
+        }
+
+        div.social-media-icons {
+            padding: 0;
+        }
+
+        .social-media-icons {
+            visibility: hidden;
+            position: absolute;
+            top: -1000px;
+            text-align: center;
+            padding: 0;
+        }
+
+        .mobile-socials-visible {
+            visibility: visible;
+            position: relative;
+            top: 0;
+            padding-top: 0;
+        }
+    
+        .mobile-socials-hidden {
+            visibility: hidden;
+            position: absolute;
+            top: -1000px;
+        }
+
+        ul.navigation {
+            text-align: center;
+
+            li {
+                display: block;
+                margin-top: 18px;
+
+                a {
+                    font-size: 16px;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+        .mobile-navigation-bar {
+            display: inline-block;
+        }
+        
+        h1 {
+            display: inline-block;
+            padding: 10px 0 12px 24px;
+        }
+    }
 }

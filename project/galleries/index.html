@@ -29,14 +29,19 @@
     <title>Galleries - Dmd</title>
   </head>
   <body>
-    <script src="scripts/lightbox-modal-script.js"></script>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
-
+    <script src="scripts/lightbox-modal-script.js"></script>
+    
     <header>
       <h1><a href="http://deimantasbutenas.lt/">testas</a></h1>
-      <nav>
-        <ul>
+      <div class="mobile-navigation-bar" onclick="toggleMobileNavigation()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="top-navigation">
+        <ul class="navigation">
           <li>
               <a href="http://deimantasbutenas.lt/galleries/">Photo Gallery</a>
               <span class="nav-dot"></span>
@@ -58,7 +63,7 @@
           </li>
         </ul>
       </nav>
-      <div class="social-media-icons">
+      <div id="top-social-media-icons" class="social-media-icons">
           <ul>
               <li>
                 <a href="http://facebook.com/" target="_blank" class="fb-icon">             
@@ -97,5 +102,6 @@
     </footer>
 
     <script src="../scripts/add-redirect-to-galleries.js"></script>
+    <script src="../scripts/toggle-mobile-navigation.js"></script>
   </body>
 </html>

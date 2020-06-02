@@ -1,6 +1,6 @@
 .container {
     width: 1200px;
-    margin: 20px auto;
+    margin: 10px auto;
     columns: 3;
     column-gap: 6px;
 
@@ -36,7 +36,7 @@
     .container {
         columns: 3;
         width: calc(100% - 20px);
-        padding: 20px 0;
+        padding: 0;
     }
 }
 

@@ -39,8 +39,32 @@ header {
   text-align: center;
 }
 
+header .mobile-navigation-bar {
+  display: none;
+  position: absolute;
+  right: 0;
+  margin: 36px 24px 0 0;
+}
+
+header .mobile-navigation-bar div {
+  width: 20px;
+  height: 3px;
+  background-color: #919191;
+  margin: 3px 0;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+header .mobile-navigation-bar:hover {
+  cursor: pointer;
+}
+
+header .mobile-navigation-bar:hover div {
+  background-color: black;
+}
+
 header h1 a,
-header ul a {
+header ul.navigation a {
   text-decoration: none;
   color: #919191;
 }
@@ -50,11 +74,20 @@ header ul {
 }
 
 header h1 {
-  padding: 24px 0;
+  padding: 70px 0 30px;
 }
 
 header nav {
   margin: 30px 0;
+}
+
+header nav ul li a {
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+header nav ul li a:hover {
+  color: black;
 }
 
 header nav ul span.nav-dot {
@@ -67,7 +100,19 @@ header nav ul span.nav-dot {
 }
 
 header div.social-media-icons {
-  padding-top: 16px;
+  padding-top: 8px;
+}
+
+header div.social-media-icons ul a {
+  text-decoration: none;
+}
+
+header div.social-media-icons ul a svg {
+  color: black;
+}
+
+header div.social-media-icons ul a svg:hover {
+  color: #1877f2;
 }
 
 header div.social-media-icons .fb-icon {
@@ -76,13 +121,13 @@ header div.social-media-icons .fb-icon {
 }
 
 header div.social-media-icons .fb-icon svg {
-  fill: black;
-  -webkit-transition: all 0.15s;
-  transition: all 0.15s;
+  -webkit-transition: color 0.15s;
+  transition: color 0.15s;
 }
 
-header div.social-media-icons .fb-icon:hover svg {
-  fill: #1877f2;
+header div.social-media-icons .fb-like {
+  position: relative;
+  right: 5px;
 }
 
 header nav,
@@ -90,6 +135,7 @@ header div.social-media-icons {
   color: #919191;
   font-size: 15px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 
 header nav ul li,
@@ -115,7 +161,7 @@ footer {
 footer div.footer-content {
   padding: 24px;
   color: #919191;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 footer div.footer-content span {
@@ -129,8 +175,12 @@ footer div.footer-content p {
 }
 
 .page-content {
-  -webkit-animation: transitionIn 0.75s;
-          animation: transitionIn 0.75s;
+  -webkit-animation: transitionIn 0.6s;
+          animation: transitionIn 0.6s;
+}
+
+.displayOff {
+  display: none;
 }
 
 .scroll-lock {
@@ -139,5 +189,69 @@ footer div.footer-content p {
 
 .cursor {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  header {
+    text-align: left;
+    height: 100px;
+    border-bottom: 1px solid rgba(200, 200, 200, 0.4);
+    -webkit-box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
+            box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
+  }
+  header #top-navigation {
+    padding-top: 2px;
+  }
+  header nav {
+    display: none;
+    margin: 15px 0;
+  }
+  header .mobile-navigation-visible {
+    display: block;
+  }
+  header .mobile-navigation-hidden {
+    display: none;
+  }
+  header div.social-media-icons {
+    padding: 0;
+  }
+  header .social-media-icons {
+    visibility: hidden;
+    position: absolute;
+    top: -1000px;
+    text-align: center;
+    padding: 0;
+  }
+  header .mobile-socials-visible {
+    visibility: visible;
+    position: relative;
+    top: 0;
+    padding-top: 0;
+  }
+  header .mobile-socials-hidden {
+    visibility: hidden;
+    position: absolute;
+    top: -1000px;
+  }
+  header ul.navigation {
+    text-align: center;
+  }
+  header ul.navigation li {
+    display: block;
+    margin-top: 18px;
+  }
+  header ul.navigation li a {
+    font-size: 16px;
+  }
+  header ul.navigation li span {
+    display: none;
+  }
+  header .mobile-navigation-bar {
+    display: inline-block;
+  }
+  header h1 {
+    display: inline-block;
+    padding: 10px 0 12px 24px;
+  }
 }
 /*# sourceMappingURL=global-style.css.map */
