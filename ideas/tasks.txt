@@ -25,6 +25,8 @@ del favicon, logo page or just test ask. (maybe use auto generators)
 horizontal thumbnail scoll center in the middle(calculate somehow different)
 + thumbnail scroll animation + modal HD image load animation
 
+ make thumbnails directly below image
+
 
 *---------------------*
 font family: inconsolata, monospace

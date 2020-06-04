@@ -23,7 +23,7 @@
     align-items: center;
     position: relative;
     margin: 80px auto 0;
-    width: 80%;
+    width: 1000px;
     height: 66%;
     border: 1px solid red;
 
@@ -33,10 +33,16 @@
         height: 100%;
         position: absolute;
         z-index: 2;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
     }
 
     div.image-overlay-right { 
         right: 0;
+        border-left: 1px solid blue;
     }
 
     img {
@@ -81,10 +87,9 @@
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 0 auto;
-    width: 80%;
+    width: 1000px;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    transition: all 0.3s;
 
     &::-webkit-scrollbar {
         display: none;
@@ -103,6 +108,13 @@ img.lightbox-thumbnail  {
     &.active,
     &:hover {
         opacity: 1;
+    }
+}
+
+@media (max-width: 1200px) {
+    .mySlides,
+    .scrolling-thumbnail-row {
+        width: 80%;
     }
 }
 

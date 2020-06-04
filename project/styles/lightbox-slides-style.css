@@ -25,7 +25,7 @@
           align-items: center;
   position: relative;
   margin: 80px auto 0;
-  width: 80%;
+  width: 1000px;
   height: 66%;
   border: 1px solid red;
 }
@@ -36,10 +36,18 @@
   height: 100%;
   position: absolute;
   z-index: 2;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.mySlides div.image-overlay-left:hover,
+.mySlides div.image-overlay-right:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .mySlides div.image-overlay-right {
   right: 0;
+  border-left: 1px solid blue;
 }
 
 .mySlides img {
@@ -93,11 +101,9 @@
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin: 0 auto;
-  width: 80%;
+  width: 1000px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
 }
 
 .scrolling-thumbnail-row::-webkit-scrollbar {
@@ -116,6 +122,13 @@ img.lightbox-thumbnail {
 
 img.lightbox-thumbnail.active, img.lightbox-thumbnail:hover {
   opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .mySlides,
+  .scrolling-thumbnail-row {
+    width: 80%;
+  }
 }
 
 @media (max-width: 768px) {

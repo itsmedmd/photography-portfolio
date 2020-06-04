@@ -14,14 +14,40 @@ let slideIndex = 1;
 let scrollI = 0;
 showSlides(slideIndex);
 
+function countOffset() {
+    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
+    const rowStyle = getComputedStyle(row);
+    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
+    const thumbnails = document.getElementsByClassName("lightbox-thumbnail")
+    const lengthOfOneDiv = row.scrollWidth / thumbnails.length;
+    const divsInViewCount = Math.floor(rowWidth / lengthOfOneDiv);
+    const scrollOffset = (rowWidth - divsInViewCount * lengthOfOneDiv) / 2;
+    return scrollOffset;
+}
+
+function countOffsetDivs() {
+    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
+    const rowStyle = getComputedStyle(row);
+    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
+    const lengthOfOneDiv = row.scrollWidth / document.getElementsByClassName("lightbox-thumbnail").length;
+    const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
+    const scrollOffset = countOffset();
+    
+    let countSideDivs = 0;
+    for(let i = 0; i < thumbnails.length; i++)
+        if(lengthOfOneDiv * i + scrollOffset < rowWidth / 2)
+            countSideDivs++;
+    return countSideDivs;
+}
+
 // Next/previous controls
 function plusSlides(n) {
-    const divCount = document.getElementsByClassName("lightbox-thumbnail").length;
+    const divCount = document.getElementsByClassName("lightbox-thumbnail").length;      
     if(n > divCount)
         scrollI = 0;
     else if(n === - 1) {
         if(scrollI === 0)
-            scrollI = divCount - 1;
+            scrollI = divCount - countOffsetDivs();
         else
             scrollI--;
     }
@@ -32,17 +58,7 @@ function plusSlides(n) {
 
 // Thumbnail image controls
 function currentSlide(n) {
-    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
-    const rowStyle = getComputedStyle(row);
-    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
-    const lengthOfOneDiv = row.scrollWidth / document.getElementsByClassName("lightbox-thumbnail").length;
-    const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
-    let countSideDivs = 0;
-    for(let i = 0; i < thumbnails.length; i++)
-        if(lengthOfOneDiv * i < rowWidth / 2)
-            countSideDivs++;
-    
-    if(scrollI = n - countSideDivs);
+    scrollI = n - countOffsetDivs();
     showSlides(slideIndex = n);
 }
 
@@ -51,14 +67,37 @@ function scrollThumbnailRow(thumbnails) {
     const rowStyle = getComputedStyle(row);
     const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
     const lengthOfOneDiv = row.scrollWidth / thumbnails.length;
+    const scrollOffset = countOffset();
+    const offsetDivs = countOffsetDivs();
+
+    
+    console.log(thumbnails[0].getBoundingClientRect());
+    console.log(thumbnails[1].getBoundingClientRect());
+    console.log(thumbnails[2].getBoundingClientRect());
     for(let i = 0; i < thumbnails.length; i++) {
         if(thumbnails[i].classList.contains("active")) {
-            if(lengthOfOneDiv * i < rowWidth / 2) {
+            if(i < offsetDivs) {
                 row.scrollLeft = 0;
                 scrollI = 0;
             }
             else {
-                row.scrollLeft = lengthOfOneDiv * scrollI;
+                //console.log("offset", scrollOffset, scrollOffset*2);
+                //console.log( lengthOfOneDiv * scrollI - scrollOffset);
+                // Making adjustments of thumbnail scroll row centering with some specific scren sizes
+                if( screen.availWidth === 667 ||
+                    screen.availWidth === 640 ||
+                    screen.availWidth === 600 ||
+                    screen.availWidth === 427 ||
+                    screen.availWidth === 414 ||
+                    screen.availWidth === 412 ||
+                    screen.availWidth === 375 ||
+                    screen.availWidth === 360 ||
+                    scrollOffset * 2 === 99)
+                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset;
+                else if(screen.availWidth === 320)
+                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset - lengthOfOneDiv / 2;
+                else
+                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset;
             }
         }
     }
