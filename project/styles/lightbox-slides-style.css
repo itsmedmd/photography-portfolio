@@ -90,19 +90,14 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   margin: 0 auto;
   width: 80%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-.scrolling-thumbnail-row::-webkit-scrollbar {
-  display: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .scrolling-thumbnail-row .column {

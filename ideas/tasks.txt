@@ -1,5 +1,7 @@
 to do :
 
+solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
+
 on like button hover make it blue, but originally keep it black.
 
 normal load first 10 or something, count height and shit, and then lazyload all others. + make better quality images
@@ -12,14 +14,6 @@ made server side rendering in parts - header, footer to just pass as variable so
 
 gallery images when load hover-overlay opacity from dark to 0 and animation small slide up like adam
 
-make thumbnails ALWAYS right below image like lilly
-
-small screen burger navigation bar
-
-horizontal scroll middle one focus 
-
-on phone scroll to side to change picture
-
 on phone when zooming in bad look - maybe display none on whole page when doing that?
 
 change meta tags of everything+ add apple-touch icons and other shit like that, description, url's.
@@ -27,6 +21,9 @@ change meta tags of everything+ add apple-touch icons and other shit like that, 
 minify js and css !
 
 del favicon, logo page or just test ask. (maybe use auto generators)
+
+horizontal thumbnail scoll center in the middle(calculate somehow different)
++ thumbnail scroll animation + modal HD image load animation
 
 
 *---------------------*
