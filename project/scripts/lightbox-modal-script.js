@@ -1,11 +1,21 @@
+function togglePageContent() {
+    const pageContent = document.querySelector(".page-content .container");
+    if(pageContent.classList.contains("displayOff"))
+        pageContent.classList.remove("displayOff");
+    else
+        pageContent.classList.add("displayOff");
+}
+
 // Open the Modal
 function openModal() {
+    togglePageContent();
     document.getElementById("myModal").style.display = "block";
     document.getElementsByTagName("html")[0].classList.add("scroll-lock");
 }
     
 // Close the Modal
 function closeModal() {
+    togglePageContent();
     document.getElementById("myModal").style.display = "none";
     document.getElementsByTagName("html")[0].classList.remove("scroll-lock");
 }

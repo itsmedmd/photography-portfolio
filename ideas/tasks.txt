@@ -1,5 +1,8 @@
 to do :
 
+jei offset 0, tai offset padaryt 100 ir per centra des
+gal su procentais kazka skaiciuot arba surast visai kita skaiciavimo buda nes kazkas blogai.
+
 solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
 
 on like button hover make it blue, but originally keep it black.
@@ -27,6 +30,9 @@ horizontal thumbnail scoll center in the middle(calculate somehow different)
 
  make thumbnails directly below image
 
+ display main none for mobile zoom in when modal is visible
+
+ naudojimo instrukcija parasyt
 
 *---------------------*
 font family: inconsolata, monospace
