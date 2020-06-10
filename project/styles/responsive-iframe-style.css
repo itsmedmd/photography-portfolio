@@ -1,0 +1,37 @@
+.box .iframe-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 Aspect Ratio */
+}
+
+.box .iframe-container .responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    -webkit-columns: 2;
+            columns: 2;
+  }
+}
+
+@media (max-width: 440px) {
+  .container {
+    -webkit-columns: 1;
+            columns: 1;
+  }
+  .container .box {
+    margin-top: 12px;
+  }
+}
+/*# sourceMappingURL=responsive-iframe-style.css.map */

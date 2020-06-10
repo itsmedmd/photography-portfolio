@@ -135,8 +135,14 @@ main {
     font-family: 'Open Sans', sans-serif !important;
     letter-spacing: -0.2px;
     .box {
-        h2 {
+        text-align: center;
+
+        h3 {
             font-weight: 600;
+            color: #616161;
+            padding-left: 12px;
+            padding-right: 12px;
+            
         }
     }
 }

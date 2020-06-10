@@ -80,10 +80,6 @@ function scrollThumbnailRow(thumbnails) {
     const scrollOffset = countOffset();
     const offsetDivs = countOffsetDivs();
 
-    
-    console.log(thumbnails[0].getBoundingClientRect());
-    console.log(thumbnails[1].getBoundingClientRect());
-    console.log(thumbnails[2].getBoundingClientRect());
     for(let i = 0; i < thumbnails.length; i++) {
         if(thumbnails[i].classList.contains("active")) {
             if(i < offsetDivs) {
@@ -91,8 +87,6 @@ function scrollThumbnailRow(thumbnails) {
                 scrollI = 0;
             }
             else {
-                //console.log("offset", scrollOffset, scrollOffset*2);
-                //console.log( lengthOfOneDiv * scrollI - scrollOffset);
                 // Making adjustments of thumbnail scroll row centering with some specific scren sizes
                 if( screen.availWidth === 667 ||
                     screen.availWidth === 640 ||

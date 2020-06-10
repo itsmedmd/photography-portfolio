@@ -148,8 +148,15 @@ main {
   letter-spacing: -0.2px;
 }
 
-main .box h2 {
+main .box {
+  text-align: center;
+}
+
+main .box h3 {
   font-weight: 600;
+  color: #616161;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 footer {
