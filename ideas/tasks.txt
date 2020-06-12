@@ -1,23 +1,12 @@
 to do :
 
-jei offset 0, tai offset padaryt 100 ir per centra des
-gal su procentais kazka skaiciuot arba surast visai kita skaiciavimo buda nes kazkas blogai.
-
 solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
-
-on like button hover make it blue, but originally keep it black.
-
-normal load first 10 or something, count height and shit, and then lazyload all others. + make better quality images
 
 check SSL certificate (cloudFLARE)
 
 made server side rendering in parts - header, footer to just pass as variable so code doesnt repeat.
 
 404 page look good
-
-gallery images when load hover-overlay opacity from dark to 0 and animation small slide up like adam
-
-on phone when zooming in bad look - maybe display none on whole page when doing that?
 
 change meta tags of everything+ add apple-touch icons and other shit like that, description, url's.
 
@@ -28,11 +17,12 @@ del favicon, logo page or just test ask. (maybe use auto generators)
 horizontal thumbnail scoll center in the middle(calculate somehow different)
 + thumbnail scroll animation + modal HD image load animation
 
- make thumbnails directly below image
-
- display main none for mobile zoom in when modal is visible
-
- naudojimo instrukcija parasyt
+ naudojimo instrukcija parasyt:
+ https://bulkresizephotos.com/en
+ visus is originaliu kompresuot
+ thumbnails: 100x70; image quality: 100%
+ compressed-small(gallery) width: 400px; image quality: 100%
+ compressed-big(slides) width: 1000px; image quality: 100%
 
 *---------------------*
 font family: inconsolata, monospace
