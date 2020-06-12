@@ -6,22 +6,26 @@
     column-gap: 6px;
 
     .box {
+        border: 1px solid rgba(145, 145, 145, 0.5);
         position: relative;
         width: 100%;
+        margin-top: 16px;
         margin-bottom: 6px;
         overflow: hidden;
         break-inside: avoid;
 
         .video-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 0;
             height: 75px;
-            line-height: 75px;
-            white-space: wrap;
             word-wrap: break-word;
-            overflow-wrap: break-word;
 
             p {
-                vertical-align: middle;
-                line-height: 25px;
+                color: #2c2c2c;
+                margin: 0;
+                letter-spacing: 0.25px;
             }
         }
 

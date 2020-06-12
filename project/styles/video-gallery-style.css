@@ -10,8 +10,10 @@
 }
 
 .container .box {
+  border: 1px solid rgba(145, 145, 145, 0.5);
   position: relative;
   width: 100%;
+  margin-top: 16px;
   margin-bottom: 6px;
   overflow: hidden;
   -webkit-column-break-inside: avoid;
@@ -19,16 +21,24 @@
 }
 
 .container .box .video-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px 0;
   height: 75px;
-  line-height: 75px;
-  white-space: wrap;
   word-wrap: break-word;
-  overflow-wrap: break-word;
 }
 
 .container .box .video-title p {
-  vertical-align: middle;
-  line-height: 25px;
+  color: #2c2c2c;
+  margin: 0;
+  letter-spacing: 0.25px;
 }
 
 .container .box .iframe-container {
