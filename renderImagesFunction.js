@@ -106,7 +106,7 @@ await s3.upload({
 function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryName) {
   const smallIMGRender = [];
   smallIMG.forEach((img, index) => {
-    smallIMGRender.push(`<div class="box cursor" onclick="openModal();currentSlide(${index + 1})"><div class="hover-overlay"></div><img src="../../images/${galleryName}/compressed-small/${img}"/></div>`)
+    smallIMGRender.push(`<div class="box cursor" onclick="openModal();currentSlide(${index + 1})"><div class="hover-overlay"></div><img class="lazyload" src="../../images/${galleryName}/blurry/${img}" data-src="../../images/${galleryName}/compressed-small/${img}"/></div>`);
   });
   
   const bigIMGRender = [];
@@ -138,7 +138,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <meta name="title" content="Dmd test">
         <meta name="author" content="name, email@aaa.com">
         <meta name="subject" content="Photography">
-        <meta name="url" content="http://www.deimantasbutenas.lt/galleries">
+        <meta name="url" content="http://www.deimantasbutenas.lt">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
         <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
@@ -151,20 +151,25 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <title>Dmd</title>
       </head>
       <body>
-        <script src="../../scripts/lightbox-modal-script.js"></script>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
-    
+        <script src="../../scripts/lightbox-modal-script.js"></script>
+        
         <header>
           <h1><a href="http://deimantasbutenas.lt/">testas</a></h1>
-          <nav>
-            <ul>
+          <div class="mobile-navigation-bar" onclick="toggleMobileNavigation()">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <nav id="top-navigation">
+            <ul class="navigation">
               <li>
                   <a href="http://deimantasbutenas.lt/galleries/">Photo Gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="#">Video gallery</a>
+                  <a href="http://deimantasbutenas.lt/videos/">Video gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
@@ -180,11 +185,11 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
               </li>
             </ul>
           </nav>
-          <div class="social-media-icons">
+          <div id="top-social-media-icons" class="social-media-icons">
               <ul>
                   <li>
                     <a href="http://facebook.com/" target="_blank" class="fb-icon">             
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
                     </a>
                   </li>
                   <li>
@@ -198,7 +203,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
             <div class="page-content">
                 <!-- Compressed images on page used to open the lightbox -->
                 <div class="container">
-                  ${smallIMGRender.join("")}
+                    ${smallIMGRender.join("")}
                 </div>
         
                 <!-- The Modal/Lightbox -->
@@ -227,11 +232,15 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         </main>
     
         <footer>
-            <p>footer</p>
+          <div class="footer-content">
+            <span>&#169;</span>
+            <p>Deimantas Butėnas</p>
+          </div>
         </footer>
     
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
         <script src="../../scripts/lazyload.js"></script>
+        <script src="../../scripts/toggle-mobile-navigation.js"></script>
       </body>
     </html>
   `;
@@ -255,6 +264,15 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
     <html lang="lt">
       <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154076276-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-154076276-2');
+        </script>
+
     
         <meta charset="utf-8" />
         <link rel="icon" href="../favicon.ico" />
@@ -275,7 +293,6 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
     
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="../styles/all-galleries-page-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/photo-gallery-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
         
@@ -286,44 +303,49 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
     
-        <header>
-          <h1><a href="http://deimantasbutenas.lt/">testas</a></h1>
-          <nav>
+      <header>
+        <h1><a href="http://deimantasbutenas.lt/">testas</a></h1>
+        <div class="mobile-navigation-bar" onclick="toggleMobileNavigation()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <nav id="top-navigation">
+          <ul class="navigation">
+            <li>
+                <a href="http://deimantasbutenas.lt/galleries/">Photo Gallery</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="http://deimantasbutenas.lt/videos/">Video gallery</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="#">Prices</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="#">About</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <div id="top-social-media-icons" class="social-media-icons">
             <ul>
-              <li>
-                  <a href="http://deimantasbutenas.lt/galleries/">Photo Gallery</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="#">Video gallery</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="#">Prices</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="#">About</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="#">Contact</a>
-              </li>
+                <li>
+                  <a href="http://facebook.com/" target="_blank" class="fb-icon">             
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
+                  </a>
+                </li>
+                <li>
+                  <div class="fb-like" data-href="https://www.facebook.com/security" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                </li>
             </ul>
-          </nav>
-          <div class="social-media-icons">
-              <ul>
-                  <li>
-                    <a href="http://facebook.com/" target="_blank" class="fb-icon">             
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
-                    </a>
-                  </li>
-                  <li>
-                    <div class="fb-like" data-href="https://www.facebook.com/security" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
-                  </li>
-              </ul>
-          </div>
-        </header>
+        </div>
+      </header>
     
         <main>
             <div class="page-content">
@@ -334,10 +356,14 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         </main>
     
         <footer>
-            <p>footer</p>
+          <div class="footer-content">
+            <span>&#169;</span>
+            <p>Deimantas Butėnas</p>
+          </div>
         </footer>
     
         <script src="../scripts/add-redirect-to-galleries.js"></script>
+        <script src="../scripts/toggle-mobile-navigation.js"></script>
       </body>
     </html>
   `;
