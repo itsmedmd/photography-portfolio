@@ -1,5 +1,7 @@
 to do :
 
+BUCKET AND FUNCTION BOTH FRANKFURT!!!
+
 solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
 
 check SSL certificate (cloudFLARE)
