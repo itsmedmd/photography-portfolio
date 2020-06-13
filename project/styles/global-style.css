@@ -51,16 +51,6 @@ header .mobile-navigation-bar div {
   height: 3px;
   background-color: #919191;
   margin: 3px 0;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
-header .mobile-navigation-bar:hover {
-  cursor: pointer;
-}
-
-header .mobile-navigation-bar:hover div {
-  background-color: black;
 }
 
 header h1 a,
@@ -180,11 +170,6 @@ footer div.footer-content span {
 
 footer div.footer-content p {
   display: inline;
-}
-
-.page-content {
-  -webkit-animation: transitionIn 0.6s;
-          animation: transitionIn 0.6s;
 }
 
 .displayOff {

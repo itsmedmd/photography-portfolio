@@ -70,14 +70,9 @@
 
 @media (max-width: 768px) {
   .container {
-    width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-  .container {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    width: 100%;
   }
 }
 

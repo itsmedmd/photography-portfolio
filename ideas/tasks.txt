@@ -6,9 +6,9 @@ solution for button (have for example blue div on it and when facebook script ad
 
 check SSL certificate (cloudFLARE)
 
-made server side rendering in parts - header, footer to just pass as variable so code doesnt repeat.
-
 404 page look good
+
+pridet google analytics
 
 change meta tags of everything+ add apple-touch icons and other shit like that, description, url's.
 
@@ -20,11 +20,14 @@ horizontal thumbnail scoll center in the middle(calculate somehow different)
 + thumbnail scroll animation + modal HD image load animation
 
  naudojimo instrukcija parasyt:
+	(linkus sukurt)
+
  https://bulkresizephotos.com/en
  visus is originaliu kompresuot
  thumbnails: 100x70; image quality: 100%
  compressed-small(gallery) width: 400px; image quality: 100%
  compressed-big(slides) width: 1000px; image quality: 100%
+ blurry: width: 400px; image quality: lowest(25%)
 
 *---------------------*
 font family: inconsolata, monospace
