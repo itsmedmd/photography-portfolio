@@ -10,23 +10,23 @@ exports.handler = async (event) => {
     });
     
     // get all gallery names
-    let gallerySet = new Set();
+    let galleryNames = new Set();
     allKeys.forEach(key => {
       let splitUp = key.split("/");
-      gallerySet.add(splitUp[1]);
+      galleryNames.add(splitUp[1]);
     });
-    gallerySet = Array.from(gallerySet);
+    galleryNames = Array.from(galleryNames);
     
     // create html file that displays all image galleries
-    const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, gallerySet);
+    const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
     await postHTMLFile("galleries/index.html", allGalleriesPageContent);
     
     // create html files for each image gallery
-    for(let i = 0; i < gallerySet.length; i++) {
-      const bigIMG = sortItems(filterByFolder(allKeys, gallerySet[i], "compressed-big"));
-      const smallIMG = sortItems(filterByFolder(allKeys, gallerySet[i], "compressed-small"));
-      const thumbnails = sortItems(filterByFolder(allKeys, gallerySet[i], "thumbnails"));
-      const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, gallerySet[i]);
+    for(let i = 0; i < galleryNames.length; i++) {
+      const bigIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-big"));
+      const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
+      const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
+      const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
       await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
     };
     
@@ -85,13 +85,6 @@ async function getAllKeys(params,  allKeys = []){
   }
   
   return allKeys;
-}
-
-async function deleteFromPath(path) {
-  await s3.deleteObject({
-      Bucket: bucketName,
-      Key: path
-    }).promise();
 }
 
 async function postHTMLFile(path, pageContent) {
