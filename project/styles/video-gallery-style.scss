@@ -1,33 +1,18 @@
 .container {
     display: grid;
-    width: 1200px;
-    margin: 10px auto;
     grid-template-columns: 1fr 1fr 1fr;
+    width: 1200px;
     column-gap: 6px;
+    margin: 10px auto;
 
     .box {
         border: 1px solid rgba(145, 145, 145, 0.5);
+        overflow: hidden;
+        text-align: center;
         position: relative;
         width: 100%;
-        margin-top: 16px;
-        margin-bottom: 6px;
-        overflow: hidden;
+        margin-bottom: 22px;
         break-inside: avoid;
-
-        .video-title {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 0;
-            height: 75px;
-            word-wrap: break-word;
-
-            p {
-                color: #2c2c2c;
-                margin: 0;
-                letter-spacing: 0.25px;
-            }
-        }
 
         .iframe-container {
             position: relative;

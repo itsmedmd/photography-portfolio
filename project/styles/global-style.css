@@ -37,6 +37,7 @@ html, body {
 header {
   height: 300px;
   text-align: center;
+  margin-bottom: 16px;
 }
 
 header .mobile-navigation-bar {
@@ -138,14 +139,26 @@ main {
   letter-spacing: -0.2px;
 }
 
-main .box {
-  text-align: center;
+main .container .box .box-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px 0;
+  height: 75px;
+  word-wrap: break-word;
 }
 
-main .box .video-title p,
-main .box h3 {
+main .container .box .box-title p {
+  color: #2c2c2c;
+  margin: 0;
+  letter-spacing: 0.25px;
   font-weight: 600;
-  color: #525252;
   padding-left: 12px;
   padding-right: 12px;
 }

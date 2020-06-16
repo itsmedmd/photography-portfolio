@@ -23,6 +23,7 @@ html, body {
 header {
     height: 300px;
     text-align: center;
+    margin-bottom: 16px;
 
     .mobile-navigation-bar {
         display: none;
@@ -125,15 +126,26 @@ header {
 main {
     font-family: 'Open Sans', sans-serif !important;
     letter-spacing: -0.2px;
-    .box {
-        text-align: center;
 
-        .video-title p,
-        h3 {
-            font-weight: 600;
-            color: #525252;
-            padding-left: 12px;
-            padding-right: 12px;
+    .container {
+        .box {
+            .box-title {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 12px 0;
+                height: 75px;
+                word-wrap: break-word;
+    
+                p {
+                    color: #2c2c2c;
+                    margin: 0;
+                    letter-spacing: 0.25px;
+                    font-weight: 600;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                }
+            }
         }
     }
 }
@@ -158,10 +170,6 @@ footer {
             display: inline;
         }
     }
-}
-
-.page-content {
-    
 }
 
 .displayOff {

@@ -24,10 +24,16 @@ horizontal thumbnail scoll center in the middle(calculate somehow different)
 
  https://bulkresizephotos.com/en
  visus is originaliu kompresuot
- thumbnails: 100x70; image quality: 100%
- compressed-small(gallery) width: 400px; image quality: 100%
- compressed-big(slides) width: 1000px; image quality: 100%
+ thumbnails: 100x70; image quality: 80%
+ compressed-small(gallery) width: 400px; image quality: 80%
+ compressed-big(slides) width: 1000px; image quality: 90%
  blurry: width: 400px; image quality: lowest(25%)
+
+ gallery-img: width: 520px; height: 300px; image quality: 80%
+
+ gal gallery-img daryt tik height pakeist ar pns (patestuot!)
+
+ dar patestuot su quality kiek daug keiciasi, bet kuo maziau tuo geriau.
 
 *---------------------*
 font family: inconsolata, monospace

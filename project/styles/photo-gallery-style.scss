@@ -1,14 +1,15 @@
 .container {
-    width: 1200px;
-    margin: 10px auto;
     columns: 3;
+    width: 1200px;
     column-gap: 6px;
+    margin: 10px auto;
 
     .box {
+        overflow: hidden;
+        text-align: center;
         position: relative;
         width: 100%;
         margin-bottom: 6px;
-        overflow: hidden;
         break-inside: avoid;
 
         .hover-overlay {
@@ -29,6 +30,11 @@
             height: 100%;
             vertical-align: top;
         }
+    }
+
+    .box-border {
+        border: 1px solid rgba(145, 145, 145, 0.5);
+        margin-bottom: 22px;
     }
 }
 

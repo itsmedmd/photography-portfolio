@@ -1,0 +1,30 @@
+@media (max-width: 1280px) {
+  .container {
+    -webkit-columns: 3;
+            columns: 3;
+    width: calc(100% - 20px);
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    -webkit-columns: 2;
+            columns: 2;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    -webkit-columns: 1;
+            columns: 1;
+  }
+}
+
+@media (max-width: 440px) {
+  .box {
+    margin-top: 12px;
+  }
+}
+/*# sourceMappingURL=all-galleries-style.css.map */

@@ -1,0 +1,26 @@
+@media (max-width: 1280px) {
+    .container {
+        columns: 3;
+        width: calc(100% - 20px);
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        columns: 2;
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .container {
+        columns: 1;
+    }
+}
+
+@media (max-width: 440px) {
+    .box {
+        margin-top: 12px;
+    }
+}

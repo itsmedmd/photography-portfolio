@@ -22,7 +22,6 @@ function closeModal() {
     
 let slideIndex = 1;
 let scrollI = 0;
-showSlides(slideIndex);
 
 function countOffset() {
     const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];

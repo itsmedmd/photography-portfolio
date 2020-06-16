@@ -1,44 +1,23 @@
 .container {
   display: -ms-grid;
   display: grid;
-  width: 1200px;
-  margin: 10px auto;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
+  width: 1200px;
   -webkit-column-gap: 6px;
           column-gap: 6px;
+  margin: 10px auto;
 }
 
 .container .box {
   border: 1px solid rgba(145, 145, 145, 0.5);
+  overflow: hidden;
+  text-align: center;
   position: relative;
   width: 100%;
-  margin-top: 16px;
-  margin-bottom: 6px;
-  overflow: hidden;
+  margin-bottom: 22px;
   -webkit-column-break-inside: avoid;
           break-inside: avoid;
-}
-
-.container .box .video-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 12px 0;
-  height: 75px;
-  word-wrap: break-word;
-}
-
-.container .box .video-title p {
-  color: #2c2c2c;
-  margin: 0;
-  letter-spacing: 0.25px;
 }
 
 .container .box .iframe-container {
