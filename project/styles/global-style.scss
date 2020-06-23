@@ -18,6 +18,7 @@ html, body {
     font-family: sans-serif;
     display:flex; 
     flex-direction:column;
+    animation: transitionIn 0.5s;
 }
 
 header {
@@ -104,9 +105,19 @@ header {
             }
         }
 
-        .fb-like {
+        li.fb-li-element {
             position: relative;
-            right: 5px;
+            width: 87px;
+            height: 20px;
+            display: inline-block;
+            background: url("../images/fb-like-button.png");
+            vertical-align: bottom;
+            
+            .fb-like {
+                //position: relative;
+                //right: 5px;
+                //bottom: 0;
+            }
         }
     }
 

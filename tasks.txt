@@ -121,3 +121,16 @@ arn:aws:iam::522183820780:user/me
 https://hackernoon.com/hosting-static-react-websites-on-aws-s3-cloudfront-with-ssl-924e5c134455
 start page creating
 https://aws.amazon.com/cloudfront/pricing/
+
+
+
+fb share meta tags:
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://beginnersbook.com/2013/09/add-facebook-like-button-website/"/>
+<meta property="og:site_name" content="Easy Steps 2 Build Website"/>
+<meta property="article:author" content="" />
+<meta property="article:publisher" content="https://www.facebook.com/es2bw" />
+<meta property="og:title" content="How to add facebook like button to website" />
+<meta property="og:description" content="Adding a Facebook like button to the website is an easy task, however you may need to have an eye on few other performance related issue which may occur while a(...)" />
+<meta property="og:image" content="https://beginnersbook.com/wp-content/uploads/2013/09/fblike1-150x150.jpg" />

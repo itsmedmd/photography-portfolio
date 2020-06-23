@@ -32,6 +32,8 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-animation: transitionIn 0.5s;
+          animation: transitionIn 0.5s;
 }
 
 header {
@@ -116,9 +118,13 @@ header div.social-media-icons .fb-icon svg {
   transition: color 0.15s;
 }
 
-header div.social-media-icons .fb-like {
+header div.social-media-icons li.fb-li-element {
   position: relative;
-  right: 5px;
+  width: 87px;
+  height: 20px;
+  display: inline-block;
+  background: url("../images/fb-like-button.png");
+  vertical-align: bottom;
 }
 
 header nav,

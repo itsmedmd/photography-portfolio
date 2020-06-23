@@ -13,8 +13,6 @@ tasks:
 
 	pakeist tekso dydi kai mazina video ir galerijas jei reikia
 
-	create stylesheet for internet explorer
-
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded"
 
@@ -28,14 +26,11 @@ tasks:
 
 	kai ant "F" raides facebook hover, padaryt title kad "go to fb page ar kazka tokio"
 
-
 	bandyt SSL verification su savo
 	fiverr uzsiregint
 	ir upwork
 	ir pradet galvot kaip portfolio website atrodys
 
-
-	pasizet skaityma ir rasyma i linked list nes saraso paveikslas tai gal rasymas ir kaip rasyt atvirksciai !
 	
 	imgfap pazet thumbnails center
 
@@ -44,6 +39,31 @@ tasks:
 
 	galeriju foto irgi lazyload
 
-	video gallery padaryt kazkaip krovima kad ifeidintu visas blokas arba tik video
+	video gallery padaryt kazkaip krovima kad fade in visas blokas arba tik video
 
 	internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
+
+	IE11 test modal, lazyload
+
+	video rel=1 ar kazkuris kad tik is to channel mestu
+
+	add-iframe-src.js padaryt kad video linkus skirtingus sudetu is lambda
+
+	gal video gallery pabandyt ne su grid padaryt, o tiesiog columns kaip ir kitus, nes padding tai vis tiek 56.25%
+
+
+
+
+
+---------------OBJ------------------------
+
+pasizet skaityma ir rasyma i linked list nes saraso paveikslas tai gal rasymas ir kaip rasyt atvirksciai !
+
+merge listus:
+	prijungt viena prie kito galo ir viskas
+	merge while keeping sort order
+	merge 1 item from A, other from B and so on...
+
+
+
+---------------OBJ------------------------
