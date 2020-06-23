@@ -1,5 +1,7 @@
 to do :
 
+caching: https://stackoverflow.com/questions/15502416/how-to-use-browser-caching-with-amazon-s3
+
 BUCKET AND FUNCTION BOTH FRANKFURT!!!
 
 solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
@@ -20,28 +22,20 @@ horizontal thumbnail scoll center in the middle(calculate somehow different)
 + thumbnail scroll animation + modal HD image load animation
 
  naudojimo instrukcija parasyt:
-	(linkus sukurt)
+ parasyt instruction kaip daryt jei teksta pakeist nori.
+	(linkus sukurt bulkresize)
 
  https://bulkresizephotos.com/en
  visus is originaliu kompresuot
+
  thumbnails: 100x70; image quality: 80%
  compressed-small(gallery) width: 400px; image quality: 80%
  compressed-big(slides) width: 1000px; image quality: 90%
  blurry: width: 400px; image quality: lowest(25%)
-
- gallery-img: width: 520px; height: 300px; image quality: 80%
-
- gal gallery-img daryt tik height pakeist ar pns (patestuot!)
-
- dar patestuot su quality kiek daug keiciasi, bet kuo maziau tuo geriau.
+ gallery-img: height: 400px; image quality: 80%
 
 *---------------------*
-font family: inconsolata, monospace
-font family: "Benton Sans Regular", "Benton Sans Regular", sans-serif;
-
 image resizer: https://bulkresizephotos.com/en
-
-VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS
 
 analytics
 galerija
@@ -50,14 +44,11 @@ domain name
 hosting
 responsive design for different screen
 
-is kur video/foto
-
 https://www.adambirdphotography.com
 http://www.lillerphoto.com
 fotorama.lt
 
 https://developers.facebook.com/docs/plugins/like-button/
-
 https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html
 https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/migrate-dns-domain-inactive.html
 https://medium.com/tensult/aws-hosting-static-website-on-s3-using-a-custom-domain-cd2782758b2c
@@ -90,7 +81,7 @@ HTML VERIFY
 
 https://www.w3schools.com/tags/tag_meta.asp
 
-OG meta tags to use:https://ahrefs.com/blog/open-graph-meta-tags/
+OG meta tags to use: https://ahrefs.com/blog/open-graph-meta-tags/
 all meta tags: https://gist.github.com/lancejpollard/1978404
 
 masonry gallery: https://www.youtube.com/watch?v=82ej2Bpc0GE
@@ -113,13 +104,9 @@ https://www.youtube.com/results?search_query=html+grid+with+masonry
 
 minify everything
 
-VISKAM NAUDOT SCSS KAD PRIDETU PREFIXUS
-
-alt
-
 gtmetrix.com
 
-soft scroll do
+soft scroll
 
 horizontal scrolling bar https://codeburst.io/how-to-create-horizontal-scrolling-containers-d8069651e9c6
 

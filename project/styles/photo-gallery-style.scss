@@ -3,6 +3,7 @@
     width: 1200px;
     column-gap: 6px;
     margin: 10px auto;
+    //ie11 margin: 316px auto;
 
     .box {
         overflow: hidden;
@@ -49,6 +50,7 @@
 @media (max-width: 768px) {
     .container {
         width: 100%;
+        //ie11 margin-top: 117px;
     }
 }
 

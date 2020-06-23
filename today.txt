@@ -11,8 +11,6 @@ tasks:
 	su thumbnail tai pazet ir susirasyt koks offset ir visi matmenys kai buna tie ekranu dydziai,
 	nes jei su visais sutampa koks offset, tai vietoj tu ekranu dydzio IF rasymu, butu galima parasyt. tiesiog su offset IF kazkokiu!
 
-	pakeist visu galleries dizaina i toki kaip video
-
 	pakeist tekso dydi kai mazina video ir galerijas jei reikia
 
 	create stylesheet for internet explorer
@@ -22,14 +20,30 @@ tasks:
 
 	padaryt galleries on hover pakeist cursor + uzdet black opacity 0.5 ir teksta pakeist spalva i sviesia
 
-	compressed-small pakeist quality i kokius 80% ir ziuret kiek file size keiciasi, nes lievesnis vaizdas bus nepastebimas.
-
-	ir kitus quality pakeist kaip surasiau i tasks
-
 	renderinimo pakeist style ir script metodus kur kas linkinta
 
 	ant tlf video buna pirmas paslidines zemyn.
 
-	snd matematikos bandomaji padaryt ir gal nuo rytoj arba nuo siandien letai pradet ruostis matkei
+	ant tlf viska dar testint ir internet explorer
 
-	pazet obj rezus
+	kai ant "F" raides facebook hover, padaryt title kad "go to fb page ar kazka tokio"
+
+
+	bandyt SSL verification su savo
+	fiverr uzsiregint
+	ir upwork
+	ir pradet galvot kaip portfolio website atrodys
+
+
+	pasizet skaityma ir rasyma i linked list nes saraso paveikslas tai gal rasymas ir kaip rasyt atvirksciai !
+	
+	imgfap pazet thumbnails center
+
+	padaryt all galleries jei screen <= 768px tai kad nebutu on-hover nes gali bugintis paspaudimas
+	(patestint gal nesibugins)
+
+	galeriju foto irgi lazyload
+
+	video gallery padaryt kazkaip krovima kad ifeidintu visas blokas arba tik video
+
+	internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
