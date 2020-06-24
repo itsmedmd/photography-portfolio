@@ -142,6 +142,10 @@ main {
 
     .container {
         .box {
+            a {
+                text-decoration: none;
+            }
+
             .box-title {
                 display: flex;
                 align-items: center;
@@ -157,6 +161,7 @@ main {
                     font-weight: 600;
                     padding-left: 12px;
                     padding-right: 12px;
+                    text-decoration: none;
                 }
             }
         }

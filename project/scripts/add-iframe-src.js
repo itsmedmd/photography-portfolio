@@ -2,7 +2,7 @@ function addSrcToIframes() {
     const iframes = Array.from(document.getElementsByClassName('responsive-iframe'));
     iframes.forEach(function(iframe) {
         // dataset.src is for adding "data-src" attribute
-        iframe.dataset.src = "https://www.youtube.com/embed/mZ2zy-wnR0s?controls=1";
+        iframe.dataset.src = "https://www.youtube.com/embed/mZ2zy-wnR0s?controls=1&rel=0";
     });
 };
 

@@ -1,10 +1,14 @@
-today:
-
-1. try SSL cloudflare(maybe cloudfront) to make it free and check prices if
-   you use cloudflare/cloudfront as another layer to your website.
-
 tasks:
-	fb like button pazet width ar constant ir sukurt div kurio opacity is 1 i 0 kai uzsikrauna 
+	ant visu puslapiu:
+		1. fb icon title uzdet
+		2. atnaujint css, js failu linkus
+		3. atnaujint header, footer bendrus
+		4. metadata
+		5. google analytics
+		6. apple touch icon manifest
+		7. favicon.ico uzdet
+		8. html lang="" pakeist
+		9. atnaujint nav href linkus
 
 	padaryt galerijom numerius kad jas is eiles butu galima det.
 
@@ -16,23 +20,22 @@ tasks:
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded"
 
-	padaryt galleries on hover pakeist cursor + uzdet black opacity 0.5 ir teksta pakeist spalva i sviesia
-
 	renderinimo pakeist style ir script metodus kur kas linkinta
 
-	ant tlf video buna pirmas paslidines zemyn.
+	try SSL cloudflare(maybe cloudfront) to make it free and check prices if
+   	you use cloudflare/cloudfront as another layer to your website.
 
-	ant tlf viska dar testint ir internet explorer
-
-	kai ant "F" raides facebook hover, padaryt title kad "go to fb page ar kazka tokio"
-
-	bandyt SSL verification su savo
 	fiverr uzsiregint
+
 	ir upwork
+
 	ir pradet galvot kaip portfolio website atrodys
 
+	global style pazet .fb-like kur uzkomentuota tai gal reikia paslinkt i kaire per 5px visa ta ul
 	
 	imgfap pazet thumbnails center
+
+	ant tlf viska dar testint ir internet explorer
 
 	padaryt all galleries jei screen <= 768px tai kad nebutu on-hover nes gali bugintis paspaudimas
 	(patestint gal nesibugins)
@@ -41,29 +44,40 @@ tasks:
 
 	video gallery padaryt kazkaip krovima kad fade in visas blokas arba tik video
 
-	internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
-
-	IE11 test modal, lazyload
-
-	video rel=1 ar kazkuris kad tik is to channel mestu
-
 	add-iframe-src.js padaryt kad video linkus skirtingus sudetu is lambda
 
 	gal video gallery pabandyt ne su grid padaryt, o tiesiog columns kaip ir kitus, nes padding tai vis tiek 56.25%
 
+	pasizet aws lambda arba tiesiog aws kaip emails siust
+
+-------------MOBILE-------------
+
+ant tlf video buna pirmas paslidines zemyn.
+
+mobile test zoominima su visais puslapiais, modal ir t.t.
+
+pazet ar visada all galleries page ir tiesiog photos veikia paspaudimai is pirmo karto
+ir jeigu neveikia, tai hover-overlay padaryt tik nuo @media (min-width: 769px) {}
+
+-------------MOBILE-------------
 
 
 
+-------------IE11-------------
 
----------------OBJ------------------------
+ie11 videos page padaryt prie iframe antra iframe su IF ie11 kad src tiesiogiai parasytu ir
+tuo paciu nerunnintu add-iframe-src.js scripto, nes neveikia lazyload taip.
 
-pasizet skaityma ir rasyma i linked list nes saraso paveikslas tai gal rasymas ir kaip rasyt atvirksciai !
+ie11 modal tik nuo puses veikia ir yra scroll tai pataisyt + thumbnails rodo scroll bar
 
-merge listus:
-	prijungt viena prie kito galo ir viskas
-	merge while keeping sort order
-	merge 1 item from A, other from B and so on...
+ie11 kai mazas ekranas modal skaidres neveikia
 
+ie11 labai daug vietoj apacioj + kai mazas ekranas foto galerijoj dahuja vietos
 
+internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
 
----------------OBJ------------------------
+IE11 test modal, lazyload
+
+fb like button prie top prilinintas, reikia nuleist zemyn
+
+-------------IE11-------------
