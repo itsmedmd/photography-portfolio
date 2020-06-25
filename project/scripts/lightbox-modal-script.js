@@ -1,3 +1,6 @@
+// If the modal is opened, adding 'display: none' to the whole page
+// and if the modal is closed, adding 'display: none' to the modal
+// because there are UX problems without this on mobile devices
 function togglePageContent() {
     const pageContent = document.querySelector(".page-content .container");
     if(pageContent.classList.contains("displayOff"))
@@ -19,93 +22,81 @@ function closeModal() {
     document.getElementById("myModal").style.display = "none";
     document.getElementsByTagName("html")[0].classList.remove("scroll-lock");
 }
-    
-let slideIndex = 1;
-let scrollI = 0;
 
-function countOffset() {
-    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
-    const rowStyle = getComputedStyle(row);
-    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
-    const thumbnails = document.getElementsByClassName("lightbox-thumbnail")
-    const lengthOfOneDiv = row.scrollWidth / thumbnails.length;
-    const divsInViewCount = Math.floor(rowWidth / lengthOfOneDiv);
-    const scrollOffset = (rowWidth - divsInViewCount * lengthOfOneDiv) / 2;
-    return scrollOffset;
+// gets the html element of the thumbnail row
+// used just for simplifying code
+function getThumbnailRowElement() {
+    return document.getElementsByClassName("scrolling-thumbnail-row")[0];
 }
 
-function countOffsetDivs() {
+// gets the width of the first thumbnail row div (all are equal width)
+// used just for simplifying code
+function getWidthOfThumbnailDiv() {
     const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
-    const rowStyle = getComputedStyle(row);
-    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
-    const lengthOfOneDiv = row.scrollWidth / document.getElementsByClassName("lightbox-thumbnail").length;
+    return row.scrollWidth / document.getElementsByClassName("lightbox-thumbnail").length;
+}
+
+// counts how many divs come before the middle of the scroll bar
+function countOffsetDivs() {
+    const rowWidth = parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'));
     const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
-    const scrollOffset = countOffset();
-    
+    const divWidth = getWidthOfThumbnailDiv();
     let countSideDivs = 0;
-    for(let i = 0; i < thumbnails.length; i++)
-        if(lengthOfOneDiv * i + scrollOffset < rowWidth / 2)
-            countSideDivs++;
+    for(let i = 1; i <= thumbnails.length; i++)
+        if(divWidth * i <= rowWidth / 2) countSideDivs++;
+        else break;
     return countSideDivs;
 }
+
+// global variables for determining the position of the thumbnail scroll bar
+let slideIndex = 1;
+let scrollCount = 0;
 
 // Next/previous controls
 function plusSlides(n) {
     const divCount = document.getElementsByClassName("lightbox-thumbnail").length;      
     if(n > divCount)
-        scrollI = 0;
+        scrollCount = 0;
     else if(n === - 1) {
-        if(scrollI === 0)
-            scrollI = divCount - countOffsetDivs();
+        if(scrollCount === 0)
+            scrollCount = divCount - countOffsetDivs();
         else
-            scrollI--;
+            scrollCount--;
     }
     else 
-        scrollI++;
+        scrollCount++;
     showSlides(slideIndex += n);
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-    scrollI = n - countOffsetDivs();
+    scrollCount = n - countOffsetDivs();
     showSlides(slideIndex = n);
 }
 
+// centering of the thumbnail row
 function scrollThumbnailRow(thumbnails) {
-    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
-    const rowStyle = getComputedStyle(row);
-    const rowWidth = parseInt(rowStyle.getPropertyValue('width'));
-    const lengthOfOneDiv = row.scrollWidth / thumbnails.length;
-    const scrollOffset = countOffset();
-    const offsetDivs = countOffsetDivs();
-
+    const row = getThumbnailRowElement();
+    const scr = screen.availWidth;
     for(let i = 0; i < thumbnails.length; i++) {
         if(thumbnails[i].classList.contains("active")) {
-            if(i < offsetDivs) {
+            if(i < countOffsetDivs()) {
                 row.scrollLeft = 0;
-                scrollI = 0;
+                scrollCount = 0;
             }
-            else {
-                // Making adjustments of thumbnail scroll row centering with some specific scren sizes
-                if( screen.availWidth === 667 ||
-                    screen.availWidth === 640 ||
-                    screen.availWidth === 600 ||
-                    screen.availWidth === 427 ||
-                    screen.availWidth === 414 ||
-                    screen.availWidth === 412 ||
-                    screen.availWidth === 375 ||
-                    screen.availWidth === 360 ||
-                    scrollOffset * 2 === 99)
-                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset;
-                else if(screen.availWidth === 320)
-                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset - lengthOfOneDiv / 2;
-                else
-                    row.scrollLeft = lengthOfOneDiv * scrollI - scrollOffset;
-            }
+            // hard coding these screen sizes since the css is exactly like that too
+            else if(scr > 310 && scr <= 410 ||
+                    scr > 520 && scr <= 680 ||
+                    scr > 820 && scr <= 950 ||
+                    scr > 1090 && scr <= 1200)
+                row.scrollLeft = getWidthOfThumbnailDiv() * scrollCount - row.scrollWidth / thumbnails.length;
+            else
+                row.scrollLeft = getWidthOfThumbnailDiv() * scrollCount - row.scrollWidth / thumbnails.length / 2;
         }
     }
 }
 
+// Main function that shows the slides (modal)
 function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("mySlides");
@@ -121,5 +112,10 @@ function showSlides(n) {
     slides[slideIndex-1].style.display = "flex";
     slides[slideIndex-1].classList.add("active");
     thumbnails[slideIndex-1].classList.add("active");
-    scrollThumbnailRow(thumbnails);
+
+    // only scroll the thumbnail bar if the screen width is more
+    // than 210px, since at this exact and lower screen sizes
+    // the thumbnail scroll bar is invisible
+    if(screen.availWidth > 210)
+        scrollThumbnailRow(thumbnails);
 }

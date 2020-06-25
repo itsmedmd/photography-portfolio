@@ -1,8 +1,8 @@
 .container {
     .box {
-        .hover-overlay {
-            &:hover {
-                opacity: 0.1;
+        &:hover {
+            .hover-overlay {
+                opacity: 0.35;
             }
         }
     }

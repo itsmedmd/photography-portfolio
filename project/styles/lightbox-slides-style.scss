@@ -25,7 +25,6 @@
     margin: 80px auto 0;
     width: 1000px;
     height: 66%;
-    border: 1px solid red;
 
     div.image-overlay-left,
     div.image-overlay-right  {
@@ -42,7 +41,6 @@
 
     div.image-overlay-right { 
         right: 0;
-        border-left: 1px solid blue;
     }
 
     img {
@@ -82,7 +80,6 @@
 }
 
 .scrolling-thumbnail-row {
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -111,16 +108,15 @@ img.lightbox-thumbnail  {
     }
 }
 
+// media for whole page resizing
 @media (max-width: 1200px) {
-    .mySlides,
-    .scrolling-thumbnail-row {
+    .mySlides {
         width: 80%;
     }
 }
 
 @media (max-width: 768px) {
-    .mySlides,
-    .scrolling-thumbnail-row {
+    .mySlides {
         width: 85%;
     }
 
@@ -134,13 +130,67 @@ img.lightbox-thumbnail  {
 }
 
 @media (max-width: 580px) {
-    .mySlides,
-    .scrolling-thumbnail-row {
+    .mySlides {
         width: 92%;
     }
 
     .prev,
     .next {
+        display: none;
+    }
+}
+
+// media for thumbnail scroll bar
+@media (max-width: 1200px) {
+    .scrolling-thumbnail-row {
+        width: 900px;
+    }
+}
+
+@media (max-width: 1090px) {
+    .scrolling-thumbnail-row {
+        width: 800px;
+    }
+}
+
+@media (max-width: 950px) {
+    .scrolling-thumbnail-row {
+        width: 700px;
+    }
+}
+
+@media (max-width: 820px) {
+    .scrolling-thumbnail-row {
+        width: 600px;
+    }
+}
+
+@media (max-width: 680px) {
+    .scrolling-thumbnail-row {
+        width: 500px;
+    }
+}
+
+@media (max-width: 520px) {
+    .scrolling-thumbnail-row {
+        width: 400px;
+    }
+}
+
+@media (max-width: 410px) {
+    .scrolling-thumbnail-row {
+        width: 300px;
+    }
+}
+
+@media (max-width: 310px) {
+    .scrolling-thumbnail-row {
+        width: 200px;
+    }
+}
+
+@media (max-width: 210px) {
+    .scrolling-thumbnail-row {
         display: none;
     }
 }

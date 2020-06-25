@@ -10,6 +10,7 @@ tasks:
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
 
+
 	padaryt galerijom numerius kad jas is eiles butu galima det.
 
 	su thumbnail tai pazet ir susirasyt koks offset ir visi matmenys kai buna tie ekranu dydziai,
@@ -30,8 +31,6 @@ tasks:
 	ir upwork
 
 	ir pradet galvot kaip portfolio website atrodys
-
-	global style pazet .fb-like kur uzkomentuota tai gal reikia paslinkt i kaire per 5px visa ta ul
 	
 	imgfap pazet thumbnails center
 
@@ -40,17 +39,34 @@ tasks:
 	padaryt all galleries jei screen <= 768px tai kad nebutu on-hover nes gali bugintis paspaudimas
 	(patestint gal nesibugins)
 
-	galeriju foto irgi lazyload
-
-	video gallery padaryt kazkaip krovima kad fade in visas blokas arba tik video
-
 	add-iframe-src.js padaryt kad video linkus skirtingus sudetu is lambda
-
-	gal video gallery pabandyt ne su grid padaryt, o tiesiog columns kaip ir kitus, nes padding tai vis tiek 56.25%
 
 	pasizet aws lambda arba tiesiog aws kaip emails siust
 
+	thumbnail paimt visa width padalint is dvieju ir pridet puse to ir viskas
+	thumbnail paimt scrollbar width pazet koks ir palygint su kazkuo
+	viso scrollbar ilgis islygint su kiek turi but ilgis ir td skaiciuot
+
+	thumbnail galima daryt pagal dydi kiek ju rodys td lengva apskaiciuot
+
+210 gal isvis isjungt nx
+310 telpa 1 ir viskas ok
+410px reikia + 50px, telpa 1.5
+520px telpa 2 ir viskas ok
+680px reikia +50px, telpa 2.5
+820px telpa 3 ir viskas ok
+950px reikia +50px, telpa 3.5
+1090px telpa 4 ir viskas ok
+1200px reikia +50px, telpa 4.5
+virs 1200px telpa 5 ir viskas ok
+
 -------------MOBILE-------------
+
+recalculate thumbnail bar scroll amount on width change
+
+mobile gal ant modal on hover nereikia nes gali bugintis
+
+test su skirtingais browser ant tlf
 
 ant tlf video buna pirmas paslidines zemyn.
 
@@ -72,12 +88,14 @@ ie11 modal tik nuo puses veikia ir yra scroll tai pataisyt + thumbnails rodo scr
 
 ie11 kai mazas ekranas modal skaidres neveikia
 
-ie11 labai daug vietoj apacioj + kai mazas ekranas foto galerijoj dahuja vietos
+ie11 labai daug vietos apacioj + kai mazas ekranas foto galerijoj dahuja vietos
 
 internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
 
 IE11 test modal, lazyload
 
 fb like button prie top prilinintas, reikia nuleist zemyn
+
+video galerija grid visus i 1;1 deda
 
 -------------IE11-------------

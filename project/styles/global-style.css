@@ -92,33 +92,33 @@ header nav ul span.nav-dot {
   background-color: #dedede;
 }
 
-header div.social-media-icons {
-  padding-top: 8px;
+header .social-media-icons ul {
+  margin-right: 5px;
 }
 
-header div.social-media-icons ul a {
+header .social-media-icons ul a {
   text-decoration: none;
 }
 
-header div.social-media-icons ul a svg {
+header .social-media-icons ul a svg {
   color: black;
 }
 
-header div.social-media-icons ul a svg:hover {
+header .social-media-icons ul a svg:hover {
   color: #1877f2;
 }
 
-header div.social-media-icons .fb-icon {
+header .social-media-icons .fb-icon {
   position: relative;
   top: 3px;
 }
 
-header div.social-media-icons .fb-icon svg {
+header .social-media-icons .fb-icon svg {
   -webkit-transition: color 0.15s;
   transition: color 0.15s;
 }
 
-header div.social-media-icons li.fb-li-element {
+header .social-media-icons li.fb-li-element {
   position: relative;
   width: 87px;
   height: 20px;

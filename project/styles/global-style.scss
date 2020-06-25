@@ -79,10 +79,10 @@ header {
         }
     }
 
-    div.social-media-icons {
-        padding-top: 8px;
-
+    .social-media-icons {
         ul {
+            margin-right: 5px;
+
             a {
                 text-decoration: none;
 
@@ -112,12 +112,6 @@ header {
             display: inline-block;
             background: url("../images/fb-like-button.png");
             vertical-align: bottom;
-            
-            .fb-like {
-                //position: relative;
-                //right: 5px;
-                //bottom: 0;
-            }
         }
     }
 
@@ -202,6 +196,8 @@ footer {
     cursor: pointer;
 }
 
+// if screen width is 768px or smaller,
+// change header navigation to mobile design
 @media (max-width: 768px) {
     header {
         text-align: left;
