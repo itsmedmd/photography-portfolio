@@ -17,43 +17,35 @@ tasks:
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
 
-
-	padaryt galerijom numerius kad jas is eiles butu galima det.
-
 	pakeist tekso dydi kai mazina video ir galerijas jei reikia
+	ir pati ta box pamazint dydi, gal line height pamazint ir tuo
+	paciu pasimazint pats box.
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
-	animation on load data-ll-loaded uzdeda "loaded"
-
-	aws lambda renderinimo pakeist style ir script metodus kur kas linkinta
-
-	try SSL cloudflare(maybe cloudfront) to make it free and check prices if
-   	you use cloudflare/cloudfront as another layer to your website.
-
-	ant tlf viska dar testint ir internet explorer
-
-	padaryt all galleries jei screen <= 768px tai kad nebutu on-hover nes gali bugintis paspaudimas
-	(patestint gal nesibugins)
-
-	add-iframe-src.js padaryt kad video linkus skirtingus sudetu is lambda
-
-	pasizet aws lambda arba tiesiog aws kaip emails siust
+	animation on load data-ll-loaded uzdeda "loaded" gal opacity
 
 	try fix video src memory leakage
 
 	fb like button top padding increase
 
 
-210 gal isvis isjungt
-310 telpa 1 ir viskas ok
-410px reikia + 50px, telpa 1.5
-520px telpa 2 ir viskas ok
-680px reikia +50px, telpa 2.5
-820px telpa 3 ir viskas ok
-950px reikia +50px, telpa 3.5
-1090px telpa 4 ir viskas ok
-1200px reikia +50px, telpa 4.5
-virs 1200px telpa 5 ir viskas ok
+-------------AWS----------------
+
+pasizet aws lambda arba tiesiog aws kaip emails siust
+
+try SSL cloudflare(maybe cloudfront) to make it free and check prices if
+you use cloudflare/cloudfront as another layer to your website.
+
+atnaujint aws lambda visus renderinimus
+
+aws lambda renderinimo pakeist style ir script metodus kur kas linkinta
+
+padaryt galerijom numerius kad jas is eiles butu galima det.
+
+add-iframe-src.js padaryt kad video linkus skirtingus sudetu is aws lambda
+-------------AWS----------------
+
+
 
 -------------MOBILE-------------
 
@@ -79,6 +71,8 @@ ir jeigu neveikia, tai hover-overlay padaryt tik nuo @media (min-width: 769px) {
 
 -------------IE11-------------
 
+video lazyload neveikia
+
 video galerijoj footer per aukstai, pats page-content per aukstai,
 header border per aukstai eina, ne vietoj, bet su mobile navigation ok viskas
 tai pazet gal kodas ten geresnis
@@ -103,3 +97,15 @@ fb like button prie top prilinintas, reikia nuleist zemyn
 video galerija grid visus i 1;1 deda
 
 -------------IE11-------------
+
+
+210 gal isvis isjungt
+310 telpa 1 ir viskas ok
+410px reikia + 50px, telpa 1.5
+520px telpa 2 ir viskas ok
+680px reikia +50px, telpa 2.5
+820px telpa 3 ir viskas ok
+950px reikia +50px, telpa 3.5
+1090px telpa 4 ir viskas ok
+1200px reikia +50px, telpa 4.5
+virs 1200px telpa 5 ir viskas ok
