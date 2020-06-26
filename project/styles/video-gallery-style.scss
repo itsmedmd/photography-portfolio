@@ -1,18 +1,20 @@
 .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
     width: 1200px;
-    column-gap: 6px;
     margin: 10px auto;
+    justify-content: center;
 
     .box {
         border: 1px solid rgba(145, 145, 145, 0.5);
+        border-bottom: none;
         overflow: hidden;
         text-align: center;
         position: relative;
-        width: 100%;
+        width: calc(99.999% / 3 - 8px);
         margin-bottom: 22px;
         break-inside: avoid;
+        margin: 0 3px 22px 3px;
 
         .iframe-container {
             position: relative;
@@ -23,7 +25,7 @@
     
             iframe {
                 position: absolute;
-                top: 0;
+                bottom: 0;
                 left: 0;
                 width: 100%;
                 height: 100%;
@@ -35,7 +37,6 @@
 
 @media (max-width: 1280px) {
     .container {
-        grid-template-columns: 1fr 1fr 1fr;
         width: calc(100% - 20px);
         padding: 0;
     }
@@ -43,14 +44,25 @@
 
 @media (max-width: 768px) {
     .container {
-        grid-template-columns: 1fr 1fr;
         width: 100%;
+
+        .box {
+            width: calc(99.999% / 2 - 8px);
+            margin-right: 2px;
+            margin-left: 2px;
+        }
     }
 }
 
 @media (max-width: 520px) {
     .container {
-        grid-template-columns: 1fr;
+        .box {
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+            border-left: none;
+            border-right: none;
+        }
     }
 }
 

@@ -1,3 +1,10 @@
+in general:
+	fiverr uzsiregint
+
+	ir upwork
+
+	ir pradet galvot kaip portfolio website atrodys
+
 tasks:
 	ant visu puslapiu:
 		1. fb icon title uzdet
@@ -13,26 +20,15 @@ tasks:
 
 	padaryt galerijom numerius kad jas is eiles butu galima det.
 
-	su thumbnail tai pazet ir susirasyt koks offset ir visi matmenys kai buna tie ekranu dydziai,
-	nes jei su visais sutampa koks offset, tai vietoj tu ekranu dydzio IF rasymu, butu galima parasyt. tiesiog su offset IF kazkokiu!
-
 	pakeist tekso dydi kai mazina video ir galerijas jei reikia
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded"
 
-	renderinimo pakeist style ir script metodus kur kas linkinta
+	aws lambda renderinimo pakeist style ir script metodus kur kas linkinta
 
 	try SSL cloudflare(maybe cloudfront) to make it free and check prices if
    	you use cloudflare/cloudfront as another layer to your website.
-
-	fiverr uzsiregint
-
-	ir upwork
-
-	ir pradet galvot kaip portfolio website atrodys
-	
-	imgfap pazet thumbnails center
 
 	ant tlf viska dar testint ir internet explorer
 
@@ -43,13 +39,12 @@ tasks:
 
 	pasizet aws lambda arba tiesiog aws kaip emails siust
 
-	thumbnail paimt visa width padalint is dvieju ir pridet puse to ir viskas
-	thumbnail paimt scrollbar width pazet koks ir palygint su kazkuo
-	viso scrollbar ilgis islygint su kiek turi but ilgis ir td skaiciuot
+	try fix video src memory leakage
 
-	thumbnail galima daryt pagal dydi kiek ju rodys td lengva apskaiciuot
+	fb like button top padding increase
 
-210 gal isvis isjungt nx
+
+210 gal isvis isjungt
 310 telpa 1 ir viskas ok
 410px reikia + 50px, telpa 1.5
 520px telpa 2 ir viskas ok
@@ -61,6 +56,9 @@ tasks:
 virs 1200px telpa 5 ir viskas ok
 
 -------------MOBILE-------------
+
+on hover isjungt gal jei 768px ir maziau visus hover ir galeriju ir thumbnail
+bet pirma patestint ar iskart veikia paspaudimas, jei veikia tai palikt
 
 recalculate thumbnail bar scroll amount on width change
 
@@ -80,6 +78,12 @@ ir jeigu neveikia, tai hover-overlay padaryt tik nuo @media (min-width: 769px) {
 
 
 -------------IE11-------------
+
+video galerijoj footer per aukstai, pats page-content per aukstai,
+header border per aukstai eina, ne vietoj, bet su mobile navigation ok viskas
+tai pazet gal kodas ten geresnis
+
+wide screen grid starts too high up
 
 ie11 videos page padaryt prie iframe antra iframe su IF ie11 kad src tiesiogiai parasytu ir
 tuo paciu nerunnintu add-iframe-src.js scripto, nes neveikia lazyload taip.
