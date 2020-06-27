@@ -121,6 +121,7 @@ img.lightbox-thumbnail.active, img.lightbox-thumbnail:hover {
   opacity: 1;
 }
 
+/* media for whole page resizing */
 @media (max-width: 1200px) {
   .mySlides {
     width: 80%;
@@ -149,6 +150,7 @@ img.lightbox-thumbnail.active, img.lightbox-thumbnail:hover {
   }
 }
 
+/* media for thumbnail scroll bar */
 @media (max-width: 1200px) {
   .scrolling-thumbnail-row {
     width: 900px;

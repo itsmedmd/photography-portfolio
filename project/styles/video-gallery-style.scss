@@ -27,7 +27,7 @@
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                width: 100%;
+                width: 101%;
                 height: 100%;
                 border: none;
             } 
@@ -54,7 +54,7 @@
     }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 535px) {
     .container {
         .box {
             width: 100%;

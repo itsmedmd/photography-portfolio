@@ -26,7 +26,7 @@ header {
     height: 300px;
     //ie11 width: 100%;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 
     .mobile-navigation-bar {
         display: none;
@@ -81,7 +81,7 @@ header {
 
     .social-media-icons {
         ul {
-            margin-right: 5px;
+            margin: 30px 5px 0 0;
 
             a {
                 text-decoration: none;
@@ -144,8 +144,6 @@ main {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                padding: 12px 0;
-                height: 75px;
                 word-wrap: break-word;
     
                 p {
@@ -196,8 +194,8 @@ footer {
     cursor: pointer;
 }
 
-// if screen width is 768px or smaller,
-// change header navigation to mobile design
+/* if screen width is 768px or smaller,
+   change header navigation to mobile design */
 @media (max-width: 768px) {
     header {
         text-align: left;
@@ -270,6 +268,52 @@ footer {
         h1 {
             display: inline-block;
             padding: 10px 0 12px 24px;
+        }
+    }
+}
+
+/* all following media queries are for resizing gallery/video title text */
+@media (min-width: 601px) {
+    .box-title {
+        padding: 10px 0;
+        height: 75px;
+    }
+}
+
+@media (max-width: 600px) {
+    .box-title {
+        padding: 6px 0;
+        height: 62px;
+    }
+}
+
+@media (max-width: 360px) {
+    .box-title {
+        padding: 8px 0;
+        height: 50px;
+    }
+}
+
+@media (min-width: 301px) {
+    .box-title {
+        p {
+            font-size: 15px;
+        }
+    }
+}
+
+@media (max-width: 300px) {
+    .box-title {
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 200px) {
+    .box-title {
+        p {
+            font-size: 12px;
         }
     }
 }

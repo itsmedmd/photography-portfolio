@@ -19,7 +19,7 @@
 @media (max-width: 768px) {
     .container {
         columns: 2;
-        width: 100%;
+        width: calc(100% - 8px);
     }
 }
 
