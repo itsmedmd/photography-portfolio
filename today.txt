@@ -7,6 +7,7 @@ in general:
 
 tasks:
 	ant visu puslapiu:
+		0. minify css ir js failus ir gal html jei eina
 		1. fb icon title uzdet
 		2. atnaujint css, js failu linkus
 		3. atnaujint header, footer bendrus
@@ -17,32 +18,24 @@ tasks:
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
 
-	pakeist tekso dydi kai mazina video ir galerijas jei reikia
-	ir pati ta box pamazint dydi, gal line height pamazint ir tuo
-	paciu pasimazint pats box.
-
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
 
 	try fix video src memory leakage
 
-	fb like button top padding increase
+	recalculate thumbnail bar scroll amount on width change
 
 
 -------------AWS----------------
+
+patikrint ar veikia lazyload visur
 
 pasizet aws lambda arba tiesiog aws kaip emails siust
 
 try SSL cloudflare(maybe cloudfront) to make it free and check prices if
 you use cloudflare/cloudfront as another layer to your website.
 
-atnaujint aws lambda visus renderinimus
-
-aws lambda renderinimo pakeist style ir script metodus kur kas linkinta
-
 padaryt galerijom numerius kad jas is eiles butu galima det.
-
-add-iframe-src.js padaryt kad video linkus skirtingus sudetu is aws lambda
 -------------AWS----------------
 
 
@@ -51,8 +44,6 @@ add-iframe-src.js padaryt kad video linkus skirtingus sudetu is aws lambda
 
 on hover isjungt gal jei 768px ir maziau visus hover ir galeriju ir thumbnail
 bet pirma patestint ar iskart veikia paspaudimas, jei veikia tai palikt
-
-recalculate thumbnail bar scroll amount on width change
 
 mobile gal ant modal on hover nereikia nes gali bugintis
 
@@ -70,6 +61,8 @@ ir jeigu neveikia, tai hover-overlay padaryt tik nuo @media (min-width: 769px) {
 
 
 -------------IE11-------------
+
+patikrint ar veikia visur lazyload
 
 video lazyload neveikia
 
