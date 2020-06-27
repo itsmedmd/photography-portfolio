@@ -16,6 +16,7 @@ exports.handler = async (event) => {
       galleryNames.add(splitUp[1]);
     });
     galleryNames = Array.from(galleryNames);
+    galleryNames.sort((a, b) => a > b ? 1: -1);
     
     // create html file that displays all image galleries
     const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
@@ -99,7 +100,12 @@ await s3.upload({
 function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryName) {
   const smallIMGRender = [];
   smallIMG.forEach((img, index) => {
-    smallIMGRender.push(`<div class="box cursor" onclick="openModal();currentSlide(${index + 1})"><div class="hover-overlay"></div><img class="lazyload" src="../../images/${galleryName}/blurry/${img}" data-src="../../images/${galleryName}/compressed-small/${img}"/></div>`);
+    smallIMGRender.push(`
+      <div class="box cursor" onclick="openModal();currentSlide(${index + 1})">
+        <div class="hover-overlay"></div>
+        <img class="lazyload" src="../../images/${galleryName}/blurry/${img}" data-src="../../images/${galleryName}/compressed-small/${img}"/>
+      </div>
+    `);
   });
   
   const bigIMGRender = [];
@@ -109,12 +115,16 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
         <div onclick="plusSlides(1)" class="image-overlay-right"></div>
         <img class="lazyload" data-src="../../images/${galleryName}/compressed-big/${img}">
-      </div>`)
+      </div>`);
   });
   
   const thumbnailsRender = [];
   thumbnails.forEach((img, index) => {
-    thumbnailsRender.push(`<div class="column"><img class="lightbox-thumbnail lazyload cursor" data-src="../../images/${galleryName}/thumbnails/${img}" onclick="currentSlide(${index + 1})"></div>`)
+    thumbnailsRender.push(`
+      <div class="column">
+        <img class="lightbox-thumbnail lazyload cursor" data-src="../../images/${galleryName}/thumbnails/${img}" onclick="currentSlide(${index + 1})">
+      </div>
+    `);
   });
   
   return `
@@ -185,8 +195,8 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
                       <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
                     </a>
                   </li>
-                  <li>
-                    <div class="fb-like" data-href="https://www.facebook.com/security" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                  <li class="fb-li-element" style="background: url(../../fb-like-button.png);">
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
                   </li>
               </ul>
           </div>
@@ -218,7 +228,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
                 
                     <!-- Thumbnail images -->
                     <div class="scrolling-thumbnail-row">
-                      ${thumbnailsRender.join("")}
+                        ${thumbnailsRender.join("")}
                     </div>
                 </div>
             </div>
@@ -243,13 +253,20 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
   const toRender = [];
   gallerySet.forEach((galleryName, index) => {
     const galleryIMG = getGalleryIMG(allKeys, gallerySet[index]);
+    const splitUpGalleryName = galleryName.split("---");
     toRender.push(`
-      <div class="box">
-        <div class="hover-overlay"></div>
-        <h2>${galleryName}</h2>
-        <img src="../images/${galleryIMG}"/>
+      <div class="box box-border cursor">
+        <a href="http://deimantasbutenas.lt/galleries/${index + 1}">
+          <div class="box-title">
+            <p>${splitUpGalleryName[1]}</p>
+          </div>
+          <div class="gallery-img-container">
+            <div class="hover-overlay"></div>
+            <img src="../images/${galleryIMG}"/>
+          </div>
+        </a>
       </div>
-    `)
+    `);
   });
   
   return `
@@ -257,16 +274,7 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
     <html lang="lt">
       <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154076276-2"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'UA-154076276-2');
-        </script>
 
-    
         <meta charset="utf-8" />
         <link rel="icon" href="../favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -287,12 +295,12 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
     
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/photo-gallery-style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../styles/all-galleries-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
         
         <title>Galleries - Dmd</title>
       </head>
       <body>
-        <script src="../scripts/lightbox-modal-script.js"></script>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
     
@@ -333,8 +341,8 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
                   </a>
                 </li>
-                <li>
-                  <div class="fb-like" data-href="https://www.facebook.com/security" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                <li class="fb-li-element" style="background: url(../fb-like-button.png);">
+                  <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
                 </li>
             </ul>
         </div>
@@ -355,7 +363,6 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
           </div>
         </footer>
     
-        <script src="../scripts/add-redirect-to-galleries.js"></script>
         <script src="../scripts/toggle-mobile-navigation.js"></script>
       </body>
     </html>

@@ -34,22 +34,22 @@ async function postHTMLFile(path, pageContent) {
 
 function createVideosPageContent(lines) {
   const toRender = [];
+  const videoURLs = [];
   lines.forEach((line, index) => {
-  const splitUp = line.split(';');
-  const videoTitle = splitUp[0].trim();
-  const videoURL = splitUp[1].trim().replace('watch?v=', 'embed/') + '?controls=1';
-  toRender.push(`
-    <div class="box">
-        <div class="video-title">
-            <p>${videoTitle}</p>
-        </div>
-        <div class="iframe-container">
-            <iframe class="responsive-iframe lazyload" allowfullscreen
-                data-src="${videoURL}">
-            </iframe>
-        </div>
-    </div>
-  `)
+    const splitUp = line.split(';');
+    const videoTitle = splitUp[0].trim();
+    const videoURL = splitUp[1].trim().replace('watch?v=', 'embed/') + '?controls=1';
+    videoURLs.push(`"${videoURL}"`);
+    toRender.push(`
+      <div class="box">
+          <div class="box-title">
+              <p>${videoTitle}</p>
+          </div>
+          <div class="iframe-container">
+              <iframe class="responsive-iframe lazyload" allowfullscreen src="about:blank"></iframe>
+          </div>
+      </div>
+    `);
   });
   
   return `
@@ -76,8 +76,8 @@ function createVideosPageContent(lines) {
         -->
         <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
     
-        <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/video-gallery-style.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
         
         <title>Videos - Dmd</title>
@@ -100,7 +100,7 @@ function createVideosPageContent(lines) {
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="http://deimantasbutenas.lt/videos/">Video gallery</a>
+                  <a href="#">Video gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
@@ -123,8 +123,8 @@ function createVideosPageContent(lines) {
                       <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
                     </a>
                   </li>
-                  <li>
-                    <div class="fb-like" data-href="https://www.facebook.com/security" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
+                  <li class="fb-li-element" style="background: url(../fb-like-button.png);">
+                    <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="false"></div>
                   </li>
               </ul>
           </div>
@@ -133,7 +133,7 @@ function createVideosPageContent(lines) {
         <main>
             <div class="page-content">
                 <div class="container">
-                  ${toRender.join("")}
+                    ${toRender.join("")}
                </div>
             </div>
         </main>
@@ -147,7 +147,22 @@ function createVideosPageContent(lines) {
     
         <script src="../scripts/toggle-mobile-navigation.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
-        <script src="../scripts/lazyload.js"></script>
+        <script src="../scripts/add-iframe-src.js"></script>
+        <script>
+            // at 768px and less the header shows only hamburger bar
+            // for navigation, where facebook like button embed is,
+            // which is why loading youtube iframes first is prioritised here
+            if(screen.availWidth <= 768) {
+                addSrcToIframes([${videoURLs}]);
+                addLazyloadScript('../scripts/lazyload.js');
+            } else {
+                // loads facebook like button before videos
+                window.onload = function() {
+                    addSrcToIframes([${videoURLs}]);
+                    addLazyloadScript('../scripts/lazyload.js');
+                };
+            }
+        </script>
       </body>
     </html>
   `;

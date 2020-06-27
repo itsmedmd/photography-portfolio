@@ -17,6 +17,7 @@ tasks:
 		7. favicon.ico uzdet
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
+		10. atnaujint fb page icon href ir fb like button i grupe
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
@@ -25,10 +26,13 @@ tasks:
 
 	recalculate thumbnail bar scroll amount on width change
 
+	firefox rodo thumbnail scroll bar
+
+	gal transitionIn animation per ilgai uztrunka
 
 -------------AWS----------------
 
-patikrint ar veikia lazyload visur
+check how to remove cache if you want to push update
 
 pasizet aws lambda arba tiesiog aws kaip emails siust
 
@@ -74,6 +78,10 @@ wide screen grid starts too high up
 
 ie11 videos page padaryt prie iframe antra iframe su IF ie11 kad src tiesiogiai parasytu ir
 tuo paciu nerunnintu add-iframe-src.js scripto, nes neveikia lazyload taip.
+
+ie11 thumbnail scrollbar matosi
+
+ie11 gallery kur visos foto galerijos tai header po apacia
 
 ie11 modal tik nuo puses veikia ir yra scroll tai pataisyt + thumbnails rodo scroll bar
 
