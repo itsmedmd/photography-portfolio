@@ -23,6 +23,11 @@
   .container {
     -webkit-columns: 1;
             columns: 1;
+    width: 100%;
+  }
+  .container .box {
+    border-left: none;
+    border-right: none;
   }
 }
 

@@ -14,7 +14,7 @@ tasks:
 		4. metadata
 		5. google analytics
 		6. apple touch icon manifest
-		7. favicon.ico uzdet
+		7. favicon.ico pakeist kiekvienam page linkus
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
 		10. atnaujint fb page icon href ir fb like button i grupe
@@ -23,12 +23,17 @@ tasks:
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
 
 	try fix video src memory leakage
+	(delete iframe and readd with src)
 
 	recalculate thumbnail bar scroll amount on width change
 
 	firefox rodo thumbnail scroll bar
 
 	gal transitionIn animation per ilgai uztrunka
+
+	search why page on reload freezes 
+
+	kai modal skaidre atidaro arba pakeicia padaryt opacity kad pasikeistu
 
 -------------AWS----------------
 
@@ -38,27 +43,25 @@ pasizet aws lambda arba tiesiog aws kaip emails siust
 
 try SSL cloudflare(maybe cloudfront) to make it free and check prices if
 you use cloudflare/cloudfront as another layer to your website.
-
-padaryt galerijom numerius kad jas is eiles butu galima det.
 -------------AWS----------------
 
 
 
 -------------MOBILE-------------
 
-on hover isjungt gal jei 768px ir maziau visus hover ir galeriju ir thumbnail
-bet pirma patestint ar iskart veikia paspaudimas, jei veikia tai palikt
+gallery pirmas per aukstai 
 
-mobile gal ant modal on hover nereikia nes gali bugintis
+video galerijoj man atrodo tik neveikia, all galleries page gal ir veikia hamburger
+
+video galerijoj ir pats navigation sunkiai spaudziasi, gal panaikint hover
+
+ir photo galerijose gal panaikint hover nes buvo su opera biski bug
+
+hover-overlay padaryt tik nuo @media (min-width: 769px) {}
 
 test su skirtingais browser ant tlf
 
-ant tlf video buna pirmas paslidines zemyn.
-
-mobile test zoominima su visais puslapiais, modal ir t.t.
-
-pazet ar visada all galleries page ir tiesiog photos veikia paspaudimai is pirmo karto
-ir jeigu neveikia, tai hover-overlay padaryt tik nuo @media (min-width: 769px) {}
+when zooming in, modal disappears and screen just becomes white
 
 -------------MOBILE-------------
 

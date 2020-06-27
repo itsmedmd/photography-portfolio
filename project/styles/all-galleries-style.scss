@@ -26,6 +26,12 @@
 @media (max-width: 520px) {
     .container {
         columns: 1;
+        width: 100%;
+
+        .box {
+            border-left: none;
+            border-right: none;
+        }
     }
 }
 
