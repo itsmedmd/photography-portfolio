@@ -43,12 +43,20 @@
         right: 0;
     }
 
-    img {
-        max-height: 100%;
-        max-width: 100%;
+    .modal-image-wrapper {
+        display: inline-block;
+        vertical-align: middle;
         margin: 0 auto;
-        object-fit: cover;
-        z-index: 1;
+        height: 100%;
+        background-color: red;
+        min-width: 1px;
+        
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
     }
 }
 
@@ -86,6 +94,7 @@
     margin: 0 auto;
     width: 1000px;
     overflow-x: auto;
+    scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
@@ -192,5 +201,12 @@ img.lightbox-thumbnail  {
 @media (max-width: 210px) {
     .scrolling-thumbnail-row {
         display: none;
+    }
+}
+
+/*IE10+ CSS here*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .scrolling-thumbnail-row {
+        overflow-x: hidden;
     }
 }

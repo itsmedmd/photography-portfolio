@@ -4,8 +4,6 @@ caching: https://stackoverflow.com/questions/15502416/how-to-use-browser-caching
 
 BUCKET AND FUNCTION BOTH FRANKFURT!!!
 
-solution for button (have for example blue div on it and when facebook script adds the class rendered or something else to watch when the button renders, transition opacity from 1 to 0 of that covering div!)
-
 check SSL certificate (cloudFLARE)
 
 404 page look good
@@ -18,8 +16,12 @@ minify js and css !
 
 del favicon, logo page or just test ask. (maybe use auto generators)
 
-horizontal thumbnail scoll center in the middle(calculate somehow different)
-+ thumbnail scroll animation + modal HD image load animation
+cache css, js
+
+HTML, css, js VERIFY
+
+speed test
+
 
  naudojimo instrukcija parasyt:
  parasyt instruction kaip daryt jei teksta pakeist nori.
@@ -76,8 +78,6 @@ fb svg:
 https://smallenvelop.com/display-loading-icon-page-loads-completely/
 
 https://masonry.desandro.com
-
-HTML VERIFY
 
 https://www.w3schools.com/tags/tag_meta.asp
 

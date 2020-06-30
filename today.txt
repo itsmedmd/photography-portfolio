@@ -18,6 +18,7 @@ tasks:
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
 		10. atnaujint fb page icon href ir fb like button i grupe
+		11. kiekvieno puslapio description, pavadinimus ir t.t.
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
@@ -34,6 +35,8 @@ tasks:
 	search why page on reload freezes 
 
 	kai modal skaidre atidaro arba pakeicia padaryt opacity kad pasikeistu
+
+	pazet jei compressed-big width 1000px ar pazymet padding kad detu ar ne ir ar neistempia
 
 -------------AWS----------------
 
@@ -69,36 +72,27 @@ when zooming in, modal disappears and screen just becomes white
 
 -------------IE11-------------
 
-patikrint ar veikia visur lazyload
+https://github.com/philipwalton/flexbugs
 
-video lazyload neveikia
+*(ir su maziau nei 3 video tampa header responsive)
+kai 3 ir daugiau videos tai header kazkodel tampa responsive + footer uzdengiamas, page-content height kazkodel pereina per ribas, lyg absolute butu
 
-video galerijoj footer per aukstai, pats page-content per aukstai,
-header border per aukstai eina, ne vietoj, bet su mobile navigation ok viskas
-tai pazet gal kodas ten geresnis
+https://christopheraue.net/design/centering-inline-block-with-vertical-align-middle
+kai pirma karta modal slide image pakrauna, margin horizontally nesuveikia, tik kitus kartus
 
-wide screen grid starts too high up
+all-galleries kai 3 galerijos, kai 2 columns, per aukstai page-content (header height tampa 0)
+all-galleries kai 4 galerijos ir daugiau, kai 2 ir 3 columns layout tai per aukstai (header height vel tampa 0) (bet su 1 column viskas ok)
 
-ie11 videos page padaryt prie iframe antra iframe su IF ie11 kad src tiesiogiai parasytu ir
-tuo paciu nerunnintu add-iframe-src.js scripto, nes neveikia lazyload taip.
+kai visu foto galerija resizina, apacioj lieka daug vietos
 
-ie11 thumbnail scrollbar matosi
+modal slide image per center turetu but
+(gal padaryt atskirai kad butu su wrapper div bet visai kitoks wrapper display priklausomai nuo browser)
 
-ie11 gallery kur visos foto galerijos tai header po apacia
+video lazyload neveikia *verify
 
-ie11 modal tik nuo puses veikia ir yra scroll tai pataisyt + thumbnails rodo scroll bar
-
-ie11 kai mazas ekranas modal skaidres neveikia
-
-ie11 labai daug vietos apacioj + kai mazas ekranas foto galerijoj dahuja vietos
-
-internet explorer atskirt kur uzkomentuota //ie11. pasizet ie11 grid auto placement for videos.
-
-IE11 test modal, lazyload
+IE11 test lazyload
 
 fb like button prie top prilinintas, reikia nuleist zemyn
-
-video galerija grid visus i 1;1 deda
 
 -------------IE11-------------
 
