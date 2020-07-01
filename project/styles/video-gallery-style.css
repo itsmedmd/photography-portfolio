@@ -6,6 +6,7 @@
       flex-wrap: wrap;
   width: 1200px;
   margin: 10px auto;
+  height: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -73,6 +74,20 @@
 @media (max-width: 440px) {
   .box {
     margin-top: 12px;
+  }
+}
+
+/*IE10+ CSS here*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .scroll-lock header {
+    padding-bottom: 0;
+  }
+  header {
+    height: 0;
+    padding-bottom: 100px;
+  }
+  footer {
+    display: none;
   }
 }
 /*# sourceMappingURL=video-gallery-style.css.map */

@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     width: 1200px;
     margin: 10px auto;
+    height: 100%;
     justify-content: center;
 
     .box {
@@ -72,3 +73,20 @@
     }
 }
 
+/*IE10+ CSS here*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .scroll-lock {
+        header {
+            padding-bottom: 0;
+        }
+    }
+    
+    header {
+        height: 0;
+        padding-bottom: 100px;
+    }
+
+    footer {
+        display: none;
+    }
+}
