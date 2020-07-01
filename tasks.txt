@@ -1,5 +1,7 @@
 to do :
 
+compression: MozJPEG, Webp, Svgo
+
 caching: https://stackoverflow.com/questions/15502416/how-to-use-browser-caching-with-amazon-s3
 
 BUCKET AND FUNCTION BOTH FRANKFURT!!!
@@ -30,7 +32,7 @@ speed test
  https://bulkresizephotos.com/en
  visus is originaliu kompresuot
 
- thumbnails: 100x70; image quality: 80%
+ thumbnails: 100x70; image quality: 70% + atzymet padding
  compressed-small(gallery) width: 400px; image quality: 80%
  compressed-big(slides) width: 1000px; image quality: 80%
  blurry: width: 400px; image quality: lowest(25%)

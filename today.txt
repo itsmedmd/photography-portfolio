@@ -26,22 +26,13 @@ tasks:
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
 
-	try fix video src memory leakage
-	(delete iframe and readd with src)
-
-	recalculate thumbnail bar scroll amount on width change
-
-	firefox rodo thumbnail scroll bar
+	recalculate thumbnail bar scroll amount on screen-width change
 
 	gal transitionIn animation per ilgai uztrunka
 
-	search why page on reload freezes 
-
 	kai modal skaidre atidaro arba pakeicia padaryt opacity kad pasikeistu
 
-	pazet jei compressed-big width 1000px ar pazymet padding kad detu ar ne ir ar neistempia
-
-	pabandyt blurry img width 1px padaryt ir pazet kas bus
+	atrast kaip modal slidint su telefu
 
 -------------AWS----------------
 
@@ -51,13 +42,18 @@ pasizet aws lambda arba tiesiog aws kaip emails siust
 
 try SSL cloudflare(maybe cloudfront) to make it free and check prices if
 you use cloudflare/cloudfront as another layer to your website.
+
 -------------AWS----------------
 
 
 
 -------------MOBILE-------------
 
+check visus page su landscape vartymu
+
 gallery pirmas per aukstai 
+
+ant mobile gal isvis panaikint visus hover efektus
 
 video galerijoj man atrodo tik neveikia, all galleries page gal ir veikia hamburger
 
@@ -67,42 +63,33 @@ ir photo galerijose gal panaikint hover nes buvo su opera biski bug
 
 hover-overlay padaryt tik nuo @media (min-width: 769px) {}
 
-test su skirtingais browser ant tlf
-
-when zooming in, modal disappears and screen just becomes white
-
 -------------MOBILE-------------
 
 
 
 -------------IE11-------------
 
-https://github.com/philipwalton/flexbugs
-
-*(ir su maziau nei 3 video tampa header responsive)
-kai 3 ir daugiau videos tai header kazkodel tampa responsive + footer uzdengiamas, page-content height kazkodel pereina per ribas, lyg absolute butu
-
-https://christopheraue.net/design/centering-inline-block-with-vertical-align-middle
-kai pirma karta modal slide image pakrauna, margin horizontally nesuveikia, tik kitus kartus
-
-all-galleries kai 3 galerijos, kai 2 columns, per aukstai page-content (header height tampa 0)
-all-galleries kai 4 galerijos ir daugiau, kai 2 ir 3 columns layout tai per aukstai (header height vel tampa 0) (bet su 1 column viskas ok)
-
-kai visu foto galerija resizina, apacioj lieka daug vietos
-
-modal slide image per center turetu but
-(gal padaryt atskirai kad butu su wrapper div bet visai kitoks wrapper display priklausomai nuo browser)
-
-video lazyload neveikia *verify
-
-IE11 test lazyload
-
-fb like button prie top prilinintas, reikia nuleist zemyn
 
 -------------IE11-------------
 
 
-210 gal isvis isjungt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+210 isjungta
 310 telpa 1 ir viskas ok
 410px reikia + 50px, telpa 1.5
 520px telpa 2 ir viskas ok
