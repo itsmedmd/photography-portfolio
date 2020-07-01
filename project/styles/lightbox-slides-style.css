@@ -6,7 +6,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: white;
 }
 
@@ -29,6 +29,27 @@
   height: 66%;
 }
 
+.mySlides .modal-image-wrapper {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  min-width: 1px;
+}
+
+.mySlides .modal-image-wrapper img {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+}
+
 .mySlides div.image-overlay-left,
 .mySlides div.image-overlay-right {
   width: 50%;
@@ -46,23 +67,6 @@
 
 .mySlides div.image-overlay-right {
   right: 0;
-}
-
-.mySlides .modal-image-wrapper {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-  height: 100%;
-  background-color: red;
-  min-width: 1px;
-}
-
-.mySlides .modal-image-wrapper img {
-  max-height: 100%;
-  max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  z-index: 1;
 }
 
 .close,

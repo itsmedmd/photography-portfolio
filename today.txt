@@ -19,6 +19,9 @@ tasks:
 		9. atnaujint nav href linkus
 		10. atnaujint fb page icon href ir fb like button i grupe
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
+		12. cache js, css failus, fb icon photo
+
+	testuot su skirtingais kompais, telefais
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
@@ -37,6 +40,8 @@ tasks:
 	kai modal skaidre atidaro arba pakeicia padaryt opacity kad pasikeistu
 
 	pazet jei compressed-big width 1000px ar pazymet padding kad detu ar ne ir ar neistempia
+
+	pabandyt blurry img width 1px padaryt ir pazet kas bus
 
 -------------AWS----------------
 

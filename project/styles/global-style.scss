@@ -105,10 +105,10 @@ header {
 
         li.fb-li-element {
             position: relative;
-            width: 87px;
-            height: 20px;
             display: inline-block;
             vertical-align: bottom;
+            width: 87px;
+            height: 20px;
         }
     }
 
@@ -311,6 +311,17 @@ footer {
     .box-title {
         p {
             font-size: 12px;
+        }
+    }
+}
+
+/*IE10+ CSS here*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    header {
+        .social-media-icons {
+            .fb-icon {
+                top: 1px;
+            }
         }
     }
 }

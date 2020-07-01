@@ -24,7 +24,7 @@ speed test
 
 
  naudojimo instrukcija parasyt:
- parasyt instruction kaip daryt jei teksta pakeist nori.
+ parasyt instruction kaip daryt jei teksta pakeist nori paciam page
 	(linkus sukurt bulkresize)
 
  https://bulkresizephotos.com/en
@@ -32,7 +32,7 @@ speed test
 
  thumbnails: 100x70; image quality: 80%
  compressed-small(gallery) width: 400px; image quality: 80%
- compressed-big(slides) width: 1000px; image quality: 90%
+ compressed-big(slides) width: 1000px; image quality: 80%
  blurry: width: 400px; image quality: lowest(25%)
  gallery-img: width: 600px; height: 400px; image quality: 80%
 

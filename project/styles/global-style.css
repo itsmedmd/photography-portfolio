@@ -120,10 +120,10 @@ header .social-media-icons .fb-icon svg {
 
 header .social-media-icons li.fb-li-element {
   position: relative;
-  width: 87px;
-  height: 20px;
   display: inline-block;
   vertical-align: bottom;
+  width: 87px;
+  height: 20px;
 }
 
 header nav,
@@ -308,6 +308,13 @@ footer div.footer-content p {
 @media (max-width: 200px) {
   .box-title p {
     font-size: 12px;
+  }
+}
+
+/*IE10+ CSS here*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  header .social-media-icons .fb-icon {
+    top: 1px;
   }
 }
 /*# sourceMappingURL=global-style.css.map */
