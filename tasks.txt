@@ -1,5 +1,11 @@
 to do :
 
+aws email https://docs.aws.amazon.com/ses/latest/DeveloperGuide/request-production-access.html
+https://aws.amazon.com/blogs/architecture/create-dynamic-contact-forms-for-s3-static-websites-using-aws-lambda-amazon-api-gateway-and-amazon-ses/
+
+how to reset cache:
+	You can use invalidations to clear AWS S3 cache. To create invalidations login to AWS Console and go to Distribution Settings > Invalidations > Create Invalidation. Once invalidation is created just type path of file or a wildcard to purge the cache.
+
 compression: MozJPEG, Webp, Svgo
 
 caching: https://stackoverflow.com/questions/15502416/how-to-use-browser-caching-with-amazon-s3
@@ -18,7 +24,7 @@ minify js and css !
 
 del favicon, logo page or just test ask. (maybe use auto generators)
 
-cache css, js
+cache: css, js, fb-like-button-image, favicon, logo jei bus
 
 HTML, css, js VERIFY
 

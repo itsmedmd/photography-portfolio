@@ -21,6 +21,8 @@ tasks:
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
 		12. cache js, css failus, fb icon photo
 
+	padaryt 404 faila su headeriu ir footer tokiu paciu bet tekstu per viduri
+
 	testuot su skirtingais kompais, telefais
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
@@ -35,8 +37,6 @@ tasks:
 	atrast kaip modal slidint su telefu
 
 -------------AWS----------------
-
-check how to remove cache if you want to push update
 
 pasizet aws lambda arba tiesiog aws kaip emails siust
 
