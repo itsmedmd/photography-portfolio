@@ -108,25 +108,25 @@
     <script>
         function submitToAPI(e) {
             e.preventDefault();
-            const Namere = /[A-Za-z]{1}[A-Za-z]/;
-            if (!Namere.test($("#name-input").val())) {
-                alert ("Name can not less than 2 char");
-                return;
-            }
-            const mobilere = /[0-9]{10}/;
-            if (!mobilere.test($("#phone-input").val())) {
-                alert ("Please enter valid mobile number");
-                return;
-            }
-            if ($("#email-input").val()=="") {
-                alert ("Please enter your email id");
-                return;
-            }
-            const reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-            if (!reeamil.test($("#email-input").val())) {
-                alert ("Please enter valid email address");
-                return;
-            }
+            // const Namere = /[A-Za-z]{1}[A-Za-z]/;
+            // if (!Namere.test($("#name-input").val())) {
+            //     alert ("Name can not less than 2 char");
+            //     return;
+            // }
+            // const mobilere = /[0-9]{10}/;
+            // if (!mobilere.test($("#phone-input").val())) {
+            //     alert ("Please enter valid mobile number");
+            //     return;
+            // }
+            // if ($("#email-input").val()=="") {
+            //     alert ("Please enter your email id");
+            //     return;
+            // }
+            // const reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            // if (!reeamil.test($("#email-input").val())) {
+            //     alert ("Please enter valid email address");
+            //     return;
+            // }
 
             const name = $("#name-input").val();
             const phone = $("#phone-input").val();
@@ -141,25 +141,18 @@
 
             $.ajax({
                 type: "POST",
-                url : "https://0anaxpdw00.execute-api.eu-central-1.amazonaws.com/beta",
+                url : "https://3jxqp8oiza.execute-api.eu-central-1.amazonaws.com/beta/contact/",
                 dataType: "json",
                 crossDomain: "true",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(data),
-                headers: {
-                  "Access-Control-Allow-Headers": "Content-Type",
-                  "Access-Control-Allow-Methods": "OPTIONS,POST",
-                  "Access-Control-Allow-Origin" : "http://www.deimantasbutenas.lt"
-                },
                 success: function () {
-                    // clear form and show a success message
-                    alert("Successfull");
+                    console.log("email send success");
                     document.getElementById("contact-form").reset();
                     location.reload();
                 },
-                error: function () {
-                    // show an error message
-                    alert("UnSuccessfull");
+                error: function (dataa) {
+                    console.log("email send error", dataa);
                 }
             });
         }
