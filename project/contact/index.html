@@ -89,7 +89,6 @@
                     
                     <h4>Your message?</h4>
                     <textarea id="description-input" rows="3" placeholder="Enter your message…" class="form-control" style="width:100%;"></textarea><br/>
-                    <div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
 
                     <button type="button" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Submit</button>
               </form>
@@ -109,27 +108,25 @@
     <script>
         function submitToAPI(e) {
             e.preventDefault();
-            const URL = "https://c5ztdaj2ye.execute-api.eu-central-1.amazonaws.com/first-test";
-
-                    const Namere = /[A-Za-z]{1}[A-Za-z]/;
-                    if (!Namere.test($("#name-input").val())) {
-                        alert ("Name can not less than 2 char");
-                        return;
-                    }
-                    const mobilere = /[0-9]{10}/;
-                    if (!mobilere.test($("#phone-input").val())) {
-                        alert ("Please enter valid mobile number");
-                        return;
-                    }
-                    if ($("#email-input").val()=="") {
-                        alert ("Please enter your email id");
-                        return;
-                    }
-                    const reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-                    if (!reeamil.test($("#email-input").val())) {
-                        alert ("Please enter valid email address");
-                        return;
-                    }
+            const Namere = /[A-Za-z]{1}[A-Za-z]/;
+            if (!Namere.test($("#name-input").val())) {
+                alert ("Name can not less than 2 char");
+                return;
+            }
+            const mobilere = /[0-9]{10}/;
+            if (!mobilere.test($("#phone-input").val())) {
+                alert ("Please enter valid mobile number");
+                return;
+            }
+            if ($("#email-input").val()=="") {
+                alert ("Please enter your email id");
+                return;
+            }
+            const reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            if (!reeamil.test($("#email-input").val())) {
+                alert ("Please enter valid email address");
+                return;
+            }
 
             const name = $("#name-input").val();
             const phone = $("#phone-input").val();
@@ -144,11 +141,16 @@
 
             $.ajax({
                 type: "POST",
-                url : "https://c5ztdaj2ye.execute-api.eu-central-1.amazonaws.com/first-test",
+                url : "https://0anaxpdw00.execute-api.eu-central-1.amazonaws.com/beta",
                 dataType: "json",
                 crossDomain: "true",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(data),
+                headers: {
+                  "Access-Control-Allow-Headers": "Content-Type",
+                  "Access-Control-Allow-Methods": "OPTIONS,POST",
+                  "Access-Control-Allow-Origin" : "http://www.deimantasbutenas.lt"
+                },
                 success: function () {
                     // clear form and show a success message
                     alert("Successfull");

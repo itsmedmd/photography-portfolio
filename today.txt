@@ -43,6 +43,8 @@ pasizet aws lambda arba tiesiog aws kaip emails siust
 try SSL cloudflare(maybe cloudfront) to make it free and check prices if
 you use cloudflare/cloudfront as another layer to your website.
 
+*both buckets cors
+
 -------------AWS----------------
 
 
