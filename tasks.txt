@@ -142,3 +142,17 @@ fb share meta tags:
 <meta property="og:title" content="How to add facebook like button to website" />
 <meta property="og:description" content="Adding a Facebook like button to the website is an easy task, however you may need to have an eye on few other performance related issue which may occur while a(...)" />
 <meta property="og:image" content="https://beginnersbook.com/wp-content/uploads/2013/09/fblike1-150x150.jpg" />
+
+AWS SES lambda function role:
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "ses:SendEmail",
+            "Resource": "*"
+        }
+    ]
+}

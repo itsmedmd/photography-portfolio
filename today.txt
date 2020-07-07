@@ -36,15 +36,16 @@ tasks:
 
 	atrast kaip modal slidint su telefu
 
+	ask reddit security measures email
+
+	on avail width change body listener check 768px ir uzdet klases del mobile navigation
+
+	email send error rodo nors ir pavyksta
+
 -------------AWS----------------
 
-pasizet aws lambda arba tiesiog aws kaip emails siust
-
-try SSL cloudflare(maybe cloudfront) to make it free and check prices if
-you use cloudflare/cloudfront as another layer to your website.
-
-problema tarp browser-->api gateway
-nes api gateway-->lambda veikia ir gaunu response
+ar tikrai cloudflare nemokamai visa laika bus?
+gal geriau cloudfront? paklaust reddit
 
 -------------AWS----------------
 
@@ -71,8 +72,6 @@ hover-overlay padaryt tik nuo @media (min-width: 769px) {}
 
 
 -------------IE11-------------
-
-
 -------------IE11-------------
 
 
