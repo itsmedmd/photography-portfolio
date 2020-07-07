@@ -47,6 +47,12 @@ tasks:
 ar tikrai cloudflare nemokamai visa laika bus?
 gal geriau cloudfront? paklaust reddit
 
+email add google captcha to block spam
+
+gal su image gallery renderinimu padaryt kad ikeltu atskirai kita faila pvz pabaiga.txt
+ir lambda lauktu to failo pavadinimo ir tada atnaujintu (taip nereiketu eit i lambda ir uztektu
+tik S3)
+
 -------------AWS----------------
 
 
