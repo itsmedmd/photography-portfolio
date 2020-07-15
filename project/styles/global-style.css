@@ -32,8 +32,8 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-animation: transitionIn 0.5s;
-          animation: transitionIn 0.5s;
+  -webkit-animation: transitionIn 0.3s;
+          animation: transitionIn 0.3s;
 }
 
 header {

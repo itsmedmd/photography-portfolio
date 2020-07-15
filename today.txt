@@ -20,10 +20,12 @@ tasks:
 		10. atnaujint fb page icon href ir fb like button i grupe
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
 		12. cache js, css failus, fb icon photo
+		99. testuot su skirtingais kompais, telefais, horizontal view phone
+
 
 	padaryt 404 faila su headeriu ir footer tokiu paciu bet tekstu per viduri
 
-	testuot su skirtingais kompais, telefais
+	
 
 	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
 	animation on load data-ll-loaded uzdeda "loaded" gal opacity
@@ -42,10 +44,11 @@ tasks:
 
 	email send error rodo nors ir pavyksta
 
+	learn how to SEO
+
 -------------AWS----------------
 
 ar tikrai cloudflare nemokamai visa laika bus?
-gal geriau cloudfront? paklaust reddit
 
 email add google captcha to block spam
 

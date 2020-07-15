@@ -1,0 +1,30 @@
+main .page-content {
+  text-align: center;
+  padding-top: 48px;
+}
+
+main .page-content h2 {
+  color: #2c2c2c;
+}
+
+main .page-content div {
+  margin-top: 32px;
+}
+
+main .page-content div a {
+  padding: 8px;
+  border: 1px solid rgba(44, 44, 44, 0.5);
+  color: #2c2c2c;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* hover effect only on screen width of 769px and more*/
+@media (min-width: 769px) {
+  main .page-content div a:hover {
+    color: black;
+    border-color: #2c2c2c;
+  }
+}
+/*# sourceMappingURL=404-style.css.map */
