@@ -11,7 +11,7 @@
     <meta name="title" content="Dmd test">
     <meta name="author" content="name, email@aaa.com">
     <meta name="subject" content="Photography">
-    <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
+    <meta name="url" content="https://www.deimantasbutenas.lt/contact/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
     <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
@@ -79,16 +79,16 @@
             <div class="container">
                 <form id="contact-form" method="post">
                     <h4>Name:</h4>
-                    <input type="text" style="height:35px;" id="name-input" placeholder="Enter name here…" class="form-control" style="width:100%;" /><br/>
+                    <input type="text" style="height:35px;" id="name-input" placeholder="Enter name here…" class="form-control"/><br/>
                     
                     <h4>Phone:</h4>
-                    <input type="phone" style="height:35px;" id="phone-input" placeholder="Enter phone number" class="form-control" style="width:100%;"/><br/>
+                    <input type="tel" style="height:35px;" id="phone-input" placeholder="Enter phone number" class="form-control"/><br/>
                     
                     <h4>Email:</h4>
-                    <input type="email" style="height:35px;" id="email-input" placeholder="Enter email here…" class="form-control" style="width:100%;"/><br/>
+                    <input type="email" style="height:35px;" id="email-input" placeholder="Enter email here…" class="form-control"/><br/>
                     
                     <h4>Your message?</h4>
-                    <textarea id="description-input" rows="3" placeholder="Enter your message…" class="form-control" style="width:100%;"></textarea><br/>
+                    <textarea id="description-input" rows="3" placeholder="Enter your message…" class="form-control"></textarea><br/>
 
                     <button type="button" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Submit</button>
               </form>
@@ -142,7 +142,6 @@
             $.ajax({
                 type: "POST",
                 url : "https://3jxqp8oiza.execute-api.eu-central-1.amazonaws.com/beta/contact/",
-                dataType: "json",
                 crossDomain: "true",
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(data),
