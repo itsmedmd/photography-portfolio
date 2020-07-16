@@ -22,15 +22,9 @@ tasks:
 		12. html, css validate + speed tests
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
 
-
-	kai lazyload pakrauna tik tada uzkraut visa .box su visom gallery ir videos
-	animation on load data-ll-loaded uzdeda "loaded" gal opacity
-
 	recalculate thumbnail bar scroll amount on screen-width change
 	+ recalculate ar klases uzdet mobile-navigation on screen-width change
 	* on avail width change body listener check 768px ir uzdet klases del mobile navigation
-
-	kai modal skaidre atidaro arba pakeicia padaryt opacity kad pasikeistu
 
 	atrast kaip modal slidint su telefu
 
@@ -44,6 +38,8 @@ tasks:
 	o jei tik index.html bus trumpas cache, tai gal image liks nors ir bus pakeistas html failas, tai patestint jei index trumpas cache, o image ilgas ir istrini/ikeli foto kas bus.
 
 	check gal jeigu pasikeicia tekstas viduj pvz index.html tai gal updatina ir cache
+
+	hover padaryt tik nuo 769px
 
 -------------AWS----------------
 
