@@ -32,7 +32,7 @@ tasks:
 
 	do not reload page on email send, just clear the form
 
-	show email send errors, success messages
+	show email send errors, success messages, validation errors
 
 	change index.html and image caching, nes jei ikelia arba istrina foto tai nepasikeis,
 	o jei tik index.html bus trumpas cache, tai gal image liks nors ir bus pakeistas html failas, tai patestint jei index trumpas cache, o image ilgas ir istrini/ikeli foto kas bus.
