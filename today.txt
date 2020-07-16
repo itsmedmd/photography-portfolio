@@ -5,12 +5,12 @@ in general:
 
 	ir pradet galvot kaip portfolio website atrodys
 
+	check rollup, babel, webpack
+
 tasks:
 	ant visu puslapiu:
 		0. minify css ir js failus ir gal html jei eina
-		1. fb icon title uzdet
-		2. atnaujint css, js failu linkus
-		3. atnaujint header, footer bendrus
+		1. fb icon, navigation titles uzdet uzdet
 		4. metadata
 		5. google analytics
 		6. apple touch icon manifest
@@ -19,8 +19,7 @@ tasks:
 		9. atnaujint nav href linkus
 		10. atnaujint fb page icon href ir fb like button i grupehttps://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwww.deimantasbutenas.lt%2Fgalleries%2F1%2F#l294c84
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
-		12. cache js, css failus, fb icon photo
-		13. html, css validate + speed tests
+		12. html, css validate + speed tests
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
 
 
@@ -35,11 +34,9 @@ tasks:
 
 	atrast kaip modal slidint su telefu
 
-	ask reddit security measures email
-
 	learn how to SEO
 
-	cache favicon
+	do not reload page on email send, just clear the form
 
 	show email send errors, success messages
 
@@ -49,8 +46,6 @@ tasks:
 	check gal jeigu pasikeicia tekstas viduj pvz index.html tai gal updatina ir cache
 
 -------------AWS----------------
-
-email add google captcha to block spam
 
 gal su image gallery renderinimu padaryt kad ikeltu atskirai kita faila pvz pabaiga.txt
 ir lambda lauktu to failo pavadinimo ir tada atnaujintu (taip nereiketu eit i lambda ir uztektu
