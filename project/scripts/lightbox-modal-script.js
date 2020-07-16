@@ -104,10 +104,9 @@ function showSlides(n) {
     if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < thumbnails.length; i++) {
+        slides[i].classList.remove("active");
         thumbnails[i].classList.remove("active");
+        slides[i].style.display = "none";
     }
     slides[slideIndex-1].style.display = "flex";
     slides[slideIndex-1].classList.add("active");
