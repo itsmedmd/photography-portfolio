@@ -23,14 +23,10 @@ tasks:
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
 
 	recalculate thumbnail bar scroll amount on screen-width change
-	+ recalculate ar klases uzdet mobile-navigation on screen-width change
-	* on avail width change body listener check 768px ir uzdet klases del mobile navigation
 
 	atrast kaip modal slidint su telefu
 
 	learn how to SEO
-
-	do not reload page on email send, just clear the form
 
 	show email send errors, success messages, validation errors
 
@@ -38,8 +34,6 @@ tasks:
 	o jei tik index.html bus trumpas cache, tai gal image liks nors ir bus pakeistas html failas, tai patestint jei index trumpas cache, o image ilgas ir istrini/ikeli foto kas bus.
 
 	check gal jeigu pasikeicia tekstas viduj pvz index.html tai gal updatina ir cache
-
-	hover padaryt tik nuo 769px
 
 -------------AWS----------------
 
@@ -52,6 +46,9 @@ tik S3)
 
 
 -------------MOBILE-------------
+
+gal pakeist nav opening divs i button nes nesispaudzia kazkodel ar kazkas su hover gal,
+nesispaudzia ir gallery photos, next, back mygtukai ir pns tik is antro karto
 
 check visus page su landscape vartymu
 
