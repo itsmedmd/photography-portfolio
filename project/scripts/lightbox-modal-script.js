@@ -11,6 +11,7 @@ function togglePageContent() {
 
 // Open the Modal
 function openModal() {
+    alert("opening modal");
     togglePageContent();
     document.getElementById("myModal").style.display = "block";
     document.getElementsByTagName("html")[0].classList.add("scroll-lock");
