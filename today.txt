@@ -35,6 +35,8 @@ tasks:
 
 	check gal jeigu pasikeicia tekstas viduj pvz index.html tai gal updatina ir cache
 
+
+
 -------------AWS----------------
 
 gal su image gallery renderinimu padaryt kad ikeltu atskirai kita faila pvz pabaiga.txt
@@ -47,12 +49,15 @@ tik S3)
 
 -------------MOBILE-------------
 
+on click event tik is antro karto ivyksta,
+o video page isvis buna uzsibugina
+
 gal pakeist nav opening divs i button nes nesispaudzia kazkodel ar kazkas su hover gal,
 nesispaudzia ir gallery photos, next, back mygtukai ir pns tik is antro karto
 
 check visus page su landscape vartymu
 
-gallery pirmas per aukstai 
+gallery pirmas per aukstai, o gal antras per zemai xd
 
 ant mobile gal isvis panaikint visus hover efektus
 
