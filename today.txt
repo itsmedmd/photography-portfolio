@@ -39,8 +39,6 @@ tasks:
 	onclick gal pabandyt pridet eventlistener per js, o ne html onclick attribute
 	ir tada gal hover efektus bus galima palikt, o gal ir tiesiog panaikint geriau test
 
-	404 panaikint is mano tikro eroro, bet pirma patikrint kodel neveikia style ir gal js
-
 	toggle mobile nav gal del tikrinimo kazkas
 
 	on video doesnt work, others seem fine click
@@ -49,7 +47,6 @@ tasks:
 
 	thumbnails biski geresne quality padaryt nes ant mobile matosi kad lieva
 
-	404 style neveikia jei /.../ ir pns nes linkas static vietoj, pabandyt su js linka dinamically padaryt: css, js, fb-image
 -------------AWS----------------
 
 gal su image gallery renderinimu padaryt kad ikeltu atskirai kita faila pvz pabaiga.txt
