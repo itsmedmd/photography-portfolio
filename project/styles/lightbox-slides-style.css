@@ -145,6 +145,10 @@ img.lightbox-thumbnail {
   width: 100px;
 }
 
+img.lightbox-thumbnail.active {
+  opacity: 1;
+}
+
 /* media for resizing the whole page*/
 @media (max-width: 1200px) {
   .mySlides {
@@ -235,7 +239,7 @@ img.lightbox-thumbnail {
   .mySlides div.image-overlay-right:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
-  img.lightbox-thumbnail.active, img.lightbox-thumbnail:hover {
+  img.lightbox-thumbnail:hover {
     opacity: 1;
   }
 }

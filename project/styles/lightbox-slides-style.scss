@@ -120,6 +120,10 @@ img.lightbox-thumbnail  {
     opacity: 0.5;
     height: 70px;
     width: 100px;
+
+    &.active {
+        opacity: 1;
+    }
 }
 
 /* media for resizing the whole page*/
@@ -221,7 +225,6 @@ img.lightbox-thumbnail  {
     }
 
     img.lightbox-thumbnail  {
-        &.active,
         &:hover {
             opacity: 1;
         }

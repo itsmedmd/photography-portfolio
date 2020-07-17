@@ -29,30 +29,25 @@ tasks:
 
 	learn how to SEO
 
+	click tik ant iphone IOS blogai
+
 	show email send errors, success messages, validation errors
 
-	change index.html and image caching, nes jei ikelia arba istrina foto tai nepasikeis,
-	o jei tik index.html bus trumpas cache, tai gal image liks nors ir bus pakeistas html failas, tai patestint jei index trumpas cache, o image ilgas ir istrini/ikeli foto kas bus.
-
-	check gal jeigu pasikeicia tekstas viduj pvz index.html tai gal updatina ir cache
+	jei images pakeicia tai pasikeicia viskas, nes img isn't cached,
+	bet jei html, css, js failai pasikeicia, tai reikia purge cache.
 
 	onclick gal pabandyt pridet eventlistener per js, o ne html onclick attribute
-	ir tada gal hover efektus bus galima palikt, o gal ir tiesiog panaikint geriau test
-
-	toggle mobile nav gal del tikrinimo kazkas
-
-	on video doesnt work, others seem fine click
 
 	thumbnails biski geresne quality padaryt nes ant mobile matosi kad lieva
 
 	padaryt gal thumbnail scroll animation
 
+	pirma karta nesuveikia thumbnail centravimas ant kompo tik
+
+	kai 10 foto viskas lygiai photo gallery, bet jei pvz 19 tai blogai.
+	
+
 -------------AWS----------------
-
-gal su image gallery renderinimu padaryt kad ikeltu atskirai kita faila pvz pabaiga.txt
-ir lambda lauktu to failo pavadinimo ir tada atnaujintu (taip nereiketu eit i lambda ir uztektu
-tik S3)
-
 -------------AWS----------------
 
 
