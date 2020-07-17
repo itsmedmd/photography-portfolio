@@ -71,6 +71,13 @@
   }
 }
 
+/* hover effects only on screen width of 1025px and more*/
+@media (max-width: 1024px) {
+  .container .box .hover-overlay {
+    display: none;
+  }
+}
+
 /*IE10+ CSS here*/
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   .photo-gallery-header {

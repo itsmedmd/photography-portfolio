@@ -63,10 +63,6 @@
         position: absolute;
         z-index: 2;
         transition: background-color 0.2s;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
     }
 
     div.image-overlay-right { 
@@ -124,14 +120,9 @@ img.lightbox-thumbnail  {
     opacity: 0.5;
     height: 70px;
     width: 100px;
-
-    &.active,
-    &:hover {
-        opacity: 1;
-    }
 }
 
-/* media for whole page resizing */
+/* media for resizing the whole page*/
 @media (max-width: 1200px) {
     .mySlides {
         width: 80%;
@@ -215,6 +206,25 @@ img.lightbox-thumbnail  {
 @media (max-width: 210px) {
     .scrolling-thumbnail-row {
         display: none;
+    }
+}
+
+/* hover effects only on screen width of 1025px and more*/
+@media (min-width: 1025px) {
+    .mySlides {
+        div.image-overlay-left,
+        div.image-overlay-right  {
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+        }
+    }
+
+    img.lightbox-thumbnail  {
+        &.active,
+        &:hover {
+            opacity: 1;
+        }
     }
 }
 

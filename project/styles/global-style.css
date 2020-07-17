@@ -46,7 +46,8 @@ header .mobile-navigation-bar {
   display: none;
   position: absolute;
   right: 0;
-  margin: 36px 24px 0 0;
+  margin: 28px 16px 0 0;
+  padding: 8px;
 }
 
 header .mobile-navigation-bar div {
@@ -79,10 +80,6 @@ header nav ul li a {
   transition: color 0.2s;
 }
 
-header nav ul li a:hover {
-  color: black;
-}
-
 header nav ul span.nav-dot {
   margin: 0 18px;
   height: 5px;
@@ -102,10 +99,6 @@ header .social-media-icons ul a {
 
 header .social-media-icons ul a svg {
   color: black;
-}
-
-header .social-media-icons ul a svg:hover {
-  color: #1877f2;
 }
 
 header .social-media-icons .fb-icon {
@@ -308,6 +301,16 @@ footer div.footer-content p {
 @media (max-width: 200px) {
   .box-title p {
     font-size: 12px;
+  }
+}
+
+/* hover effects only on screen width of 1025px and more*/
+@media (min-width: 1025px) {
+  nav ul li a:hover {
+    color: black;
+  }
+  .social-media-icons ul a svg:hover {
+    color: #1877f2;
   }
 }
 

@@ -20,8 +20,8 @@ main .page-content div a {
   transition: all 0.3s;
 }
 
-/* hover effect only on screen width of 769px and more*/
-@media (min-width: 769px) {
+/* hover effects only on screen width of 1025px and more*/
+@media (min-width: 1025px) {
   main .page-content div a:hover {
     color: black;
     border-color: #2c2c2c;

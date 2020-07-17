@@ -21,7 +21,6 @@ function turnNavigationOff(pageContent) {
 }
 
 function toggleMobileNavigation() {
-    alert("toggling navigation");
     const pageContent = document.getElementsByClassName("page-content")[0];
     if(pageContent.classList.contains("displayOff"))
         turnNavigationOff(pageContent);
