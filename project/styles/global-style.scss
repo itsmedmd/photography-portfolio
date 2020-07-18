@@ -32,12 +32,19 @@ header {
         right: 0;
         margin: 28px 16px 0 0;
         padding: 8px;
+        cursor: pointer;
+
+        width: 20px;
+        height: 20px;
+        background-color: #919191;
+        user-select: none;
 
         div {
             width: 20px;
             height: 3px;
             background-color: #919191;
             margin: 3px 0;
+            user-select: none;
         }
     }
 
@@ -45,6 +52,7 @@ header {
     ul.navigation a {
         text-decoration: none;
         color: #919191;
+        cursor: pointer;
     }
 
     ul {

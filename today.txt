@@ -29,7 +29,7 @@ tasks:
 
 	learn how to SEO
 
-	click tik ant iphone IOS blogai
+	click tik ant iphone IOS blogai, ypac ant video page
 
 	show email send errors, success messages, validation errors
 
@@ -39,8 +39,6 @@ tasks:
 	onclick gal pabandyt pridet eventlistener per js, o ne html onclick attribute
 
 	thumbnails biski geresne quality padaryt nes ant mobile matosi kad lieva
-
-	padaryt gal thumbnail scroll animation
 
 	pirma karta nesuveikia thumbnail centravimas ant kompo tik
 
@@ -53,26 +51,20 @@ tasks:
 
 
 -------------MOBILE-------------
+problema yra videos
+kai uzsibugina ir neina spaust ant nav atidarymo,
+jei paspaudi kazkur kur yra click eventas pvz ant youtube,
+tada vel puikiai veikia, tai gal youtube pradeda kazkoki
+touchstart eventa ir jis blokuoja click.
 
-on click event tik is antro karto ivyksta,
-o video page isvis buna uzsibugina
+videos click neveikia kai i apacia nueini
 
-gal pakeist nav opening divs i button nes nesispaudzia kazkodel ar kazkas su hover gal,
-nesispaudzia ir gallery photos, next, back mygtukai ir pns tik is antro karto
+horizontal modal gal pakelt i virsu
+
+su 10 horizontal vidurinis zemyn paejes
+su 19 vertical desinys zemyn paejes, bet horizontal visi lygiai.
 
 check visus page su landscape vartymu
-
-gallery pirmas per aukstai, o gal antras per zemai xd
-
-ant mobile gal isvis panaikint visus hover efektus
-
-video galerijoj man atrodo tik neveikia, all galleries page gal ir veikia hamburger
-
-video galerijoj ir pats navigation sunkiai spaudziasi, gal panaikint hover
-
-ir photo galerijose gal panaikint hover nes buvo su opera biski bug
-
-hover-overlay padaryt tik nuo @media (min-width: 769px) {}
 
 -------------MOBILE-------------
 

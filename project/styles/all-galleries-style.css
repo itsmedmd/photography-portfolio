@@ -25,10 +25,6 @@
             columns: 1;
     width: 100%;
   }
-  .container .box {
-    border-left: none;
-    border-right: none;
-  }
 }
 
 @media (max-width: 440px) {

@@ -118,3 +118,10 @@ function showSlides(n) {
     if(screen.availWidth > 210)
         scrollThumbnailRow(thumbnails);
 }
+
+// padaryt thumbnails on screen resize to rescroll
+// window.addEventListener('resize', () => {
+//     const pageContent = document.getElementsByClassName("page-content")[0];
+//     if(screen.availWidth > 768 && pageContent.classList.contains("displayOff"))
+//         turnNavigationOff(pageContent);
+// });
