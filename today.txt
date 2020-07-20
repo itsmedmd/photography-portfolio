@@ -18,7 +18,7 @@ tasks:
 		7. favicon.ico pakeist kiekvienam page linkus
 		8. html lang="" pakeist
 		9. atnaujint nav href linkus
-		10. atnaujint fb page icon href ir fb like button i grupehttps://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fwww.deimantasbutenas.lt%2Fgalleries%2F1%2F#l294c84
+		10. atnaujint fb page icon href ir fb like button i grupe
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
 		12. html, css validate + speed tests
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
@@ -31,11 +31,7 @@ tasks:
 
 	show email send errors, success messages, validation errors
 
-	thumbnails biski geresne quality padaryt nes ant mobile matosi kad lieva
-
 	pirma karta nesuveikia thumbnail centravimas ant kompo tik
-
-	kai 10 foto viskas lygiai photo gallery, bet jei pvz 19 tai blogai.
 	
 
 -------------AWS----------------
@@ -44,13 +40,7 @@ tasks:
 
 
 -------------MOBILE-------------
-problema yra videos
-kai uzsibugina ir neina spaust ant nav atidarymo,
-jei paspaudi kazkur kur yra click eventas pvz ant youtube,
-tada vel puikiai veikia, tai gal youtube pradeda kazkoki
-touchstart eventa ir jis blokuoja click.
-
-videos click neveikia kai i apacia nueini
+iframe paima eventa ir negalima jo pagaut
 
 horizontal modal pakelt i virsu
 
