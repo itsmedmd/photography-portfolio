@@ -29,14 +29,7 @@ tasks:
 
 	learn how to SEO
 
-	click tik ant iphone IOS blogai, ypac ant video page
-
 	show email send errors, success messages, validation errors
-
-	jei images pakeicia tai pasikeicia viskas, nes img isn't cached,
-	bet jei html, css, js failai pasikeicia, tai reikia purge cache.
-
-	onclick gal pabandyt pridet eventlistener per js, o ne html onclick attribute
 
 	thumbnails biski geresne quality padaryt nes ant mobile matosi kad lieva
 
@@ -59,7 +52,7 @@ touchstart eventa ir jis blokuoja click.
 
 videos click neveikia kai i apacia nueini
 
-horizontal modal gal pakelt i virsu
+horizontal modal pakelt i virsu
 
 su 10 horizontal vidurinis zemyn paejes
 su 19 vertical desinys zemyn paejes, bet horizontal visi lygiai.
