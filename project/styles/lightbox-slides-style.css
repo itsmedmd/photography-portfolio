@@ -233,6 +233,26 @@ img.lightbox-thumbnail.active {
   }
 }
 
+/* HEIGHT media for thumbnail scroll bar*/
+@media (max-height: 468px) {
+  .mySlides {
+    margin-top: 40px;
+  }
+  .close {
+    right: 10px;
+    top: 0;
+  }
+}
+
+@media (max-height: 350px) {
+  .scrolling-thumbnail-row {
+    display: none;
+  }
+  .mySlides {
+    margin-top: 60px;
+  }
+}
+
 /* hover effects only on screen width of 1025px and more*/
 @media (min-width: 1025px) {
   .mySlides div.image-overlay-left:hover,
