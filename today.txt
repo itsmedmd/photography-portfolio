@@ -30,25 +30,22 @@ tasks:
 	learn how to SEO
 
 	show email send errors, success messages, validation errors
-
-	pirma karta nesuveikia thumbnail centravimas ant kompo tik
 	
+	check su 1,2,3,4,5 ir t.t images galleries, thumbnails, all phone views
 
 -------------AWS----------------
+pabandyt resize + compress su node
 -------------AWS----------------
 
 
 
 -------------MOBILE-------------
-iframe paima eventa ir negalima jo pagaut
-
-horizontal modal pakelt i virsu
+horizontal view navigation mobile padaryt 2 columns, nes netelpa.
 
 su 10 horizontal vidurinis zemyn paejes
 su 19 vertical desinys zemyn paejes, bet horizontal visi lygiai.
 
-check visus page su landscape vartymu
-
+iframe paima eventa ir negalima jo pagaut
 -------------MOBILE-------------
 
 

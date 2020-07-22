@@ -9,8 +9,14 @@
         text-align: center;
         position: relative;
         width: 100%;
-        margin-bottom: 6px;
+        padding-bottom: 6px;
         break-inside: avoid;
+
+        img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
 
         .hover-overlay {
             position: absolute;
@@ -23,12 +29,6 @@
             &:hover {
                 opacity: 0.5;
             }
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            vertical-align: top;
         }
     }
 
