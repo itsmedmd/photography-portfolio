@@ -40,10 +40,7 @@ pabandyt resize + compress su node
 
 
 -------------MOBILE-------------
-horizontal view navigation mobile padaryt 2 columns, nes netelpa.
-
-su 10 horizontal vidurinis zemyn paejes
-su 19 vertical desinys zemyn paejes, bet horizontal visi lygiai.
+thumbnail is pirmo karto neteisingai buna paslidine.
 
 iframe paima eventa ir negalima jo pagaut
 -------------MOBILE-------------

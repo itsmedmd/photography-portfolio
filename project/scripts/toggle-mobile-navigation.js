@@ -6,6 +6,7 @@ function turnNavigationOn(pageContent) {
     nav.classList.add("mobile-navigation-visible");
     socials.classList.remove("mobile-socials-hidden");
     socials.classList.add("mobile-socials-visible");
+    document.getElementsByTagName("footer")[0].style.display = "none";
     document.getElementsByTagName("html")[0].classList.add("scroll-lock");
 }
 
@@ -17,6 +18,7 @@ function turnNavigationOff(pageContent) {
     socials.classList.remove("mobile-socials-visible");
     socials.classList.add("mobile-socials-hidden");
     pageContent.classList.remove("displayOff");
+    document.getElementsByTagName("footer")[0].style.display = "block";
     document.getElementsByTagName("html")[0].classList.remove("scroll-lock");
 }
 

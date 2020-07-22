@@ -263,6 +263,50 @@ footer {
             padding: 10px 0 12px 24px;
         }
     }
+
+    /* HEIGHT media queries for landscape navigation view*/
+    @media (max-height: 365px) {
+        header {
+            ul.navigation {
+                columns: 2;
+                padding: 0 20px;
+            }
+
+            .social-media-icons ul {
+                margin: 50px 15px 0 10px;
+            }
+        }
+    }
+
+    @media (max-height: 320px) {
+        header .social-media-icons ul {
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-height: 280px) {
+        header {
+            ul.navigation li {
+                margin-top: 6px;
+            }
+
+            .social-media-icons ul {
+                margin-top: 0;
+            }
+        }
+    }
+
+    @media (max-height: 245px) {
+        header {
+            nav {
+                margin: 0;
+            }
+
+            ul.navigation {
+                margin: 8px 0 0;
+            }
+        }
+    }
 }
 
 /* all following media queries are for resizing gallery/video title text */
