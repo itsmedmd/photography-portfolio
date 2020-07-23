@@ -25,6 +25,8 @@ tasks:
 
 	atrast kaip modal slidint su telefu
 
+	create contact page style
+
 	learn how to SEO
 
 	show email send errors, success messages, validation errors

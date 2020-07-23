@@ -110,17 +110,17 @@
     <script>
         function submitToAPI(e) {
             e.preventDefault();
-            const mobileRegex = /([0-9]{10})|[0-9]{8}/;
-            if (!mobileRegex.test($("#phone-input").val())) {
-                alert ("Please enter a valid phone number.");
-                return;
-            }
+            // const mobileRegex = /([0-9]{10})|[0-9]{8}/;
+            // if (!mobileRegex.test($("#phone-input").val())) {
+            //     alert ("Please enter a valid phone number.");
+            //     return;
+            // }
 
-            const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-            if (!emailRegex.test($("#email-input").val())) {
-                alert ("Please enter a valid email address.");
-                return;
-            }
+            // const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+            // if (!emailRegex.test($("#email-input").val())) {
+            //     alert ("Please enter a valid email address.");
+            //     return;
+            // }
 
             const name = $("#name-input").val();
             const phone = $("#phone-input").val();
