@@ -1,3 +1,8 @@
+// global variables for determining the position of the thumbnail scroll bar
+let slideIndex = 1;
+let scrollCount = 0;
+let rowWidth;
+
 // If the modal is opened, adding 'display: none' to the whole page
 // and if the modal is closed, adding 'display: none' to the modal
 // because there are UX problems without this on mobile devices
@@ -31,7 +36,7 @@ function getThumbnailRowElement() {
 
 // counts how many divs come before the middle of the scroll bar
 function countOffsetDivs() {
-    const rowWidth = parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'));
+    rowWidth = parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'));
     const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
     let countSideDivs = 0;
     for(let i = 1; i <= thumbnails.length; i++)
@@ -39,10 +44,6 @@ function countOffsetDivs() {
         else break;
     return countSideDivs;
 }
-
-// global variables for determining the position of the thumbnail scroll bar
-let slideIndex = 1;
-let scrollCount = 0;
 
 // Next/previous controls
 function plusSlides(n) {
@@ -63,11 +64,7 @@ function plusSlides(n) {
 // Thumbnail image controls
 function currentSlide(n) {
     scrollCount = n - countOffsetDivs();
-    slideIndex = n;
     showSlides(slideIndex = n);
-    console.log("showing ", slideIndex);
-    console.log("offsetdivs ", n - scrollCount);
-    console.log("scrollcount ", scrollCount);
 }
 
 // centering of the thumbnail row
@@ -115,9 +112,10 @@ function showSlides(n) {
         scrollThumbnailRow(thumbnails);
 }
 
-// padaryt thumbnails on screen resize to rescroll
-// window.addEventListener('resize', () => {
-//     const pageContent = document.getElementsByClassName("page-content")[0];
-//     if(screen.availWidth > 768 && pageContent.classList.contains("displayOff"))
-//         turnNavigationOff(pageContent);
-// });
+// After window resize, if the thumbnail scroll bar width changes, recalculate thumbnail scroll amount
+window.addEventListener('resize', () => {
+    if(document.getElementById("myModal").style.display = "block" &&
+       rowWidth !== parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'))) {
+        currentSlide(slideIndex);
+    }
+});
