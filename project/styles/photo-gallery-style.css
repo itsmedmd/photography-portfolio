@@ -39,6 +39,7 @@
 
 .container .box-border {
   border: 1px solid rgba(145, 145, 145, 0.5);
+  border-bottom: none;
   margin-bottom: 22px;
 }
 

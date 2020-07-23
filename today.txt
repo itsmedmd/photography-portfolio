@@ -33,6 +33,8 @@ tasks:
 	
 	check su 1,2,3,4,5 ir t.t images galleries, thumbnails, all phone views
 
+	make logo DMD
+
 -------------AWS----------------
 pabandyt resize + compress su node
 -------------AWS----------------
@@ -41,6 +43,10 @@ pabandyt resize + compress su node
 
 -------------MOBILE-------------
 thumbnail is pirmo karto neteisingai buna paslidine.
+
+on rotate landscape/portrait, execute thumbnail function so it checks.
+(it fixes when i click on it, so maybe execute with the same slide number)
+(maybe first time not loading correctly is a similar problem [test without lazyload])
 
 iframe paima eventa ir negalima jo pagaut
 -------------MOBILE-------------

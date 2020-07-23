@@ -29,21 +29,13 @@ function getThumbnailRowElement() {
     return document.getElementsByClassName("scrolling-thumbnail-row")[0];
 }
 
-// gets the width of the first thumbnail row div (all are equal width)
-// used just for simplifying code
-function getWidthOfThumbnailDiv() {
-    const row = document.getElementsByClassName("scrolling-thumbnail-row")[0];
-    return row.scrollWidth / document.getElementsByClassName("lightbox-thumbnail").length;
-}
-
 // counts how many divs come before the middle of the scroll bar
 function countOffsetDivs() {
     const rowWidth = parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'));
     const thumbnails = document.getElementsByClassName("lightbox-thumbnail");
-    const divWidth = getWidthOfThumbnailDiv();
     let countSideDivs = 0;
     for(let i = 1; i <= thumbnails.length; i++)
-        if(divWidth * i <= rowWidth / 2) countSideDivs++;
+        if(100 * i <= rowWidth / 2) countSideDivs++;
         else break;
     return countSideDivs;
 }
@@ -71,7 +63,11 @@ function plusSlides(n) {
 // Thumbnail image controls
 function currentSlide(n) {
     scrollCount = n - countOffsetDivs();
+    slideIndex = n;
     showSlides(slideIndex = n);
+    console.log("showing ", slideIndex);
+    console.log("offsetdivs ", n - scrollCount);
+    console.log("scrollcount ", scrollCount);
 }
 
 // centering of the thumbnail row
@@ -89,9 +85,9 @@ function scrollThumbnailRow(thumbnails) {
                     scr > 520 && scr <= 680 ||
                     scr > 820 && scr <= 950 ||
                     scr > 1090 && scr <= 1200)
-                row.scrollLeft = getWidthOfThumbnailDiv() * scrollCount - row.scrollWidth / thumbnails.length;
+                row.scrollLeft = 100 * scrollCount - row.scrollWidth / thumbnails.length;
             else
-                row.scrollLeft = getWidthOfThumbnailDiv() * scrollCount - row.scrollWidth / thumbnails.length / 2;
+                row.scrollLeft = 100 * scrollCount - row.scrollWidth / thumbnails.length / 2;
         }
     }
 }
