@@ -42,6 +42,11 @@ header {
   margin-bottom: 24px;
 }
 
+header .page-logo {
+  width: auto;
+  height: 200px;
+}
+
 header .mobile-navigation-bar {
   display: none;
   position: absolute;
@@ -71,14 +76,6 @@ header ul.navigation a {
 
 header ul {
   padding: 0;
-}
-
-header h1 {
-  padding: 70px 0 30px;
-}
-
-header nav {
-  margin: 30px 0;
 }
 
 header nav ul li a {
@@ -213,6 +210,10 @@ footer div.footer-content p {
     border-bottom: 1px solid rgba(200, 200, 200, 0.4);
     -webkit-box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
             box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
+  }
+  header .page-logo {
+    height: 100px;
+    margin-left: 20px;
   }
   header #top-navigation {
     padding-top: 2px;

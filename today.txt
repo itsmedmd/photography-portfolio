@@ -28,10 +28,6 @@ tasks:
 	learn how to SEO
 
 	show email send errors, success messages, validation errors
-	
-	check su 1,2,3,4,5 ir t.t images galleries, thumbnails, all phone views
-
-	make logo DMD
 
 -------------AWS----------------
 pabandyt resize + compress su node
@@ -40,7 +36,8 @@ pabandyt resize + compress su node
 
 
 -------------MOBILE-------------
-iframe paima eventa ir negalima jo pagaut
+IOS safari ir chrome
+iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
 -------------MOBILE-------------
 
 
