@@ -72,6 +72,7 @@
 
 .mySlides div.image-overlay-left,
 .mySlides div.image-overlay-right {
+  display: none;
   width: 50%;
   height: 100%;
   position: absolute;
@@ -255,6 +256,10 @@ img.lightbox-thumbnail.active {
 
 /* hover effects only on screen width of 1025px and more*/
 @media only screen and (min-width: 1025px) {
+  .mySlides div.image-overlay-left,
+  .mySlides div.image-overlay-right {
+    display: block;
+  }
   .mySlides div.image-overlay-left:hover,
   .mySlides div.image-overlay-right:hover {
     background-color: rgba(255, 255, 255, 0.1);

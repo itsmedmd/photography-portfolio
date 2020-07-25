@@ -9,7 +9,7 @@ in general:
 
 tasks:
 	ant visu puslapiu:
-		0. minify css ir js failus ir gal html jei eina
+		0. minify html, css ir js failus
 		1. fb icon, navigation titles uzdet uzdet
 		2. page <title> pakeist in head
 		4. metadata

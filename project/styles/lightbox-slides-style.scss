@@ -58,6 +58,7 @@
 
     div.image-overlay-left,
     div.image-overlay-right  {
+        display: none;
         width: 50%;
         height: 100%;
         position: absolute;
@@ -240,6 +241,8 @@ img.lightbox-thumbnail  {
     .mySlides {
         div.image-overlay-left,
         div.image-overlay-right  {
+            display: block;
+
             &:hover {
                 background-color: rgba(255, 255, 255, 0.1);
             }
