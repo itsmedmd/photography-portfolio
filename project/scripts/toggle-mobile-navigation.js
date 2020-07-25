@@ -30,7 +30,7 @@ function toggleMobileNavigation() {
         turnNavigationOn(pageContent);
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', function() {
     const pageContent = document.getElementsByClassName("page-content")[0];
     if(screen.availWidth > 768 && pageContent.classList.contains("displayOff"))
         turnNavigationOff(pageContent);

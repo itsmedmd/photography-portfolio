@@ -113,7 +113,7 @@ function showSlides(n) {
 }
 
 // After window resize, if the thumbnail scroll bar width changes, recalculate thumbnail scroll amount
-window.addEventListener('resize', () => {
+window.addEventListener('resize', function() {
     if(document.getElementById("myModal").style.display = "block" &&
        rowWidth !== parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'))) {
         currentSlide(slideIndex);
