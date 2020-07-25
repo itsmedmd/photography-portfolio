@@ -37,14 +37,14 @@
     }
 }
 
-@media (max-width: 1280px) {
+@media only screen and (max-width: 1280px) {
     .container {
         width: calc(100% - 20px);
         padding: 0;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .container {
         width: 100%;
 
@@ -56,7 +56,7 @@
     }
 }
 
-@media (max-width: 535px) {
+@media only screen and (max-width: 535px) {
     .container {
         .box {
             width: 100%;
@@ -68,14 +68,14 @@
     }
 }
 
-@media (max-width: 440px) {
+@media only screen and (max-width: 440px) {
     .box {
         margin-top: 12px;
     }
 }
 
 /*IE10+ CSS here*/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media only screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .scroll-lock {
         header {
             padding-bottom: 0;

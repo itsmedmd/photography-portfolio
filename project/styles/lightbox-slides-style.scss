@@ -127,13 +127,13 @@ img.lightbox-thumbnail  {
 }
 
 /* media for resizing the whole page*/
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .mySlides {
         width: 80%;
     }
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .mySlides {
         width: 85%;
     }
@@ -147,7 +147,7 @@ img.lightbox-thumbnail  {
     }
 }
 
-@media (max-width: 580px) {
+@media only screen and (max-width: 580px) {
     .mySlides {
         width: 92%;
     }
@@ -159,62 +159,62 @@ img.lightbox-thumbnail  {
 }
 
 /* media for thumbnail scroll bar */
-@media (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .scrolling-thumbnail-row {
         width: 900px;
     }
 }
 
-@media (max-width: 1090px) {
+@media only screen and (max-width: 1090px) {
     .scrolling-thumbnail-row {
         width: 800px;
     }
 }
 
-@media (max-width: 950px) {
+@media only screen and (max-width: 950px) {
     .scrolling-thumbnail-row {
         width: 700px;
     }
 }
 
-@media (max-width: 820px) {
+@media only screen and (max-width: 820px) {
     .scrolling-thumbnail-row {
         width: 600px;
     }
 }
 
-@media (max-width: 680px) {
+@media only screen and (max-width: 680px) {
     .scrolling-thumbnail-row {
         width: 500px;
     }
 }
 
-@media (max-width: 520px) {
+@media only screen and (max-width: 520px) {
     .scrolling-thumbnail-row {
         width: 400px;
     }
 }
 
-@media (max-width: 410px) {
+@media only screen and (max-width: 410px) {
     .scrolling-thumbnail-row {
         width: 300px;
     }
 }
 
-@media (max-width: 310px) {
+@media only screen and (max-width: 310px) {
     .scrolling-thumbnail-row {
         width: 200px;
     }
 }
 
-@media (max-width: 210px) {
+@media only screen and (max-width: 210px) {
     .scrolling-thumbnail-row {
         display: none;
     }
 }
 
 /* HEIGHT media for thumbnail scroll bar*/
-@media (max-height: 468px) {
+@media only screen and (max-height: 468px) {
     .mySlides {
         margin-top: 40px;
     }
@@ -225,7 +225,7 @@ img.lightbox-thumbnail  {
     }
 }
 
-@media (max-height: 350px) {
+@media only screen and (max-height: 350px) {
     .scrolling-thumbnail-row {
         display: none;
     }
@@ -236,7 +236,7 @@ img.lightbox-thumbnail  {
 }
 
 /* hover effects only on screen width of 1025px and more*/
-@media (min-width: 1025px) {
+@media only screen and (min-width: 1025px) {
     .mySlides {
         div.image-overlay-left,
         div.image-overlay-right  {
@@ -254,7 +254,7 @@ img.lightbox-thumbnail  {
 }
 
 /*IE10+ CSS here*/
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+@media only screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .scrolling-thumbnail-row {
         overflow-x: hidden;
     }

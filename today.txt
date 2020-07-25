@@ -25,7 +25,7 @@ tasks:
 
 	atrast kaip modal slidint su telefu
 
-	create contact page style
+	create contact, prices, about page style
 
 	learn how to SEO
 

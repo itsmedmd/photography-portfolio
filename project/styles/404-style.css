@@ -21,7 +21,7 @@ main .page-content div a {
 }
 
 /* hover effects only on screen width of 1025px and more*/
-@media (min-width: 1025px) {
+@media only screen and (min-width: 1025px) {
   main .page-content div a:hover {
     color: black;
     border-color: #2c2c2c;
