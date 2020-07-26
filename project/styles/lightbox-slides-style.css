@@ -52,8 +52,8 @@
   width: 100%;
   height: 100%;
   min-width: 1px;
-  -webkit-animation: transitionIn 0.5s;
-          animation: transitionIn 0.5s;
+  -webkit-animation: transitionIn 1s;
+          animation: transitionIn 1s;
 }
 
 .mySlides .modal-image-wrapper img {

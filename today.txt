@@ -31,13 +31,6 @@ tasks:
 
 	panaikint tasks faila is git
 
-	panaikint user-select nuo modal ir gallery-photo
-
-	padaryt mazesni delay ir daugiau px kad zoomint gal eitu
-	ARBA ziuret ar zoomina su 2 pirstais ir tada neslidint
-
-	modal opacity padaryt ilgesni
-
 -------------AWS----------------
 pabandyt resize + compress su node
 -------------AWS----------------
@@ -47,6 +40,8 @@ pabandyt resize + compress su node
 -------------MOBILE-------------
 IOS safari ir chrome
 iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
+
+zoomed in modal swipe with 1 finger changes the picture, not a big deal but shouldn't do that
 -------------MOBILE-------------
 
 
