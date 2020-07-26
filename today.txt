@@ -23,13 +23,20 @@ tasks:
 		12. html, css validate + speed tests
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
 
-	atrast kaip modal slidint su telefu
-
 	create contact, prices, about page style
 
 	learn how to SEO
 
 	show email send errors, success messages, validation errors
+
+	panaikint tasks faila is git
+
+	panaikint user-select nuo modal ir gallery-photo
+
+	padaryt mazesni delay ir daugiau px kad zoomint gal eitu
+	ARBA ziuret ar zoomina su 2 pirstais ir tada neslidint
+
+	modal opacity padaryt ilgesni
 
 -------------AWS----------------
 pabandyt resize + compress su node

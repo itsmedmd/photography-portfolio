@@ -1,3 +1,7 @@
+.container .box {
+  padding-bottom: 0;
+}
+
 .container .box:hover .hover-overlay {
   opacity: 0.35;
 }
