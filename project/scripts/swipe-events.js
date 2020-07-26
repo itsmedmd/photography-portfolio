@@ -21,22 +21,23 @@
     let xDiff = null;
     let timeDown = null;
     let startEl = null;
+    let startTouchesLength = 0;
 
     function handleTouchEnd(e) {
         // if the user released on a different element, cancel
         if (startEl !== e.target) return;
 
-        const swipeThreshold = 15; // 15px
-        const swipeTimeout = 2000; // 2000ms
+        const swipeThreshold = 20; // 20px needed to swipe
+        const swipeTimeout = 1000; // doesn't fire event if held down for longer than 1000ms
         const timeDiff = Date.now() - timeDown;
         let eventType = '';
-
+        
         if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
             if (xDiff > 0)  eventType = 'swiped-left';
             else            eventType = 'swiped-right';
         }
 
-        if (eventType !== '') {
+        if (eventType !== '' && startTouchesLength === 1) {
             // fire event on the element that started the swipe
             startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
         }
@@ -47,6 +48,7 @@
     }
 
     function handleTouchStart(e) {
+        startTouchesLength = e.touches.length;
         startEl = e.target;
         timeDown = Date.now();
         xDown = e.touches[0].clientX;
