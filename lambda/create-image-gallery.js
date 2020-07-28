@@ -28,12 +28,10 @@ exports.handler = async (event) => {
     for(let i = 0; i < galleryNames.length; i++) {
       ///await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i])); // gallery-img resize
       ///await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill'); // thumbnails
-      await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside'); // blurry
+      ///await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside'); // blurry
       ///await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside'); // compressed-small
       ///await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside'); // compressed-big
     }
-    
-    /*
     
     // create html file that displays all image galleries
     const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
@@ -47,8 +45,6 @@ exports.handler = async (event) => {
       const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
       await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
     };
-    
-    */
     
     return {};
 };
@@ -148,7 +144,7 @@ async function resizeImg(image, width, height, fit) {
 }
 
 // used specifically to create low quality images for gallery pages
-async function resizeImgCustomQualityWidthOnly(image, width, fit, quality) {
+async function resizeImgCustomQualityWidthOnly(image, width, fit) {
   return await sharp(image)
             .resize({
               width: width,
@@ -181,7 +177,6 @@ async function resizeAndCreateGalleryIMG(key) {
   }).promise();
 }
 
-
 // resize and compress function for any image
 async function resizeAndCreate(allKeys, galleryName, folder, width, height, fit) {
   for(let i = 0; i < allKeys.length; i++) {
@@ -198,10 +193,18 @@ async function resizeAndCreate(allKeys, galleryName, folder, width, height, fit)
   
       // resize image
       let buffer;
-      if(height === 0)
-        buffer = await resizeImgWidthOnly(image.Body, width, fit);
-      else
+      
+      if(height === 0) {
+        if(folder === 'blurry') {
+          buffer = await resizeImgCustomQualityWidthOnly(image.Body, width, fit);
+        }
+        else {
+          buffer = await resizeImgWidthOnly(image.Body, width, fit);
+        }
+      }
+      else {
         buffer = await resizeImg(image.Body, width, height, fit);
+      }
       
       // upload image to s3 bucket
       await s3.putObject({
