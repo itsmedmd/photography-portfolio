@@ -38,7 +38,7 @@ function createVideosPageContent(lines) {
   lines.forEach((line, index) => {
     const splitUp = line.split(';');
     const videoTitle = splitUp[0].trim();
-    const videoURL = splitUp[1].trim().replace('watch?v=', 'embed/') + '?controls=1';
+    const videoURL = splitUp[1].trim().replace('watch?v=', 'embed/') + '?controls=1&rel=0';
     videoURLs.push(`"${videoURL}"`);
     toRender.push(`
       <div class="box">
@@ -54,7 +54,7 @@ function createVideosPageContent(lines) {
   
   return `
     <!DOCTYPE html>
-    <html lang="lt">
+    <html lang="en">
       <head>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     
@@ -66,7 +66,7 @@ function createVideosPageContent(lines) {
         <meta name="title" content="Dmd test">
         <meta name="author" content="name, email@aaa.com">
         <meta name="subject" content="Photography">
-        <meta name="url" content="http://www.deimantasbutenas.lt/galleries/">
+        <meta name="url" content="https://www.deimantasbutenas.lt/videos/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
         <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
@@ -87,35 +87,37 @@ function createVideosPageContent(lines) {
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
         
         <header>
-          <h1><a href="http://deimantasbutenas.lt/">testas</a></h1>
-          <div class="mobile-navigation-bar" onclick="toggleMobileNavigation()">
+        <a href="https://deimantasbutenas.lt/">
+            <img src="../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
+        </a>
+        <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
             <div></div>
             <div></div>
             <div></div>
-          </div>
-          <nav id="top-navigation">
+        </div>
+        <nav id="top-navigation">
             <ul class="navigation">
               <li>
-                  <a href="http://deimantasbutenas.lt/galleries/">Photo Gallery</a>
+                  <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="#">Video gallery</a>
+                  <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="#">Prices</a>
+                  <a href="https://deimantasbutenas.lt/prices/" title="Go to prices page">Prices</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="#">About</a>
+                  <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="#">Contact</a>
+                  <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
               </li>
             </ul>
-          </nav>
+        </nav>
           <div id="top-social-media-icons" class="social-media-icons">
               <ul>
                   <li>
@@ -149,9 +151,6 @@ function createVideosPageContent(lines) {
         <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
         <script src="../scripts/add-iframe-src.js"></script>
         <script>
-            // at 768px and less the header shows only hamburger bar
-            // for navigation, where facebook like button embed is,
-            // which is why loading youtube iframes first is prioritised here
             if(screen.availWidth <= 768) {
                 addSrcToIframes([${videoURLs}]);
                 addLazyloadScript('../scripts/lazyload.js');
