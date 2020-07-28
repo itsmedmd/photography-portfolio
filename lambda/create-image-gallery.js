@@ -1,13 +1,12 @@
 const AWS = require('aws-sdk');
 const sharp = require('sharp');
-const jimp = require('jimp');
 const s3 = new AWS.S3();
 const bucketName = "www.deimantasbutenas.lt";
 
 exports.handler = async (event) => {
     
     // get all keys
-    const allKeys = await getAllKeys({
+    let allKeys = await getAllKeys({
       Bucket: bucketName,
       Prefix: 'images/'
     });
@@ -26,16 +25,22 @@ exports.handler = async (event) => {
     
     // pacheckint jei yra pvz compressed-small ir neatitinka skaicius tai tik tada sukurt ta kurios reikia img
     for(let i = 0; i < galleryNames.length; i++) {
-      ///await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i])); // gallery-img resize
-      ///await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill'); // thumbnails
-      ///await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside'); // blurry
-      ///await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside'); // compressed-small
-      ///await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside'); // compressed-big
+      await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i]));   // gallery-img resize
+      await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill');         // thumbnails
+      await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside');            // blurry
+      await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside');  // compressed-small
+      await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside');   // compressed-big
     }
     
     // create html file that displays all image galleries
     const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
     await postHTMLFile("galleries/index.html", allGalleriesPageContent);
+    
+    // get all keys after new images are uploaded
+    allKeys = await getAllKeys({
+      Bucket: bucketName,
+      Prefix: 'images/'
+    });
     
     // create html files for each image gallery
     for(let i = 0; i < galleryNames.length; i++) {

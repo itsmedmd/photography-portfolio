@@ -37,10 +37,6 @@ move out of SES sandbox
 padaryt create-image-gallery lambda kad praeitu per visus ir jei
 yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
 tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
-
-save lambda code in git
-
-test with different cpu
 -------------AWS----------------
 
 
