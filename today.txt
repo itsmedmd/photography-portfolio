@@ -10,7 +10,7 @@ in general:
 tasks:
 	ant visu puslapiu:
 		0. minify html, css ir js failus
-		1. fb icon, navigation titles uzdet uzdet
+		1. fb icon, navigation, logo titles uzdet
 		2. page <title> pakeist in head
 		4. metadata
 		5. google analytics
@@ -21,18 +21,26 @@ tasks:
 		10. atnaujint fb page icon href ir fb like button i grupe
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
 		12. html, css validate + speed tests
+		13. change meta tags of everything+ add apple-touch icons and other stuff like
+			that,description, url's.
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
+
+	try to create fadeout and next picture fade in effect for modal
 
 	create contact, prices, about page style
 
-	learn how to SEO
-
 	show email send errors, success messages, validation errors
 
-	panaikint tasks faila is git
-
 -------------AWS----------------
-pabandyt resize + compress su node
+move out of SES sandbox
+
+padaryt create-image-gallery lambda kad praeitu per visus ir jei
+yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
+tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
+
+save lambda code in git
+
+test with different cpu
 -------------AWS----------------
 
 
