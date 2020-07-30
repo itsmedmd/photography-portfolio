@@ -37,6 +37,12 @@ move out of SES sandbox
 padaryt create-image-gallery lambda kad praeitu per visus ir jei
 yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
 tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
+
+test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window document
+
+check gallery-img jpg
+
+test jei original-images tuscias, pvz visus istrini tai turi istrint ir kitas
 -------------AWS----------------
 
 
@@ -46,6 +52,8 @@ IOS safari ir chrome
 iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
 
 zoomed in modal swipe with 1 finger changes the picture, not a big deal but shouldn't do that
+
+neveikia fb like kazkodel on click, bet pc veikia
 -------------MOBILE-------------
 
 
