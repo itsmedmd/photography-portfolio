@@ -14,42 +14,74 @@ exports.handler = async (event) => {
     // get all gallery names
     let galleryNames = new Set();
     allKeys.forEach(key => {
-      let splitUp = key.split("/");
+      const splitUp = key.split("/");
       if(!splitUp[1].includes(".txt"))
         galleryNames.add(splitUp[1]);
     });
-    galleryNames = Array.from(galleryNames);
+    galleryNames = [...galleryNames];
     galleryNames.sort((a, b) => a > b ? 1: -1);
     
     // compressing images here
-    
-    // pacheckint jei yra pvz compressed-small ir neatitinka skaicius tai tik tada sukurt ta kurios reikia img
     for(let i = 0; i < galleryNames.length; i++) {
-      await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i]));   // gallery-img resize
-      await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill');         // thumbnails
-      await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside');            // blurry
-      await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside');  // compressed-small
-      await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside');   // compressed-big
+      // create sets for finding differences
+      const originalImages = new Set();
+      const otherImages = new Set();
+      
+      for(let j = 0; j < allKeys.length; j++) {
+        let splitUp = allKeys[j].split("/");
+        if(splitUp[1] === galleryNames[i] && splitUp[2] === "original-images")
+          originalImages.add(splitUp[3]);
+        else if(splitUp[1] === galleryNames[i] && splitUp[2] === "thumbnails")
+          otherImages.add(splitUp[3]);
+      }
+      
+      // finds new deleted and uploaded files
+      let newDeleted = new Set([...otherImages].filter(x => !originalImages.has(x)));
+      let newUploaded = new Set([...originalImages].filter(x => !otherImages.has(x)));
+      newDeleted = [...newDeleted];
+      newUploaded = [...newUploaded];
+      
+      // creates array of keys to delete
+      const toDelete = [];
+      for(let j = 0; j < newDeleted.length; j++) {
+        toDelete.push(
+          {'Key': `images/${galleryNames[i]}/thumbnails/${newDeleted[j]}`},
+          {'Key': `images/${galleryNames[i]}/blurry/${newDeleted[j]}`},
+          {'Key': `images/${galleryNames[i]}/compressed-small/${newDeleted[j]}`},
+          {'Key': `images/${galleryNames[i]}/compressed-big/${newDeleted[j]}`}
+        );
+      }
+      
+      // deletes objects
+      await deleteObjects(toDelete);
     }
+  
+    //for(let i = 0; i < galleryNames.length; i++) {
+      //await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i]));   // gallery-img resize
+      //await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill');         // thumbnails
+      //await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside');            // blurry
+      //await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside');  // compressed-small
+      //await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside');   // compressed-big
+    //}
     
-    // create html file that displays all image galleries
-    const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
-    await postHTMLFile("galleries/index.html", allGalleriesPageContent);
+    // // create html file that displays all image galleries
+    // const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
+    // await postHTMLFile("galleries/index.html", allGalleriesPageContent);
     
-    // get all keys after new images are uploaded
-    allKeys = await getAllKeys({
-      Bucket: bucketName,
-      Prefix: 'images/'
-    });
+    // // get all keys after new images are uploaded
+    // allKeys = await getAllKeys({
+    //   Bucket: bucketName,
+    //   Prefix: 'images/'
+    // });
     
-    // create html files for each image gallery
-    for(let i = 0; i < galleryNames.length; i++) {
-      const bigIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-big"));
-      const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
-      const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
-      const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
-      await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
-    };
+    // // create html files for each image gallery
+    // for(let i = 0; i < galleryNames.length; i++) {
+    //   const bigIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-big"));
+    //   const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
+    //   const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
+    //   const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
+    //   await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
+    // };
     
     return {};
 };
@@ -222,6 +254,14 @@ async function resizeAndCreate(allKeys, galleryName, folder, width, height, fit)
   }
 }
 
+// deletes objects from an s3 bucket
+async function deleteObjects(Objects) {
+  await s3.deleteObjects({
+    Bucket: bucketName, 
+    Delete: {Objects}
+  }).promise();
+}
+
 // creates HTML markup for a single gallery page
 function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryName) {
   const smallIMGRender = [];
@@ -229,7 +269,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
     smallIMGRender.push(`
       <div class="box cursor" onclick="openModal();currentSlide(${index + 1})">
         <div class="hover-overlay"></div>
-        <img class="lazyload" src="../../images/${galleryName}/blurry/${img}" data-src="../../images/${galleryName}/compressed-small/${img}" alt="Image ${index + 1}"/>
+        <img class="lazyload" src="../../images/${galleryName}/blurry/${img}" data-src="../../images/${galleryName}/compressed-small/${img}" alt=""/>
       </div>
     `);
   });
@@ -250,7 +290,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
   thumbnails.forEach((img, index) => {
     thumbnailsRender.push(`
       <div class="column">
-        <img class="lightbox-thumbnail lazyload cursor" data-src="../../images/${galleryName}/thumbnails/${img}" onclick="currentSlide(${index + 1})" alt="Img ${index + 1}">
+        <img class="lightbox-thumbnail lazyload cursor" data-src="../../images/${galleryName}/thumbnails/${img}" onclick="currentSlide(${index + 1})" alt="">
       </div>
     `);
   });
