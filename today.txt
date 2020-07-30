@@ -43,6 +43,8 @@ test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window d
 check gallery-img jpg
 
 test jei original-images tuscias, pvz visus istrini tai turi istrint ir kitas
+
+fix gallery-img upload tik tada jei nera
 -------------AWS----------------
 
 
@@ -54,6 +56,8 @@ iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
 zoomed in modal swipe with 1 finger changes the picture, not a big deal but shouldn't do that
 
 neveikia fb like kazkodel on click, bet pc veikia
+
+jei zoom tai neslidint
 -------------MOBILE-------------
 
 

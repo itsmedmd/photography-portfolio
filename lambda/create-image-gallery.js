@@ -22,66 +22,102 @@ exports.handler = async (event) => {
     galleryNames.sort((a, b) => a > b ? 1: -1);
     
     // compressing images here
-    for(let i = 0; i < galleryNames.length; i++) {
+    
+    // delete and create files for each gallery
+    const toDelete = [];
+    const toUpload = [];
+    
+    for(const galleryName of galleryNames) {
       // create sets for finding differences
       const originalImages = new Set();
       const otherImages = new Set();
       
-      for(let j = 0; j < allKeys.length; j++) {
-        let splitUp = allKeys[j].split("/");
-        if(splitUp[1] === galleryNames[i] && splitUp[2] === "original-images")
+      allKeys.forEach(key => {
+        const splitUp = key.split("/");
+        
+        if(splitUp[1] === galleryName && splitUp[2] === "original-images")
           originalImages.add(splitUp[3]);
-        else if(splitUp[1] === galleryNames[i] && splitUp[2] === "thumbnails")
+          
+        else if(splitUp[1] === galleryName && splitUp[2] === "thumbnails")
           otherImages.add(splitUp[3]);
-      }
+      });
       
       // finds new deleted and uploaded files
-      let newDeleted = new Set([...otherImages].filter(x => !originalImages.has(x)));
-      let newUploaded = new Set([...originalImages].filter(x => !otherImages.has(x)));
-      newDeleted = [...newDeleted];
-      newUploaded = [...newUploaded];
+      const newDeleted = [...new Set([...otherImages].filter(x => !originalImages.has(x)))];
+      const newUploaded = [...new Set([...originalImages].filter(x => !otherImages.has(x)))];
       
-      // creates array of keys to delete
-      const toDelete = [];
-      for(let j = 0; j < newDeleted.length; j++) {
+      // creates an array of keys to delete
+      newDeleted.forEach(item => {
         toDelete.push(
-          {'Key': `images/${galleryNames[i]}/thumbnails/${newDeleted[j]}`},
-          {'Key': `images/${galleryNames[i]}/blurry/${newDeleted[j]}`},
-          {'Key': `images/${galleryNames[i]}/compressed-small/${newDeleted[j]}`},
-          {'Key': `images/${galleryNames[i]}/compressed-big/${newDeleted[j]}`}
+          {'Key': `images/${galleryName}/thumbnails/${item}`},
+          {'Key': `images/${galleryName}/blurry/${item}`},
+          {'Key': `images/${galleryName}/compressed-small/${item}`},
+          {'Key': `images/${galleryName}/compressed-big/${item}`}
         );
-      }
+      });
       
-      // deletes objects
-      await deleteObjects(toDelete);
+      // creates an array of keys to create/upload
+      for(const item of newUploaded) {
+        if(item !== '')
+          toUpload.push(
+            {
+              Bucket: bucketName,
+              Key: `images/${galleryName}/thumbnails/${item}`,
+              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'thumbnails', 100, 70, 'fill'),
+              ContentType: 'image'
+            },
+            {
+              Bucket: bucketName,
+              Key: `images/${galleryName}/blurry/${item}`,
+              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'blurry', 400, 0, 'inside'),
+              ContentType: 'image'
+            },
+            {
+              Bucket: bucketName,
+              Key: `images/${galleryName}/compressed-small/${item}`,
+              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'compressed-small', 400, 0, 'inside'),
+              ContentType: 'image'
+            },
+            {
+              Bucket: bucketName,
+              Key: `images/${galleryName}/compressed-big/${item}`,
+              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'compressed-big', 1000, 0, 'inside'),
+              ContentType: 'image'
+            }
+          );
+      };
+      
+      // gallery-image upload (does it every time)
+      await resizeCompressUploadGalleryImg("images/" + getGalleryIMG(allKeys, galleryName));
     }
-  
-    //for(let i = 0; i < galleryNames.length; i++) {
-      //await resizeAndCreateGalleryIMG("images/" + getGalleryIMG(allKeys, galleryNames[i]));   // gallery-img resize
-      //await resizeAndCreate(allKeys, galleryNames[i], 'thumbnails', 100, 70, 'fill');         // thumbnails
-      //await resizeAndCreate(allKeys, galleryNames[i], 'blurry', 400, 0, 'inside');            // blurry
-      //await resizeAndCreate(allKeys, galleryNames[i], 'compressed-small', 400, 0, 'inside');  // compressed-small
-      //await resizeAndCreate(allKeys, galleryNames[i], 'compressed-big', 1000, 0, 'inside');   // compressed-big
-    //}
     
-    // // create html file that displays all image galleries
-    // const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
-    // await postHTMLFile("galleries/index.html", allGalleriesPageContent);
+    // deletes objects (files)
+    if(toDelete.length !== 0)
+      await deleteObjects(toDelete);
+      
+    // uploads objects (files)
+    for(const object of toUpload) {
+      await s3.putObject(object).promise();
+    }
     
-    // // get all keys after new images are uploaded
-    // allKeys = await getAllKeys({
-    //   Bucket: bucketName,
-    //   Prefix: 'images/'
-    // });
+    // create html file that displays all image galleries
+    const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
+    await postHTMLFile("galleries/index.html", allGalleriesPageContent);
     
-    // // create html files for each image gallery
-    // for(let i = 0; i < galleryNames.length; i++) {
-    //   const bigIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-big"));
-    //   const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
-    //   const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
-    //   const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
-    //   await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
-    // };
+    // get all keys after new images are uploaded
+    allKeys = await getAllKeys({
+      Bucket: bucketName,
+      Prefix: 'images/'
+    });
+    
+    // create html files for each image gallery
+    for(let i = 0; i < galleryNames.length; i++) {
+      const bigIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-big"));
+      const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
+      const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
+      const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
+      await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
+    };
     
     return {};
 };
@@ -172,12 +208,12 @@ async function resizeImgWidthOnly(image, width, fit) {
 // function for resizing image with specified width, height and fill option
 async function resizeImg(image, width, height, fit) {
   return await sharp(image)
-            .resize({
-              width: width,
-              height: height,
-              fit: fit
-            })
-            .toBuffer();
+              .resize({
+                width: width,
+                height: height,
+                fit: fit
+              })
+              .toBuffer();
 }
 
 // used specifically to create low quality images for gallery pages
@@ -191,8 +227,8 @@ async function resizeImgCustomQualityWidthOnly(image, width, fit) {
             .toBuffer();
 }
 
-// resize and compress function specifically for gallery image
-async function resizeAndCreateGalleryIMG(key) {
+// resize, compress and upload function specifically for gallery image
+async function resizeCompressUploadGalleryImg(key) {
   const splitUp = key.split("/");
   const extension = splitUp[splitUp.length - 1].split(".");
   
@@ -215,42 +251,20 @@ async function resizeAndCreateGalleryIMG(key) {
 }
 
 // resize and compress function for any image
-async function resizeAndCreate(allKeys, galleryName, folder, width, height, fit) {
-  for(let i = 0; i < allKeys.length; i++) {
-    let splitUp = allKeys[i].split("/");
-    
-    /// cia tikrint ar egzistuoja toks key ir jeigu jo, tai nedaryt
-    
-    if(splitUp[1] === galleryName && splitUp[2] === "original-images") {
-      // get image from s3 bucket
-      const image = await s3.getObject({
-        Bucket: bucketName,
-        Key: allKeys[i]
-      }).promise();
-  
-      // resize image
-      let buffer;
-      
-      if(height === 0) {
-        if(folder === 'blurry') {
-          buffer = await resizeImgCustomQualityWidthOnly(image.Body, width, fit);
-        }
-        else {
-          buffer = await resizeImgWidthOnly(image.Body, width, fit);
-        }
-      }
-      else {
-        buffer = await resizeImg(image.Body, width, height, fit);
-      }
-      
-      // upload image to s3 bucket
-      await s3.putObject({
-        Bucket: bucketName,
-        Key: `images/${galleryName}/${folder}/${splitUp[splitUp.length - 1]}`,
-        Body: buffer,
-        ContentType: "image"
-      }).promise();
-    }
+async function resizeAndCompress(key, folder, width, height, fit) {
+  // get the image from an s3 bucket
+  const image = await s3.getObject({
+    Bucket: bucketName,
+    Key: key
+  }).promise();
+
+  // resize and compress the image
+  if(height === 0) {
+    if(folder === 'blurry') return await resizeImgCustomQualityWidthOnly(image.Body, width, fit);
+    else return await resizeImgWidthOnly(image.Body, width, fit);
+  }
+  else {
+    return await resizeImg(image.Body, width, height, fit);
   }
 }
 
