@@ -21,7 +21,7 @@ tasks:
 
 	show email send errors, success messages, validation errors
 
-	position per viduri thumbnails jei per mazai
+	fb like button duoda 'confirm' ir del background bug
 
 -------------AWS----------------
 move out of SES sandbox
