@@ -17,11 +17,11 @@ tasks:
 
 	try to create fadeout and next picture fade in effect for modal
 
-	create contact, prices, about page style
+	create contact page style
+
+	create about page style
 
 	show email send errors, success messages, validation errors
-
-	fb like button duoda 'confirm' ir del background bug
 
 -------------AWS----------------
 move out of SES sandbox
