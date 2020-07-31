@@ -1,12 +1,3 @@
-in general:
-	fiverr uzsiregint
-
-	ir upwork
-
-	ir pradet galvot kaip portfolio website atrodys
-
-	check rollup, babel, webpack
-
 tasks:
 	ant visu puslapiu:
 		0. minify html, css ir js failus
@@ -21,8 +12,7 @@ tasks:
 		10. atnaujint fb page icon href ir fb like button i grupe
 		11. kiekvieno puslapio description, pavadinimus ir t.t.
 		12. html, css validate + speed tests
-		13. change meta tags of everything+ add apple-touch icons and other stuff like
-			that,description, url's.
+		13. compress fb logo, favicon
 		99. testuot su skirtingais kompais, telefais, horizontal view phone
 
 	try to create fadeout and next picture fade in effect for modal
@@ -30,6 +20,8 @@ tasks:
 	create contact, prices, about page style
 
 	show email send errors, success messages, validation errors
+
+	position per viduri thumbnails jei per mazai
 
 -------------AWS----------------
 move out of SES sandbox
@@ -39,12 +31,6 @@ yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
 tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
 
 test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window document
-
-check gallery-img jpg
-
-test jei original-images tuscias, pvz visus istrini tai turi istrint ir kitas
-
-fix gallery-img upload tik tada jei nera
 -------------AWS----------------
 
 
