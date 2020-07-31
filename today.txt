@@ -23,7 +23,11 @@ tasks:
 
 	show email send errors, success messages, validation errors
 
+<<<<<<< HEAD
 	test master
+=======
+	another test but now from contactPage
+>>>>>>> contactPage
 
 -------------AWS----------------
 move out of SES sandbox
