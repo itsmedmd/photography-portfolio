@@ -23,6 +23,8 @@ tasks:
 
 	show email send errors, success messages, validation errors
 
+	test master
+
 -------------AWS----------------
 move out of SES sandbox
 
