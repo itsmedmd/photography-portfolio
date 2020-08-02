@@ -22,6 +22,7 @@
     <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
 
     <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../styles/contact-style.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
     <title>Contact - DMD</title>
@@ -74,23 +75,45 @@
 
     <main>
         <div class="page-content">
-            <div class="container">
-                <form id="contact-form" method="post">
-                    <h4>Name:</h4>
-                    <input type="text" style="height:35px;" id="name-input" placeholder="Enter name here…" class="form-control" required/><br/>
-                    
-                    <h4>Phone:</h4>
-                    <input type="tel" style="height:35px;" id="phone-input" placeholder="Enter phone number" class="form-control" required/><br/>
-                    
-                    <h4>Email:</h4>
-                    <input type="email" style="height:35px;" id="email-input" placeholder="Enter email here…" class="form-control" required/><br/>
-                    
-                    <h4>Your message?</h4>
-                    <textarea id="description-input" rows="3" placeholder="Enter your message…" class="form-control" required></textarea><br/>
+            <section>
+              <h4>Write an email to me:</h4>
+              <form id="contact-form" method="post">
+                <label for="name-input">Name:</label><br>
+                <input type="text" id="name-input" placeholder="Enter your name" required/><br/>
+                
+                <label for="phone-input">Phone number:</label><br>
+                <input type="tel" id="phone-input" placeholder="Enter your phone number" required/><br/>
+                
+                <label for="email-input">Email:</label><br>
+                <input type="email" id="email-input" placeholder="Enter your email" required/><br/>
+                
+                <label for="description-input">Your message:</label><br>
+                <textarea id="description-input" rows="3" placeholder="Enter your message" required></textarea><br/>
 
-                    <button type="button" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Submit</button>
+                <button id="email-submit-button" type="button" onClick="submitToAPI(event)" class="cursor">Submit</button>
               </form>
-           </div>
+            </section>
+            <aside>
+              <div class="social-media">
+                <ul class="navigation">
+                  <li>
+                      <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+                  </li>
+                  <li>
+                      <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+                  </li>
+                  <li>
+                      <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+                  </li>
+                  <li>
+                      <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="message">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam expedita quaerat dignissimos, iste officia iure esse. Inventore voluptatum placeat a, facilis deleniti ipsam qui voluptate officia tempora amet nesciunt minima.</p>
+              </div>
+            </aside>
         </div>
     </main>
 
@@ -107,27 +130,11 @@
     <script>
         function submitToAPI(e) {
             e.preventDefault();
-            // const mobileRegex = /([0-9]{10})|[0-9]{8}/;
-            // if (!mobileRegex.test($("#phone-input").val())) {
-            //     alert ("Please enter a valid phone number.");
-            //     return;
-            // }
-
-            // const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-            // if (!emailRegex.test($("#email-input").val())) {
-            //     alert ("Please enter a valid email address.");
-            //     return;
-            // }
-
-            const name = $("#name-input").val();
-            const phone = $("#phone-input").val();
-            const email = $("#email-input").val();
-            const desc = $("#description-input").val();
             const data = {
-                name : name,
-                phone : phone,
-                email : email,
-                desc : desc
+                name : $("#name-input").val(),
+                phone : $("#phone-input").val(),
+                email : $("#email-input").val(),
+                desc : $("#description-input").val()
             };
 
             $.ajax({
@@ -137,11 +144,13 @@
                 contentType: "application/json; charset=utf-8",
                 data: JSON.stringify(data),
                 success: function () {
-                    console.log("email send success");
-                    document.getElementById("contact-form").reset();
+                  document.getElementById("contact-form").reset();
+                  document.getElementById("email-submit-button").blur();
                 },
                 error: function (data) {
-                    console.log("email send error", data);
+                  document.getElementById("contact-form").reset();
+                  document.getElementById("email-submit-button").blur();
+                  alert("Something went wrong. Try again or use another contact method.")
                 }
             });
         }

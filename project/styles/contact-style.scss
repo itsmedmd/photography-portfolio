@@ -1,0 +1,166 @@
+header {
+    margin-bottom: 0;
+}
+
+.page-content {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+
+    section {
+        border-right: 1px solid rgba(44, 44, 44, 0.15);
+        padding: 24px 32px 16px;
+        margin-right: 32px;
+
+        h4 {
+            margin: 22px 0;
+            color: rgba(44, 44, 44, 0.9);
+        }
+
+        #contact-form {
+            label {
+                display: inline-block;
+                padding-bottom: 4px;
+                color: rgba(44, 44, 44, 0.8);
+            }
+
+            input {
+                height: 35px;
+                margin-bottom: 16px;
+            }
+
+            input, textarea {
+                border: 1px solid rgba(118, 118, 118, 0.9);
+                padding: 2px;
+                width: 180px;
+
+                &:focus {
+                    outline: 1px solid rgba(118, 118, 118, 0.5);
+                    outline-offset: 0;
+                }
+            }
+
+            button {
+                margin-top:20px;
+                padding: 6px 0;
+                width: 180px;
+                background-color: white;
+                border: 1px solid rgb(118, 118, 118);
+                font-size: 15px;
+
+                &:hover {
+                    background-color: rgba(118, 118, 118, 0.04);
+                }
+
+                &:focus {
+                    outline: 1px solid rgba(118, 118, 118, 0.5);
+                    outline-offset: 0;
+                }
+            }
+        }
+    }
+
+    aside {
+        padding-top: 24px;
+
+        .social-media {
+            padding-right: 52px;
+            margin: 0 auto;
+
+            ul {
+                padding: 66px 48px 12px 0;
+                margin: 0;
+                list-style-type: none;
+    
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: rgba(44, 44, 44, 0.8);
+
+                        &:hover {
+                            color: rgb(44, 44, 44);
+                        }
+                    }
+                }
+            }
+        }
+
+        .message {
+            padding-right: 52px;
+            border-top: 1px solid rgba(44, 44, 44, 0.15);
+            height: 50%;
+            position: relative;
+            bottom: 0;
+        }
+    }
+}
+
+// change layout
+@media only screen and (min-width: 1000px) {
+    .page-content {
+        width: 1000px;
+
+        section {
+            padding-right: 64px;
+            padding-left: 64px;
+            margin-right: 64px;
+        }
+
+        aside .message {
+            padding-right: 200px;
+            width: 500px;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        margin-bottom: 24px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+    .page-content {
+        section {
+            padding-right: 48px;
+            padding-left: 48px;
+            margin-right: 48px;
+        }
+
+        aside .message {
+            padding-right: 150px;
+        }
+    }
+
+}
+
+@media only screen and (max-width: 767px) {
+    .page-content aside .message {
+        padding-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .page-content {
+        flex-direction: column;
+
+        section {
+            margin-right: 0;
+            border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+            border-right: none;
+            padding-bottom: 36px;
+            text-align: center;
+        }
+        
+        aside {
+            padding: 24px 0;
+
+            .social-media ul,
+            .message {
+                padding: 12px 48px;
+            }
+        }
+    }
+}

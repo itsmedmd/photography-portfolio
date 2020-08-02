@@ -17,17 +17,9 @@ tasks:
 
 	try to create fadeout and next picture fade in effect for modal
 
-	create contact page style
-
 	create about page style
 
-	show email send errors, success messages, validation errors
-
-	test master
-
-	another test but now from contactPage
-
-	epic new test
+	change color usage to variables with scss
 
 -------------AWS----------------
 move out of SES sandbox

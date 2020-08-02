@@ -1,0 +1,163 @@
+header {
+  margin-bottom: 0;
+}
+
+.page-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin: 0 auto;
+}
+
+.page-content section {
+  border-right: 1px solid rgba(44, 44, 44, 0.15);
+  padding: 24px 32px 16px;
+  margin-right: 32px;
+}
+
+.page-content section h4 {
+  margin: 22px 0;
+  color: rgba(44, 44, 44, 0.9);
+}
+
+.page-content section #contact-form label {
+  display: inline-block;
+  padding-bottom: 4px;
+  color: rgba(44, 44, 44, 0.8);
+}
+
+.page-content section #contact-form input {
+  height: 35px;
+  margin-bottom: 16px;
+}
+
+.page-content section #contact-form input, .page-content section #contact-form textarea {
+  border: 1px solid rgba(118, 118, 118, 0.9);
+  padding: 2px;
+  width: 180px;
+}
+
+.page-content section #contact-form input:focus, .page-content section #contact-form textarea:focus {
+  outline: 1px solid rgba(118, 118, 118, 0.5);
+  outline-offset: 0;
+}
+
+.page-content section #contact-form button {
+  margin-top: 20px;
+  padding: 6px 0;
+  width: 180px;
+  background-color: white;
+  border: 1px solid #767676;
+  font-size: 15px;
+}
+
+.page-content section #contact-form button:hover {
+  background-color: rgba(118, 118, 118, 0.04);
+}
+
+.page-content section #contact-form button:focus {
+  outline: 1px solid rgba(118, 118, 118, 0.5);
+  outline-offset: 0;
+}
+
+.page-content aside {
+  padding-top: 24px;
+}
+
+.page-content aside .social-media {
+  padding-right: 52px;
+  margin: 0 auto;
+}
+
+.page-content aside .social-media ul {
+  padding: 66px 48px 12px 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.page-content aside .social-media ul li {
+  margin-bottom: 10px;
+}
+
+.page-content aside .social-media ul li a {
+  text-decoration: none;
+  color: rgba(44, 44, 44, 0.8);
+}
+
+.page-content aside .social-media ul li a:hover {
+  color: #2c2c2c;
+}
+
+.page-content aside .message {
+  padding-right: 52px;
+  border-top: 1px solid rgba(44, 44, 44, 0.15);
+  height: 50%;
+  position: relative;
+  bottom: 0;
+}
+
+@media only screen and (min-width: 1000px) {
+  .page-content {
+    width: 1000px;
+  }
+  .page-content section {
+    padding-right: 64px;
+    padding-left: 64px;
+    margin-right: 64px;
+  }
+  .page-content aside .message {
+    padding-right: 200px;
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    margin-bottom: 24px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+  .page-content section {
+    padding-right: 48px;
+    padding-left: 48px;
+    margin-right: 48px;
+  }
+  .page-content aside .message {
+    padding-right: 150px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-content aside .message {
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .page-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .page-content section {
+    margin-right: 0;
+    border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+    border-right: none;
+    padding-bottom: 36px;
+    text-align: center;
+  }
+  .page-content aside {
+    padding: 24px 0;
+  }
+  .page-content aside .social-media ul,
+  .page-content aside .message {
+    padding: 12px 48px;
+  }
+}
+/*# sourceMappingURL=contact-style.css.map */
