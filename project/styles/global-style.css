@@ -190,7 +190,7 @@ footer div.footer-content p {
 }
 
 .displayOff {
-  display: none;
+  display: none !important;
 }
 
 .scroll-lock {

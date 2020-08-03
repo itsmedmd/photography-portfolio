@@ -78,8 +78,20 @@ header {
                         text-decoration: none;
                         color: rgba(44, 44, 44, 0.8);
 
-                        &:hover {
-                            color: rgb(44, 44, 44);
+                        &.facebook-a:hover {
+                            color: #1877f2;
+                        }
+
+                        &.instagram-a:hover {
+                            color: #FF1493;
+                        }
+
+                        &.twitter-a:hover {
+                            color: #1ea0f0;
+                        }
+
+                        &.youtube-a:hover {
+                            color: #E62117;
                         }
                     }
                 }
@@ -93,6 +105,7 @@ header {
 
             p {
                 font-size: 17px;
+                text-align: justify;
             }
         }
     }
@@ -105,13 +118,16 @@ header {
 
         section {
             padding-right: 64px;
-            padding-left: 64px;
+            padding-left: 164px;
             margin-right: 64px;
         }
 
-        aside .message {
-            padding-right: 200px;
-            width: 500px;
+        aside {
+            padding-right: 100px;
+            
+            .message {
+                width: 400px;
+            }
         }
     }
 }

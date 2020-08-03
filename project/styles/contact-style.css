@@ -87,8 +87,20 @@ header {
   color: rgba(44, 44, 44, 0.8);
 }
 
-.page-content aside .social-media ul li a:hover {
-  color: #2c2c2c;
+.page-content aside .social-media ul li a.facebook-a:hover {
+  color: #1877f2;
+}
+
+.page-content aside .social-media ul li a.instagram-a:hover {
+  color: #FF1493;
+}
+
+.page-content aside .social-media ul li a.twitter-a:hover {
+  color: #1ea0f0;
+}
+
+.page-content aside .social-media ul li a.youtube-a:hover {
+  color: #E62117;
 }
 
 .page-content aside .message {
@@ -99,6 +111,7 @@ header {
 
 .page-content aside .message p {
   font-size: 17px;
+  text-align: justify;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -107,12 +120,14 @@ header {
   }
   .page-content section {
     padding-right: 64px;
-    padding-left: 64px;
+    padding-left: 164px;
     margin-right: 64px;
   }
+  .page-content aside {
+    padding-right: 100px;
+  }
   .page-content aside .message {
-    padding-right: 200px;
-    width: 500px;
+    width: 400px;
   }
 }
 

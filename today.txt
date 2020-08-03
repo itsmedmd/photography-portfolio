@@ -17,8 +17,6 @@ tasks:
 
 	try to create fadeout and next picture fade in effect for modal
 
-	create about page style
-
 	change color usage to variables with scss
 
 -------------AWS----------------
