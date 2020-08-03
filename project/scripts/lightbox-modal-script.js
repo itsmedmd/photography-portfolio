@@ -114,7 +114,7 @@ function showSlides(n) {
 
 // if needed, adds 'justify-content: center' css rule to scrolling-thumbnail-row class element
 function adjustThumbnailRowCentering() {
-    if(screen.availWidth > document.getElementsByClassName("lightbox-thumbnail").length * 100)
+    if(screen.availWidth >= document.getElementsByClassName("lightbox-thumbnail").length * 100 && screen.availWidth <= 1000)
         if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "center")
             document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "center";
     else
