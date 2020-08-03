@@ -27,6 +27,8 @@ yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
 tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
 
 test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window document
+
+test with a few galleries at the same time(creation of files, compression)
 -------------AWS----------------
 
 
