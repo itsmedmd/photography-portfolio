@@ -42,7 +42,7 @@ header {
   margin-bottom: 24px;
 }
 
-header .page-logo {
+header .page-logo img {
   width: auto;
   height: 200px;
 }
@@ -220,7 +220,7 @@ footer div.footer-content p {
     -webkit-box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
             box-shadow: 0 0 2px rgba(200, 200, 200, 0.3);
   }
-  header .page-logo {
+  header .page-logo img {
     height: 100px;
     margin-left: 20px;
   }
@@ -313,6 +313,19 @@ footer div.footer-content p {
   }
   header ul.navigation {
     margin: 8px 0 0;
+  }
+}
+
+@media only screen and (max-width: 170px) {
+  header {
+    padding-top: 100px;
+  }
+  header .mobile-navigation-bar {
+    margin-top: -72px;
+    right: 25%;
+  }
+  header .page-logo {
+    display: none;
   }
 }
 
