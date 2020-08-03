@@ -1,69 +1,65 @@
+// // tested and it's not really necessary, works on chrome without this.
+// // Not sure if it works in IE but in IE swipe events don't even get used.
+// // patch CustomEvent to allow constructor creation (IE/Chrome)
+// if (typeof window.CustomEvent !== 'function') {
+//     window.CustomEvent = function (event, params) {
+//         params = params || { bubbles: false, cancelable: false, detail: undefined };
+//         const evt = document.createEvent('CustomEvent');
+//         evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+//         return evt;
+//     };
+//     window.CustomEvent.prototype = window.Event.prototype;
+// }
 
-(function (window, document) {
-    'use strict';
+let xDown = null;
+let xDiff = null;
+let timeDown = null;
+let startEl = null;
+let startTouchesLength = 0;
 
-    // patch CustomEvent to allow constructor creation (IE/Chrome)
-    // if (typeof window.CustomEvent !== 'function') {
-    //     window.CustomEvent = function (event, params) {
-    //         params = params || { bubbles: false, cancelable: false, detail: undefined };
-    //         const evt = document.createEvent('CustomEvent');
-    //         evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-    //         return evt;
-    //     };
-    //     window.CustomEvent.prototype = window.Event.prototype;
-    // }
+function handleTouchEnd(e) {
+    // if the user released on a different element, cancel
+    if (startEl !== e.target) return;
 
-    document.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-    document.addEventListener('touchend', handleTouchEnd);
-
-    let xDown = null;
-    let xDiff = null;
-    let timeDown = null;
-    let startEl = null;
-    let startTouchesLength = 0;
-
-    function handleTouchEnd(e) {
-        // if the user released on a different element, cancel
-        if (startEl !== e.target) return;
-
-        const swipeThreshold = 20; // 20px needed to swipe
-        const swipeTimeout = 1000; // doesn't fire event if held down for longer than 1000ms
-        const timeDiff = Date.now() - timeDown;
-        let eventType = '';
-        
-        if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
-            if (xDiff > 0)  eventType = 'swiped-left';
-            else            eventType = 'swiped-right';
-        }
-
-        if (eventType !== '' && startTouchesLength === 1) {
-            // fire event on the element that started the swipe
-            startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
-        }
-
-        // reset values
-        xDown = null;
-        timeDown = null;
+    const swipeThreshold = 20; // 20px needed to swipe
+    const swipeTimeout = 1000; // doesn't fire event if held down for longer than 1000ms
+    const timeDiff = Date.now() - timeDown;
+    let eventType = '';
+    
+    if (Math.abs(xDiff) > swipeThreshold && timeDiff < swipeTimeout) {
+        if (xDiff > 0)  eventType = 'swiped-left';
+        else            eventType = 'swiped-right';
     }
 
-    function handleTouchStart(e) {
-        startTouchesLength = e.touches.length;
-        startEl = e.target;
-        timeDown = Date.now();
-        xDown = e.touches[0].clientX;
-        xDiff = 0;
+    if (eventType !== '' && startTouchesLength === 1) {
+        // fire event on the element that started the swipe
+        startEl.dispatchEvent(new CustomEvent(eventType, { bubbles: true, cancelable: true }));
     }
 
-    function handleTouchMove(e) {
-        if (!xDown) return;
-        const xUp = e.touches[0].clientX;
-        xDiff = xDown - xUp;
-    }
+    // reset values
+    xDown = null;
+    timeDown = null;
+}
 
-}(window, document));
+function handleTouchStart(e) {
+    startTouchesLength = e.touches.length;
+    startEl = e.target;
+    timeDown = Date.now();
+    xDown = e.touches[0].clientX;
+    xDiff = 0;
+}
 
-window.addEventListener("load", function() {
+function handleTouchMove(e) {
+    if (!xDown) return;
+    const xUp = e.touches[0].clientX;
+    xDiff = xDown - xUp;
+}
+
+document.addEventListener('touchstart', handleTouchStart);
+document.addEventListener('touchmove', handleTouchMove);
+document.addEventListener('touchend', handleTouchEnd);
+
+window.addEventListener('load', function() {
     const elements = document.getElementsByClassName("modal-image-wrapper");
 
     // Changing HTMLCollection to array this way instead of
