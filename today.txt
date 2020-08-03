@@ -19,9 +19,6 @@ tasks:
 
 	change color usage to variables with scss
 
-	slide index or something is fked up. wrong thumbnail scroll
-	su pradzia kazkas blogai, nes visa laika buna paslidine.
-
 -------------AWS----------------
 move out of SES sandbox
 
@@ -37,8 +34,6 @@ IOS safari ir chrome
 iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
 
 zoomed in modal swipe with 1 finger changes the picture, not a big deal but shouldn't do that
-
-neveikia fb like kazkodel on click, bet pc veikia
 
 jei zoom tai neslidint
 -------------MOBILE-------------

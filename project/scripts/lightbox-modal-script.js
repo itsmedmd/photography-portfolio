@@ -114,18 +114,12 @@ function showSlides(n) {
 
 // if needed, adds 'justify-content: center' css rule to scrolling-thumbnail-row class element
 function adjustThumbnailRowCentering() {
-    if(screen.availWidth > document.getElementsByClassName("lightbox-thumbnail").length * 100) {
-        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "center") {
+    if(screen.availWidth > document.getElementsByClassName("lightbox-thumbnail").length * 100)
+        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "center")
             document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "center";
-            console.log("adding!");
-        }
-    }
-    else {
-        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "initial") {
-        document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "initial";
-        console.log("removing!");
-        }
-    }
+    else
+        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "initial")
+            document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "initial";
 }
 
 window.addEventListener('load', function() {
