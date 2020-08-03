@@ -112,10 +112,31 @@ function showSlides(n) {
         scrollThumbnailRow(thumbnails);
 }
 
+// if needed, adds 'justify-content: center' css rule to scrolling-thumbnail-row class element
+function adjustThumbnailRowCentering() {
+    if(screen.availWidth > document.getElementsByClassName("lightbox-thumbnail").length * 100) {
+        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "center") {
+            document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "center";
+            console.log("adding!");
+        }
+    }
+    else {
+        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "initial") {
+        document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "initial";
+        console.log("removing!");
+        }
+    }
+}
+
+window.addEventListener('load', function() {
+    adjustThumbnailRowCentering();
+});
+
 // After window resize, if the thumbnail scroll bar width changes, recalculate thumbnail scroll amount
 window.addEventListener('resize', function() {
     if(document.getElementById("myModal").style.display = "block" &&
        rowWidth !== parseInt(getComputedStyle(getThumbnailRowElement()).getPropertyValue('width'))) {
         currentSlide(slideIndex);
     }
+    adjustThumbnailRowCentering();
 });

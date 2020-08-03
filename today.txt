@@ -19,12 +19,11 @@ tasks:
 
 	change color usage to variables with scss
 
+	slide index or something is fked up. wrong thumbnail scroll
+	su pradzia kazkas blogai, nes visa laika buna paslidine.
+
 -------------AWS----------------
 move out of SES sandbox
-
-padaryt create-image-gallery lambda kad praeitu per visus ir jei
-yra kazkokie pavadinimai kurie yra sukurti bet ju nera original-images foldery,
-tai istrint. pvz jei yra thumbnail img5.jpg bet original-images tokio nera, tai delete
 
 test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window document
 
@@ -48,31 +47,3 @@ jei zoom tai neslidint
 
 -------------IE11-------------
 -------------IE11-------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-210 isjungta
-310 telpa 1 ir viskas ok
-410px reikia + 50px, telpa 1.5
-520px telpa 2 ir viskas ok
-680px reikia +50px, telpa 2.5
-820px telpa 3 ir viskas ok
-950px reikia +50px, telpa 3.5
-1090px telpa 4 ir viskas ok
-1200px reikia +50px, telpa 4.5
-virs 1200px telpa 5 ir viskas ok
