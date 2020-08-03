@@ -13,67 +13,38 @@ header {
   margin: 0 auto;
 }
 
+.page-content p {
+  font-size: 17px;
+  text-align: justify;
+}
+
 .page-content section {
   border-right: 1px solid rgba(44, 44, 44, 0.15);
   padding: 24px 32px 16px;
   margin-right: 32px;
 }
 
-.page-content section h4 {
-  margin: 22px 0;
-  color: #2c2c2c;
+.page-content section img {
+  width: 100%;
 }
 
-.page-content section #contact-form label {
-  display: inline-block;
-  padding-bottom: 4px;
-  color: rgba(44, 44, 44, 0.8);
-}
-
-.page-content section #contact-form input {
-  height: 35px;
-  margin-bottom: 16px;
-}
-
-.page-content section #contact-form input, .page-content section #contact-form textarea {
-  border: 1px solid rgba(118, 118, 118, 0.9);
-  padding: 2px;
-  width: 180px;
-}
-
-.page-content section #contact-form input:focus, .page-content section #contact-form textarea:focus {
-  outline: 1px solid rgba(118, 118, 118, 0.5);
-  outline-offset: 0;
-}
-
-.page-content section #contact-form button {
-  margin-top: 20px;
-  padding: 6px 0;
-  width: 180px;
-  background-color: white;
-  border: 1px solid #767676;
-  font-size: 15px;
-}
-
-.page-content section #contact-form button:hover {
-  background-color: rgba(118, 118, 118, 0.04);
-}
-
-.page-content section #contact-form button:focus {
-  outline: 1px solid rgba(118, 118, 118, 0.5);
-  outline-offset: 0;
-}
-
-.page-content aside {
-  padding-top: 24px;
+.page-content section p {
+  padding-top: 16px;
+  margin-bottom: 0;
 }
 
 .page-content aside .social-media {
   padding-right: 52px;
+  border-top: 1px solid rgba(44, 44, 44, 0.15);
+}
+
+.page-content aside .social-media h4 {
+  margin: 32px 0 16px;
+  font-size: 15px;
 }
 
 .page-content aside .social-media ul {
-  padding: 66px 48px 12px 0;
+  padding: 0 48px 12px 0;
   margin: 0;
   list-style-type: none;
 }
@@ -92,13 +63,7 @@ header {
 }
 
 .page-content aside .message {
-  padding-right: 52px;
-  border-top: 1px solid rgba(44, 44, 44, 0.15);
-  height: 50%;
-}
-
-.page-content aside .message p {
-  font-size: 17px;
+  padding: 0 52px 16px 0;
 }
 
 @media only screen and (min-width: 1000px) {
@@ -111,8 +76,8 @@ header {
     margin-right: 64px;
   }
   .page-content aside .message {
-    padding-right: 200px;
-    width: 500px;
+    padding-right: 20px;
+    width: 350px;
   }
 }
 
@@ -129,13 +94,19 @@ header {
     margin-right: 48px;
   }
   .page-content aside .message {
-    padding-right: 150px;
+    padding-right: 48px;
   }
 }
 
 @media only screen and (max-width: 767px) {
-  .page-content aside .message {
-    padding-right: 50px;
+  .page-content section {
+    padding-top: 48px;
+  }
+  .page-content aside {
+    padding-top: 48px;
+  }
+  .page-content aside p {
+    margin-top: 0;
   }
 }
 
@@ -156,9 +127,14 @@ header {
   .page-content aside {
     padding: 24px 0;
   }
-  .page-content aside .social-media ul,
+  .page-content aside .social-media ul {
+    padding: 0 36px 12px;
+  }
+  .page-content aside .social-media h4 {
+    margin-left: 36px;
+  }
   .page-content aside .message {
-    padding: 12px 48px;
+    padding: 12px 36px;
   }
 }
-/*# sourceMappingURL=contact-style.css.map */
+/*# sourceMappingURL=about-style.css.map */
