@@ -7,67 +7,38 @@ header {
     flex-direction: row;
     margin: 0 auto;
 
+    p {
+        font-size: 17px;
+        text-align: justify;
+    }
+
     section {
         border-right: 1px solid rgba(44, 44, 44, 0.15);
         padding: 24px 32px 16px;
         margin-right: 32px;
 
-        h4 {
-            margin: 22px 0;
-            color: rgb(44, 44, 44);
+        img {
+            width: 100%;
         }
 
-        #contact-form {
-            label {
-                display: inline-block;
-                padding-bottom: 4px;
-                color: rgba(44, 44, 44, 0.8);
-            }
-
-            input {
-                height: 35px;
-                margin-bottom: 16px;
-            }
-
-            input, textarea {
-                border: 1px solid rgba(118, 118, 118, 0.9);
-                padding: 2px;
-                width: 180px;
-
-                &:focus {
-                    outline: 1px solid rgba(118, 118, 118, 0.5);
-                    outline-offset: 0;
-                }
-            }
-
-            button {
-                margin-top:20px;
-                padding: 6px 0;
-                width: 180px;
-                background-color: white;
-                border: 1px solid rgb(118, 118, 118);
-                font-size: 15px;
-
-                &:hover {
-                    background-color: rgba(118, 118, 118, 0.04);
-                }
-
-                &:focus {
-                    outline: 1px solid rgba(118, 118, 118, 0.5);
-                    outline-offset: 0;
-                }
-            }
+        p {
+            padding-top: 16px;
+            margin-bottom: 0;
         }
     }
 
     aside {
-        padding-top: 24px;
-
         .social-media {
             padding-right: 52px;
+            border-top: 1px solid rgba(44, 44, 44, 0.15);
+
+            h4 {
+                margin: 32px 0 16px;
+                font-size: 15px;
+            }
 
             ul {
-                padding: 66px 48px 12px 0;
+                padding: 0 48px 12px 0;
                 margin: 0;
                 list-style-type: none;
     
@@ -87,13 +58,7 @@ header {
         }
 
         .message {
-            padding-right: 52px;
-            border-top: 1px solid rgba(44, 44, 44, 0.15);
-            height: 50%;
-
-            p {
-                font-size: 17px;
-            }
+            padding: 0 52px 16px 0;
         }
     }
 }
@@ -110,8 +75,8 @@ header {
         }
 
         aside .message {
-            padding-right: 200px;
-            width: 500px;
+            padding-right: 20px;
+            width: 350px;
         }
     }
 }
@@ -131,15 +96,25 @@ header {
         }
 
         aside .message {
-            padding-right: 150px;
+            padding-right: 48px;
         }
     }
 
 }
 
 @media only screen and (max-width: 767px) {
-    .page-content aside .message {
-        padding-right: 50px;
+    .page-content {
+        section {
+            padding-top: 48px;
+        }
+
+        aside {
+            padding-top: 48px;
+
+            p {
+                margin-top: 0;
+            }
+        }
     }
 }
 
@@ -158,9 +133,18 @@ header {
         aside {
             padding: 24px 0;
 
-            .social-media ul,
+            .social-media {
+                ul {
+                    padding: 0 36px 12px;
+                }
+
+                h4 {
+                    margin-left: 36px;
+                }
+            }
+
             .message {
-                padding: 12px 48px;
+                padding: 12px 36px;
             }
         }
     }
