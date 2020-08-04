@@ -1,3 +1,5 @@
+$dark-grey: rgb(44, 44, 44);
+
 header {
     margin-bottom: 0;
 }
@@ -13,7 +15,7 @@ header {
     }
 
     section {
-        border-right: 1px solid rgba(44, 44, 44, 0.15);
+        border-right: 1px solid rgba($dark-grey, 0.15);
         padding: 24px 32px 16px;
         margin-right: 32px;
 
@@ -30,7 +32,7 @@ header {
     aside {
         .social-media {
             padding-right: 52px;
-            border-top: 1px solid rgba(44, 44, 44, 0.15);
+            border-top: 1px solid rgba($dark-grey, 0.15);
 
             h4 {
                 margin: 32px 0 16px;
@@ -47,10 +49,10 @@ header {
 
                     a {
                         text-decoration: none;
-                        color: rgba(44, 44, 44, 0.8);
+                        color: rgba($dark-grey, 0.8);
 
                         &:hover {
-                            color: rgb(44, 44, 44);
+                            color: $dark-grey;
                         }
                     }
                 }
@@ -124,7 +126,7 @@ header {
 
         section {
             margin-right: 0;
-            border-bottom: 1px solid rgba(44, 44, 44, 0.15);
+            border-bottom: 1px solid rgba($dark-grey, 0.15);
             border-right: none;
             padding-bottom: 36px;
             text-align: center;
