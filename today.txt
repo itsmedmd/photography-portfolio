@@ -19,12 +19,10 @@ tasks:
 
 	change color usage to variables with scss
 
+	find better looking photos
+
 -------------AWS----------------
 move out of SES sandbox
-
-test swipe-effects funkcija gal tiesiog on load padaryt o ne ta kazkoki window document
-
-test with a few galleries at the same time(creation of files, compression)
 -------------AWS----------------
 
 
