@@ -117,8 +117,7 @@ function adjustThumbnailRowCentering() {
     if(screen.availWidth >= document.getElementsByClassName("lightbox-thumbnail").length * 100 && screen.availWidth <= 1000)
         if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "center")
             document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "center";
-    else
-        if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "initial")
+    else if(document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent !== "initial")
             document.getElementsByClassName("scrolling-thumbnail-row")[0].style.justifyContent = "initial";
 }
 

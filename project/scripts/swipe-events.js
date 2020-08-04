@@ -1,22 +1,42 @@
-// // tested and it's not really necessary, works on chrome without this.
-// // Not sure if it works in IE but in IE swipe events don't even get used.
-// // patch CustomEvent to allow constructor creation (IE/Chrome)
-// if (typeof window.CustomEvent !== 'function') {
-//     window.CustomEvent = function (event, params) {
-//         params = params || { bubbles: false, cancelable: false, detail: undefined };
-//         const evt = document.createEvent('CustomEvent');
-//         evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-//         return evt;
-//     };
-//     window.CustomEvent.prototype = window.Event.prototype;
-// }
+/*
+// tested and it's not really necessary, works on chrome without this.
+// Not sure if it works in IE but in IE swipe events are not realistically needed.
+// patch CustomEvent to allow constructor creation (IE/Chrome)
+if (typeof window.CustomEvent !== 'function') {
+    window.CustomEvent = function (event, params) {
+        params = params || { bubbles: false, cancelable: false, detail: undefined };
+        const evt = document.createEvent('CustomEvent');
+        evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
+        return evt;
+    };
+    window.CustomEvent.prototype = window.Event.prototype;
+}
+*/
 
+// variables for determining and executing swipes
 let xDown = null;
 let xDiff = null;
 let timeDown = null;
 let startEl = null;
 let startTouchesLength = 0;
 
+// touchstart event handler function
+function handleTouchStart(e) {
+    startTouchesLength = e.touches.length;
+    startEl = e.target;
+    timeDown = Date.now();
+    xDown = e.touches[0].clientX;
+    xDiff = 0;
+}
+
+// touchmove event handler function
+function handleTouchMove(e) {
+    if (!xDown) return;
+    const xUp = e.touches[0].clientX;
+    xDiff = xDown - xUp;
+}
+
+// touchend event handler function
 function handleTouchEnd(e) {
     // if the user released on a different element, cancel
     if (startEl !== e.target) return;
@@ -39,20 +59,6 @@ function handleTouchEnd(e) {
     // reset values
     xDown = null;
     timeDown = null;
-}
-
-function handleTouchStart(e) {
-    startTouchesLength = e.touches.length;
-    startEl = e.target;
-    timeDown = Date.now();
-    xDown = e.touches[0].clientX;
-    xDiff = 0;
-}
-
-function handleTouchMove(e) {
-    if (!xDown) return;
-    const xUp = e.touches[0].clientX;
-    xDiff = xDown - xUp;
 }
 
 document.addEventListener('touchstart', handleTouchStart);
