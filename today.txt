@@ -1,23 +1,13 @@
 tasks:
-	ant visu puslapiu:
+	on all pages:
 		0. minify html, css ir js failus
-		1. fb icon, navigation, logo titles uzdet
-		2. page <title> pakeist in head
-		4. metadata
+		4. metadata (description, author and so on)
 		5. google analytics
 		6. apple touch icon manifest
-		7. favicon.ico pakeist kiekvienam page linkus
-		8. html lang="" pakeist
-		9. atnaujint nav href linkus
-		10. atnaujint fb page icon href ir fb like button i grupe
-		11. kiekvieno puslapio description, pavadinimus ir t.t.
+		7. favicon.ico update links
+		8. html lang="" update
 		12. html, css validate + speed tests
-		13. compress fb logo, favicon
-		99. testuot su skirtingais kompais, telefais, horizontal view phone
-
-	try to create fadeout and next picture fade in effect for modal
-
-	change color usage to variables with scss
+		13. compress fb logo, favicon, page logo
 
 	find better looking photos
 
@@ -28,12 +18,6 @@ move out of SES sandbox
 
 
 -------------MOBILE-------------
-IOS safari ir chrome
-iframe paima eventa ir negalima jo pagaut, del to click veikia tik su long touch
-
-zoomed in modal swipe with 1 finger changes the picture, not a big deal but shouldn't do that
-
-jei zoom tai neslidint
 -------------MOBILE-------------
 
 
