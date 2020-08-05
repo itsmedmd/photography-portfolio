@@ -317,12 +317,12 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
     
         <meta charset="utf-8" />
         <link rel="icon" href="../../favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="test site"/>
-        <meta name="title" content="Dmd test">
-        <meta name="author" content="name, email@aaa.com">
-        <meta name="subject" content="Photography">
+        <meta name="description" content="Gallery page"/>
+        <meta name="title" content="Photos - DMD">
+        <meta name="author" content="Deimantas Butėnas, email@aaa.com">
+        <meta name="subject" content="Photo gallery">
         <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
@@ -333,23 +333,22 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <link rel="stylesheet" type="text/css" href="../../styles/lightbox-slides-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     
-        <title>Dmd</title>
+        <title>Photos - DMD</title>
       </head>
       <body>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
-        <script src="../../scripts/lightbox-modal-script.js"></script>
         
-        <header>
-        <a href="https://deimantasbutenas.lt/">
-            <img src="../../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
-        </a>
-        <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
+        <header class="photo-gallery-header">
+          <a href="https://deimantasbutenas.lt/" class="page-logo">
+            <img src="../../logo.png" alt="Page logo" title="Go to home page">
+          </a>
+          <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
             <div></div>
             <div></div>
             <div></div>
-        </div>
-        <nav id="top-navigation">
+          </div>
+          <nav id="top-navigation">
             <ul class="navigation">
               <li>
                   <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
@@ -360,10 +359,6 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="https://deimantasbutenas.lt/prices/" title="Go to prices page">Prices</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
                   <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
                   <span class="nav-dot"></span>
               </li>
@@ -371,7 +366,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
                   <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
               </li>
             </ul>
-        </nav>
+          </nav>
           <div id="top-social-media-icons" class="social-media-icons">
               <ul>
                   <li>
@@ -425,9 +420,11 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
           </div>
         </footer>
     
-        <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@16.1.0/dist/lazyload.min.js"></script>
+        <script src="../../scripts/observe-fb-like-button.js"></script>
+        <script src="../../scripts/lazyload-16-1-0.min.js"></script>
         <script src="../../scripts/lazyload.js"></script>
         <script src="../../scripts/toggle-mobile-navigation.js"></script>
+        <script src="../../scripts/lightbox-modal-script.js"></script>
         <script src="../../scripts/swipe-events.js"></script>
       </body>
     </html>
@@ -465,10 +462,10 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <link rel="icon" href="../favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="test site"/>
-        <meta name="title" content="Dmd test">
-        <meta name="author" content="name, email@aaa.com">
-        <meta name="subject" content="Photography">
+        <meta name="description" content="Galleries page"/>
+        <meta name="title" content="Galleries - DMD">
+        <meta name="author" content="Deimantas Butėnas, email@aaa.com">
+        <meta name="subject" content="Photo galleries">
         <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
@@ -484,49 +481,45 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <link rel="stylesheet" type="text/css" href="../styles/all-galleries-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
         
-        <title>Galleries - Dmd</title>
+        <title>Galleries - DMD</title>
       </head>
       <body>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
     
       <header>
-        <a href="https://deimantasbutenas.lt/">
-            <img src="../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
+        <a href="https://deimantasbutenas.lt/" class="page-logo">
+          <img src="../logo.png" alt="Page logo" title="Go to home page">
         </a>
         <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
-            <div></div>
-            <div></div>
-            <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
         <nav id="top-navigation">
-            <ul class="navigation">
-              <li>
-                  <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="https://deimantasbutenas.lt/prices/" title="Go to prices page">Prices</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
-                  <span class="nav-dot"></span>
-              </li>
-              <li>
-                  <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
-              </li>
-            </ul>
+          <ul class="navigation">
+            <li>
+                <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+                <span class="nav-dot"></span>
+            </li>
+            <li>
+                <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+            </li>
+          </ul>
         </nav>
         <div id="top-social-media-icons" class="social-media-icons">
             <ul>
                 <li>
                   <a href="https://facebook.com/" target="_blank" class="fb-icon">             
-                    <svg xmlns="https://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -150 1000 1000"><path fill="currentColor" d="M570.5 310h144l-17 159h-127v460h-190V469h-95V310h95v-95c0-68 16-119.3 48-154s84.7-52 158-52h126v158h-79c-14.7 0-26.3 1.3-35 4s-15 7-19 13-6.3 12.3-7 19-1.3 16-2 28v79z"></path></svg>
                   </a>
                 </li>
                 <li class="fb-li-element" style="background: url(../fb-like-button.png);">
@@ -551,6 +544,7 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
           </div>
         </footer>
     
+        <script src="../scripts/observe-fb-like-button.js"></script>
         <script src="../scripts/toggle-mobile-navigation.js"></script>
       </body>
     </html>
