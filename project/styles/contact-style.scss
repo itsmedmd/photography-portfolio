@@ -80,22 +80,6 @@ header {
                     a {
                         text-decoration: none;
                         color: rgba($dark-grey, 0.8);
-
-                        &.facebook-a:hover {
-                            color: #1877f2;
-                        }
-
-                        &.instagram-a:hover {
-                            color: #FF1493;
-                        }
-
-                        &.twitter-a:hover {
-                            color: #1ea0f0;
-                        }
-
-                        &.youtube-a:hover {
-                            color: #E62117;
-                        }
                     }
                 }
             }
@@ -110,6 +94,27 @@ header {
                 font-size: 17px;
                 text-align: justify;
             }
+        }
+    }
+}
+
+/* hover effects only on screen width of 1025px and more*/
+@media only screen and (min-width: 1025px) {
+    .page-content aside .social-media ul li a {
+        &.facebook-a:hover {
+            color: #1877f2;
+        }
+
+        &.instagram-a:hover {
+            color: #FF1493;
+        }
+
+        &.twitter-a:hover {
+            color: #1ea0f0;
+        }
+
+        &.youtube-a:hover {
+            color: #E62117;
         }
     }
 }

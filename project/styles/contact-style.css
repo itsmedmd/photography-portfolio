@@ -87,22 +87,6 @@ header {
   color: rgba(44, 44, 44, 0.8);
 }
 
-.page-content aside .social-media ul li a.facebook-a:hover {
-  color: #1877f2;
-}
-
-.page-content aside .social-media ul li a.instagram-a:hover {
-  color: #FF1493;
-}
-
-.page-content aside .social-media ul li a.twitter-a:hover {
-  color: #1ea0f0;
-}
-
-.page-content aside .social-media ul li a.youtube-a:hover {
-  color: #E62117;
-}
-
 .page-content aside .message {
   padding-right: 52px;
   border-top: 1px solid rgba(44, 44, 44, 0.15);
@@ -112,6 +96,22 @@ header {
 .page-content aside .message p {
   font-size: 17px;
   text-align: justify;
+}
+
+/* hover effects only on screen width of 1025px and more*/
+@media only screen and (min-width: 1025px) {
+  .page-content aside .social-media ul li a.facebook-a:hover {
+    color: #1877f2;
+  }
+  .page-content aside .social-media ul li a.instagram-a:hover {
+    color: #FF1493;
+  }
+  .page-content aside .social-media ul li a.twitter-a:hover {
+    color: #1ea0f0;
+  }
+  .page-content aside .social-media ul li a.youtube-a:hover {
+    color: #E62117;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
