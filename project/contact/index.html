@@ -77,20 +77,20 @@
         <div class="page-content">
             <section>
               <h4>Write an email to me:</h4>
-              <form id="contact-form" method="post">
+              <form id="contact-form" method="post" onsubmit="submitToAPI(event)">
                 <label for="name-input">Name:</label><br>
-                <input type="text" id="name-input" placeholder="Enter your name" required/><br/>
+                <input type="text" id="name-input" required/><br/>
                 
                 <label for="phone-input">Phone number:</label><br>
-                <input type="tel" id="phone-input" placeholder="Enter your phone number" required/><br/>
+                <input type="tel" id="phone-input" required/><br/>
                 
                 <label for="email-input">Email:</label><br>
-                <input type="email" id="email-input" placeholder="Enter your email" required/><br/>
+                <input type="email" id="email-input" required/><br/>
                 
                 <label for="description-input">Your message:</label><br>
-                <textarea id="description-input" rows="3" placeholder="Enter your message" required></textarea><br/>
+                <textarea id="description-input" rows="3" required></textarea><br/>
 
-                <button id="email-submit-button" type="button" onClick="submitToAPI(event)" class="cursor">Submit</button>
+                <button id="email-submit-button" type="submit" class="cursor">Submit</button>
               </form>
             </section>
             <aside>
