@@ -9,8 +9,6 @@ tasks:
 		12. html, css validate + speed tests
 		13. compress fb logo, favicon, page logo
 
-	find better looking photos
-
 -------------AWS----------------
 move out of SES sandbox
 -------------AWS----------------
