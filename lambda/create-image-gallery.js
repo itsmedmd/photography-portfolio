@@ -8,8 +8,10 @@ exports.handler = async (event) => {
     // get all keys
     let allKeys = await getAllKeys({
       Bucket: bucketName,
-      Prefix: 'images/'
+      Prefix: 'projects/1/images/'
     });
+    
+    allKeys = allKeys.map(key => key.split("projects/1/")[1]);
     
     // get all gallery names
     let galleryNames = new Set();
@@ -20,13 +22,11 @@ exports.handler = async (event) => {
     });
     galleryNames = [...galleryNames];
     galleryNames.sort((a, b) => a > b ? 1: -1);
-    
     // compressing images here
     
     // delete and create files for each gallery
     const toDelete = [];
     const toUpload = [];
-    
     for(const galleryName of galleryNames) {
       // create sets for finding differences
       const originalImages = new Set();
@@ -49,10 +49,10 @@ exports.handler = async (event) => {
       // creates an array of keys to delete
       newDeleted.forEach(item => {
         toDelete.push(
-          {'Key': `images/${galleryName}/thumbnails/${item}`},
-          {'Key': `images/${galleryName}/blurry/${item}`},
-          {'Key': `images/${galleryName}/compressed-small/${item}`},
-          {'Key': `images/${galleryName}/compressed-big/${item}`}
+          {'Key': `projects/1/images/${galleryName}/thumbnails/${item}`},
+          {'Key': `projects/1/images/${galleryName}/blurry/${item}`},
+          {'Key': `projects/1/images/${galleryName}/compressed-small/${item}`},
+          {'Key': `projects/1/images/${galleryName}/compressed-big/${item}`}
         );
       });
       
@@ -62,33 +62,33 @@ exports.handler = async (event) => {
           toUpload.push(
             {
               Bucket: bucketName,
-              Key: `images/${galleryName}/thumbnails/${item}`,
-              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'thumbnails', 100, 70, 'fill'),
+              Key: `projects/1/images/${galleryName}/thumbnails/${item}`,
+              Body: await resizeAndCompress(`projects/1/images/${galleryName}/original-images/${item}`, 'thumbnails', 100, 70, 'fill'),
               ContentType: 'image'
             },
             {
               Bucket: bucketName,
-              Key: `images/${galleryName}/blurry/${item}`,
-              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'blurry', 400, 0, 'inside'),
+              Key: `projects/1/images/${galleryName}/blurry/${item}`,
+              Body: await resizeAndCompress(`projects/1/images/${galleryName}/original-images/${item}`, 'blurry', 400, 0, 'inside'),
               ContentType: 'image'
             },
             {
               Bucket: bucketName,
-              Key: `images/${galleryName}/compressed-small/${item}`,
-              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'compressed-small', 400, 0, 'inside'),
+              Key: `projects/1/images/${galleryName}/compressed-small/${item}`,
+              Body: await resizeAndCompress(`projects/1/images/${galleryName}/original-images/${item}`, 'compressed-small', 400, 0, 'inside'),
               ContentType: 'image'
             },
             {
               Bucket: bucketName,
-              Key: `images/${galleryName}/compressed-big/${item}`,
-              Body: await resizeAndCompress(`images/${galleryName}/original-images/${item}`, 'compressed-big', 1000, 0, 'inside'),
+              Key: `projects/1/images/${galleryName}/compressed-big/${item}`,
+              Body: await resizeAndCompress(`projects/1/images/${galleryName}/original-images/${item}`, 'compressed-big', 1000, 0, 'inside'),
               ContentType: 'image'
             }
           );
-      };
+      }
       
       // gallery-image upload (does it every time)
-      await resizeCompressUploadGalleryImg("images/" + getGalleryIMG(allKeys, galleryName));
+      await resizeCompressUploadGalleryImg("projects/1/images/" + getGalleryIMG(allKeys, galleryName));
     }
     
     // deletes objects (files)
@@ -102,12 +102,12 @@ exports.handler = async (event) => {
     
     // create html file that displays all image galleries
     const allGalleriesPageContent = createAllGalleriesPageContent(allKeys, galleryNames);
-    await postHTMLFile("galleries/index.html", allGalleriesPageContent);
+    await postHTMLFile("projects/1/galleries/index.html", allGalleriesPageContent);
     
     // get all keys after new images are uploaded
     allKeys = await getAllKeys({
       Bucket: bucketName,
-      Prefix: 'images/'
+      Prefix: 'projects/1/images/'
     });
     
     // create html files for each image gallery
@@ -116,7 +116,7 @@ exports.handler = async (event) => {
       const smallIMG = sortItems(filterByFolder(allKeys, galleryNames[i], "compressed-small"));
       const thumbnails = sortItems(filterByFolder(allKeys, galleryNames[i], "thumbnails"));
       const galleryPageContent = createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNames[i]);
-      await postHTMLFile(`galleries/${i + 1}/index.html`, galleryPageContent);
+      await postHTMLFile(`projects/1/galleries/${i + 1}/index.html`, galleryPageContent);
     };
     
     return {};
@@ -151,8 +151,8 @@ function sortItems(items, result = []) {
 function filterByFolder(allKeys, galleryName, folderName, result = []) {
   allKeys.forEach(key => {
     let splitUp = key.split("/");
-    if(splitUp[1] === galleryName && splitUp[2] === folderName)
-      result.push(splitUp[3]);
+    if(splitUp[3] === galleryName && splitUp[4] === folderName)
+      result.push(splitUp[5]);
   });
   return result;
 }
@@ -242,9 +242,10 @@ async function resizeCompressUploadGalleryImg(key) {
   const buffer = await resizeImg(image.Body, 600, 400, 'fill');
   
   // upload image to s3 bucket
+  // splitUp[3] is gallery name
   await s3.putObject({
     Bucket: bucketName,
-    Key: `images/${splitUp[1]}/gallery-img-resized.${extension[1]}`,
+    Key: `projects/1/images/${splitUp[3]}/gallery-img-resized.${extension[1]}`,
     Body: buffer,
     ContentType: "image"
   }).promise();
@@ -313,8 +314,6 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    
         <meta charset="utf-8" />
         <link rel="icon" href="../../favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -323,11 +322,9 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <meta name="title" content="Photos - DMD">
         <meta name="author" content="Deimantas Butėnas, email@aaa.com">
         <meta name="subject" content="Photo gallery">
-        <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
+        <meta name="url" content="https://www.deimantasbutenas.lt/projects/1/galleries/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
-        <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
-    
         <link rel="stylesheet" type="text/css" href="../../styles/global-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../../styles/photo-gallery-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../../styles/lightbox-slides-style.css" media="screen">
@@ -340,7 +337,7 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
         
         <header class="photo-gallery-header">
-          <a href="https://deimantasbutenas.lt/" class="page-logo">
+          <a href="https://deimantasbutenas.lt/projects/1/galleries/" class="page-logo">
             <img src="../../logo.png" alt="Page logo" title="Go to home page">
           </a>
           <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
@@ -351,19 +348,19 @@ function createSingleGalleryPageContent(bigIMG, smallIMG, thumbnails, galleryNam
           <nav id="top-navigation">
             <ul class="navigation">
               <li>
-                  <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+                  <a href="https://deimantasbutenas.lt/projects/1/galleries/" title="Go to galleries page">Photo Gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+                  <a href="https://deimantasbutenas.lt/projects/1/videos/" title="Go to videos page">Video gallery</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+                  <a href="https://deimantasbutenas.lt/projects/1/about/" title="Go to about page">About</a>
                   <span class="nav-dot"></span>
               </li>
               <li>
-                  <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+                  <a href="https://deimantasbutenas.lt/projects/1/contact/" title="Go to contact page">Contact</a>
               </li>
             </ul>
           </nav>
@@ -439,7 +436,7 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
     const splitUpGalleryName = galleryName.split("---");
     toRender.push(`
       <div class="box box-border cursor noSelect">
-        <a href="https://deimantasbutenas.lt/galleries/${index + 1}">
+        <a href="https://deimantasbutenas.lt/projects/1/galleries/${index + 1}">
           <div class="box-title">
             <p>${splitUpGalleryName[1]}</p>
           </div>
@@ -456,8 +453,6 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-
         <meta charset="utf-8" />
         <link rel="icon" href="../favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -466,16 +461,9 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <meta name="title" content="Galleries - DMD">
         <meta name="author" content="Deimantas Butėnas, email@aaa.com">
         <meta name="subject" content="Photo galleries">
-        <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
+        <meta name="url" content="https://www.deimantasbutenas.lt/projects/1/galleries/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
-        <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
-        <!--
-          manifest.json provides metadata used when your web app is installed on a
-          user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
-    
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/photo-gallery-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/all-galleries-style.css" media="screen">
@@ -488,7 +476,7 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
     
       <header>
-        <a href="https://deimantasbutenas.lt/" class="page-logo">
+        <a href="https://deimantasbutenas.lt/projects/1/galleries/" class="page-logo">
           <img src="../logo.png" alt="Page logo" title="Go to home page">
         </a>
         <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
@@ -499,19 +487,19 @@ function createAllGalleriesPageContent(allKeys, gallerySet) {
         <nav id="top-navigation">
           <ul class="navigation">
             <li>
-                <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+                <a href="https://deimantasbutenas.lt/projects/1/galleries/" title="Go to galleries page">Photo Gallery</a>
                 <span class="nav-dot"></span>
             </li>
             <li>
-                <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+                <a href="https://deimantasbutenas.lt/projects/1/videos/" title="Go to videos page">Video gallery</a>
                 <span class="nav-dot"></span>
             </li>
             <li>
-                <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+                <a href="https://deimantasbutenas.lt/projects/1/about/" title="Go to about page">About</a>
                 <span class="nav-dot"></span>
             </li>
             <li>
-                <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+                <a href="https://deimantasbutenas.lt/projects/1/contact/" title="Go to contact page">Contact</a>
             </li>
           </ul>
         </nav>

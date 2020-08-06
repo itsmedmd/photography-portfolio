@@ -5,9 +5,9 @@ const bucketName = "www.deimantasbutenas.lt";
 exports.handler = async (event) => {
     const lines = [];
     const source = await getMyObject();
-    const allLines = source.Body.toString().split('\n');
+    const allLines = source.Body.toString().split("\n");
     allLines.forEach(line => lines.push(line));
-    await postHTMLFile("videos/index.html", createVideosPageContent(lines));
+    await postHTMLFile("projects/1/videos/index.html", createVideosPageContent(lines));
     
     return {};
 };
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
 async function getMyObject() {
   return new Promise(function(resolve, reject) {
       s3.getObject(
-          { Bucket: bucketName, Key: 'videos/source.txt' },
+          { Bucket: bucketName, Key: 'projects/1/videos/source.txt' },
           function (error, data) {
               if(error) reject(error);
               else      resolve(data);
@@ -56,8 +56,6 @@ function createVideosPageContent(lines) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    
         <meta charset="utf-8" />
         <link rel="icon" href="../favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -66,20 +64,12 @@ function createVideosPageContent(lines) {
         <meta name="title" content="Videos - DMD">
         <meta name="author" content="Deimantas Butėnas, email@aaa.com">
         <meta name="subject" content="Video gallery">
-        <meta name="url" content="https://www.deimantasbutenas.lt/videos/">
+        <meta name="url" content="https://www.deimantasbutenas.lt/projects/1/videos/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         
-        <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
-        <!--
-          manifest.json provides metadata used when your web app is installed on a
-          user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-        -->
-        <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
-    
         <link rel="stylesheet" type="text/css" href="../styles/video-gallery-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-        
         <title>Videos - DMD</title>
       </head>
       <body>
@@ -87,7 +77,7 @@ function createVideosPageContent(lines) {
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
         
         <header>
-            <a href="https://deimantasbutenas.lt/" class="page-logo">
+            <a href="https://deimantasbutenas.lt/projects/1/galleries/" class="page-logo">
                 <img src="../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
             </a>
             <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
@@ -98,19 +88,19 @@ function createVideosPageContent(lines) {
             <nav id="top-navigation">
                 <ul class="navigation">
                   <li>
-                      <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/galleries/" title="Go to galleries page">Photo Gallery</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/videos/" title="Go to videos page">Video gallery</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/about/" title="Go to about page">About</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/contact/" title="Go to contact page">Contact</a>
                   </li>
                 </ul>
             </nav>
