@@ -9,6 +9,10 @@ tasks:
 		12. html, css validate + speed tests
 		13. compress fb logo, favicon, page logo
 
+		create landing page
+
+		make nav links have .active class with underline
+
 -------------AWS----------------
 move out of SES sandbox
 -------------AWS----------------
