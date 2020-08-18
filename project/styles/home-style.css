@@ -1,1 +1,149 @@
-/* No CSS *//*# sourceMappingURL=home-style.css.map */
+.page-content {
+  width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.page-content section {
+  float: left;
+  width: 40%;
+}
+
+.page-content section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.page-content section h2 {
+  font-size: 24px;
+  color: #3f3f3f;
+  width: 60%;
+  margin-bottom: 32px;
+}
+
+.page-content section h2 span {
+  color: #1877f2;
+}
+
+.page-content section a {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  background-color: #3f3f3f;
+  color: white;
+  width: 200px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.page-content section a:first-of-type {
+  margin-right: 12px;
+}
+
+.page-content section a:last-of-type {
+  margin-top: 12px;
+  width: 415px;
+}
+
+.page-content aside {
+  float: left;
+  width: 60%;
+}
+
+.page-content aside img {
+  width: 700px;
+  position: absolute;
+  margin-top: -100px;
+}
+
+@media only screen and (max-width: 1460px) {
+  .page-content {
+    width: calc(100% - 30px);
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .page-content section {
+    width: 50%;
+  }
+  .page-content section h2 {
+    width: 70%;
+  }
+  .page-content aside {
+    width: calc(50% - 30px);
+    padding-right: 30px;
+  }
+  .page-content aside img {
+    width: 500px;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .page-content section {
+    width: 60%;
+  }
+  .page-content aside {
+    width: calc(40% - 30px);
+  }
+  .page-content aside img {
+    width: 300px;
+    margin-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .page-content {
+    padding: 0;
+  }
+  .page-content section {
+    width: 100%;
+    padding: 30px 0;
+  }
+  .page-content section h2 {
+    width: 60%;
+  }
+  .page-content section h1, .page-content section h2,
+  .page-content section a:first-of-type,
+  .page-content section a:last-of-type {
+    margin-left: 30px;
+  }
+  .page-content aside {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .page-content section h2 {
+    width: 70%;
+  }
+  .page-content section a {
+    display: block;
+    width: 100%;
+    margin: 0 0 12px 0;
+  }
+  .page-content section a:first-of-type {
+    margin-left: 0;
+  }
+  .page-content section a:last-of-type {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -1px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .page-content section h1 {
+    margin-left: 0;
+    font-size: 32px;
+  }
+  .page-content section h2 {
+    margin-left: 0;
+    width: 80%;
+  }
+}
+
+/*IE10+ CSS here*/
+/*# sourceMappingURL=home-style.css.map */
