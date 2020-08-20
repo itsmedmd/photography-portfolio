@@ -7,7 +7,7 @@ exports.handler = async (event) => {
     const source = await getMyObject();
     const allLines = source.Body.toString().split("\n");
     allLines.forEach(line => lines.push(line));
-    await postHTMLFile("projects/1/videos/index.html", createVideosPageContent(lines));
+    await postHTMLFile("projects/1/preview/videos/index.html", createVideosPageContent(lines));
     
     return {};
 };
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
 async function getMyObject() {
   return new Promise(function(resolve, reject) {
       s3.getObject(
-          { Bucket: bucketName, Key: 'projects/1/videos/source.txt' },
+          { Bucket: bucketName, Key: 'projects/1/preview/videos/source.txt' },
           function (error, data) {
               if(error) reject(error);
               else      resolve(data);
@@ -56,16 +56,29 @@ function createVideosPageContent(lines) {
     <!DOCTYPE html>
     <html lang="en">
       <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175798206-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'UA-175798206-1');
+        </script>
+        
         <meta charset="utf-8" />
-        <link rel="icon" href="../favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#000000" />
-        <meta name="description" content="Videos page"/>
-        <meta name="title" content="Videos - DMD">
-        <meta name="author" content="Deimantas Butėnas, email@aaa.com">
-        <meta name="subject" content="Video gallery">
-        <meta name="url" content="https://www.deimantasbutenas.lt/projects/1/videos/">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="A frontend development portfolio website of Deimantas Butėnas where you can see his work."/>
+        <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png" />
+        <meta name="keywords" content="web development, frontend, portfolio, design, web design" />
+        <meta property="og:title" content="Frontend developer Deimantas Butėnas" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="A frontend development portfolio website of Deimantas Butėnas where you can see his work." />
+        <meta property="og:image" content="../../../../meta-og-img.png" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:url" content="https://www.deimantasbutenas.lt/" />
+        <link rel="canonical" href="https://www.deimantasbutenas.lt/" />
         
         <link rel="stylesheet" type="text/css" href="../styles/video-gallery-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
@@ -77,7 +90,7 @@ function createVideosPageContent(lines) {
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
         
         <header>
-            <a href="https://deimantasbutenas.lt/projects/1/galleries/" class="page-logo">
+            <a href="https://deimantasbutenas.lt/projects/1/preview/galleries/" class="page-logo">
                 <img src="../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
             </a>
             <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
@@ -88,19 +101,19 @@ function createVideosPageContent(lines) {
             <nav id="top-navigation">
                 <ul class="navigation">
                   <li>
-                      <a href="https://deimantasbutenas.lt/projects/1/galleries/" title="Go to galleries page">Photo Gallery</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/preview/galleries/" title="Go to galleries page">Photo Gallery</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/projects/1/videos/" title="Go to videos page">Video gallery</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/preview/videos/" title="Go to videos page">Video gallery</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/projects/1/about/" title="Go to about page">About</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/preview/about/" title="Go to about page">About</a>
                       <span class="nav-dot"></span>
                   </li>
                   <li>
-                      <a href="https://deimantasbutenas.lt/projects/1/contact/" title="Go to contact page">Contact</a>
+                      <a href="https://deimantasbutenas.lt/projects/1/preview/contact/" title="Go to contact page">Contact</a>
                   </li>
                 </ul>
             </nav>

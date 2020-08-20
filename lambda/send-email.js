@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const ses = new AWS.SES();
  
-const RECEIVER = 'silenc8@gmail.com';
+const RECEIVER = 'deimantasbutenas@gmail.com';
 const SENDER = 'deimantas200@gmail.com';
 
 exports.handler = function (event, context) {
@@ -16,12 +16,13 @@ exports.handler = function (event, context) {
         Message: {
             Body: {
                 Text: {
-                    Data: 'name: ' + data.name + '\nphone: ' + data.phone + '\nemail: ' + data.email + '\ndesc: ' + data.desc,
+                    //Data: 'name: ' + data.name + '\nphone: ' + data.phone + '\nemail: ' + data.email + '\ndesc: ' + data.desc,
+                    Data: 'Vardas: ' + data.name + '\nEl. paštas: ' + data.email + '\nŽinutė: ' + data.msg,
                     Charset: 'UTF-8'
                 }
             },
             Subject: {
-                Data: 'deimantasbutenas.lt EMAIL BOT',
+                Data: 'EMAIL BOT',
                 Charset: 'UTF-8'
             }
         },
