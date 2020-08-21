@@ -2,33 +2,50 @@
 <html lang="en">
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175798206-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-175798206-1');
+    </script>
 
     <meta charset="utf-8" />
-    <link rel="icon" href="favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Gallery page"/>
-    <meta name="title" content="Photos - DMD">
-    <meta name="author" content="Deimantas Butėnas, email@aaa.com">
-    <meta name="subject" content="Photo gallery">
-    <meta name="url" content="https://www.deimantasbutenas.lt/galleries/">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../favicon-16x16.png" />
+    <meta name="title" content="Frontend developer Deimantas Butėnas" />
+    <meta name="description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
+    <meta name="keywords" content="web development, frontend, portfolio, design, web design" />
+    <link rel="canonical" href="https://www.deimantasbutenas.lt/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.deimantasbutenas.lt/" />
+    <meta property="og:title" content="Frontend developer Deimantas Butėnas" />
+    <meta property="og:description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
+    <meta property="og:image" content="https://www.deimantasbutenas.lt/meta-og-image.png" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.deimantasbutenas.lt/" />
+    <meta property="twitter:title" content="Frontend developer Deimantas Butėnas" />
+    <meta property="twitter:description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
+    <meta property="twitter:image" content="https://www.deimantasbutenas.lt/meta-og-image.png" />
     
     <!--<link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
 
     <link rel="stylesheet" type="text/css" href="styles/global-style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="styles/photo-gallery-style.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="styles/lightbox-slides-style.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="styles/home-style.css" media="screen">
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <title>DMD - Project 1 - Photos</title>
+    <title>DMD - Project 1 - Home</title>
   </head>
   <body>
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
     
     <header class="photo-gallery-header">
-      <a href="https://deimantasbutenas.lt/" class="page-logo">
+      <a href="https://deimantasbutenas.lt/projects/1/preview/" class="page-logo">
         <img src="logo.png" alt="Page logo" title="Go to home page">
       </a>
       <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
@@ -39,19 +56,19 @@
       <nav id="top-navigation">
         <ul class="navigation">
           <li>
-              <a href="https://deimantasbutenas.lt/galleries/" title="Go to galleries page">Photo Gallery</a>
+              <a href="https://deimantasbutenas.lt/projects/1/preview/galleries/" title="Go to galleries page">Photo Gallery</a>
               <span class="nav-dot"></span>
           </li>
           <li>
-              <a href="https://deimantasbutenas.lt/videos/" title="Go to videos page">Video gallery</a>
+              <a href="https://deimantasbutenas.lt/projects/1/preview/videos/" title="Go to videos page">Video gallery</a>
               <span class="nav-dot"></span>
           </li>
           <li>
-              <a href="https://deimantasbutenas.lt/about/" title="Go to about page">About</a>
+              <a href="https://deimantasbutenas.lt/projects/1/preview/about/" title="Go to about page">About</a>
               <span class="nav-dot"></span>
           </li>
           <li>
-              <a href="https://deimantasbutenas.lt/contact/" title="Go to contact page">Contact</a>
+              <a href="https://deimantasbutenas.lt/projects/1/preview/contact/" title="Go to contact page">Contact</a>
           </li>
         </ul>
       </nav>
@@ -71,135 +88,21 @@
 
     <main>
         <div class="page-content">
-            <!-- Compressed images on page used to open the lightbox -->
-            <div class="container all-photos">
-                <div class="box cursor" onclick="openModal();currentSlide(1)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img1.jpg" data-src="images/testgallery/compressed-small/img1.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(2)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img2.jpg" data-src="images/testgallery/compressed-small/img2.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(3)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img3.jpg" data-src="images/testgallery/compressed-small/img3.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(4)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img4.jpg" data-src="images/testgallery/compressed-small/img4.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(5)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img5.jpg" data-src="images/testgallery/compressed-small/img5.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(6)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img6.jpg" data-src="images/testgallery/compressed-small/img6.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(7)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img7.jpg" data-src="images/testgallery/compressed-small/img7.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(8)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img8.jpg" data-src="images/testgallery/compressed-small/img8.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(9)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img9.jpg" data-src="images/testgallery/compressed-small/img9.jpg"></div>
-                <div class="box cursor" onclick="openModal();currentSlide(10)"><div class="hover-overlay"></div><img class="lazyload" src="images/testgallery/blurry/img10.jpg" data-src="images/testgallery/compressed-small/img10.jpg"></div>
-            </div>
-    
-            <!-- The Modal/Lightbox -->
-            <div id="myModal" class="modal">
-                <!-- Control button for closing the modal(slides) -->
-                <button type="button" class="close cursor" onclick="closeModal()">&times;</button>
-            
-                <!-- High quality images -->
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img1.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img2.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img3.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img4.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img5.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img6.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img7.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img8.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img9.jpg">
-                  </div>
-                </div>
-                <div class="mySlides cursor noSelect">
-                  <div onclick="plusSlides(-1)" class="image-overlay-left"></div>
-                  <div onclick="plusSlides(1)" class="image-overlay-right"></div>
-                  <div class="modal-image-wrapper">
-                    <img class="lazyload" data-src="images/testgallery/compressed-big/img10.jpg">
-                  </div>
-                </div>
-            
-                <!-- Next/previous image controls -->
-                <button type="button" class="prev cursor noSelect" onclick="plusSlides(-1)">
-                  <svg width="22" height="42" viewBox="0 0 22 42" xmlns="http://www.w3.org/2000/svg"><path d="M2.615 21L21.708 1.907c.39-.39.39-1.023 0-1.413-.394-.393-1.024-.39-1.414 0l-19.8 19.8C.297 20.49.2 20.744.2 21c0 .257.098.51.293.706l19.8 19.8c.39.39 1.024.39 1.414 0 .393-.393.39-1.023 0-1.413L2.616 21z" fill-rule="evenodd"></path></svg>
-                </button>
-
-                <button type="button" class="next cursor noSelect" onclick="plusSlides(1)">
-                  <svg width="22" height="42" viewBox="0 0 22 42" xmlns="http://www.w3.org/2000/svg"><path d="M19.385 21L.292 40.093c-.39.39-.39 1.023 0 1.413.394.393 1.024.39 1.414 0l19.8-19.8c.196-.195.293-.45.293-.705 0-.257-.098-.51-.293-.706L1.707.494C1.316.103.682.103.292.493c-.393.393-.39 1.023 0 1.413L19.384 21z" fill-rule="evenodd"></path></svg>
-                </button>
-            
-                <!-- Thumbnail images -->
-                <div class="scrolling-thumbnail-row">
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img1.jpg" onclick="currentSlide(1)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img2.jpg" onclick="currentSlide(2)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img3.jpg" onclick="currentSlide(3)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img4.jpg" onclick="currentSlide(4)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img5.jpg" onclick="currentSlide(5)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img6.jpg" onclick="currentSlide(6)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img7.jpg" onclick="currentSlide(7)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img8.jpg" onclick="currentSlide(8)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img9.jpg" onclick="currentSlide(9)"></div>
-                    <div class="column"><img class="lightbox-thumbnail cursor" src="images/testgallery/thumbnails/img10.jpg" onclick="currentSlide(10)"></div>
-                  </div>
-            </div>
+          <section>
+            <h1>DMD Photography</h1>
+            <h2>I help to capture <span>emotions</span> through my work, what will be <span>yours</span>?</h2>
+            <a href="https://deimantasbutenas.lt/projects/1/preview/galleries/">Photo gallery</a>
+            <a href="https://deimantasbutenas.lt/projects/1/preview/videos/">Video gallery</a>
+            <a href="https://deimantasbutenas.lt/projects/1/preview/about/">Learn more about me</a>
+          </section>
+          <aside>
+            <img id="camera" src="./camera.svg" onerror="changeToPNG" alt="">
+          </aside>
         </div>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <span>&#169;</span>
-        <p>Deimantas Butėnas</p>
-      </div>
-    </footer>
-
     <script src="scripts/observe-fb-like-button.js"></script>
-    <script src="scripts/lazyload-16-1-0.min.js"></script>
-    <script src="scripts/lazyload.js"></script>
     <script src="scripts/toggle-mobile-navigation.js"></script>
-    <script src="scripts/lightbox-modal-script.js"></script>
-    <script src="scripts/swipe-events.js"></script>
+    <script>function changeToPNG(e){e.target.src="./camera.png"}</script>
   </body>
 </html>
