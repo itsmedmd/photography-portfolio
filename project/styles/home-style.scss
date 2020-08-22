@@ -1,7 +1,6 @@
 .page-content {
     width: 1400px;
     margin: 0 auto;
-    padding: 0 30px;
 
     section {
         float: left;
@@ -166,8 +165,4 @@
             width: 80%;
         }
     }
-}
-
-/*IE10+ CSS here*/
-@media only screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
 }

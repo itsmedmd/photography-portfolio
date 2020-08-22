@@ -1,7 +1,6 @@
 .page-content {
   width: 1400px;
   margin: 0 auto;
-  padding: 0 30px;
 }
 
 .page-content section {
@@ -146,6 +145,4 @@
     width: 80%;
   }
 }
-
-/*IE10+ CSS here*/
 /*# sourceMappingURL=home-style.css.map */
