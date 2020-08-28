@@ -46,10 +46,14 @@ header {
   outline-offset: 0;
 }
 
+.page-content section #contact-form textarea {
+  height: 80px;
+}
+
 .page-content section #contact-form button {
   margin-top: 20px;
-  padding: 6px 0;
-  width: 180px;
+  padding: 12px 0;
+  width: 186px;
   background-color: white;
   border: 1px solid #767676;
   font-size: 15px;
@@ -167,6 +171,12 @@ header {
     border-right: none;
     padding-bottom: 36px;
     text-align: center;
+  }
+  .page-content section #contact-form input, .page-content section #contact-form textarea {
+    width: 90%;
+  }
+  .page-content section #contact-form button {
+    width: calc(90% + 6px);
   }
   .page-content aside {
     padding: 24px 0;

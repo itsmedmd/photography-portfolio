@@ -43,10 +43,14 @@ header {
                 }
             }
 
+            textarea {
+                height: 80px;
+            }
+
             button {
                 margin-top:20px;
-                padding: 6px 0;
-                width: 180px;
+                padding: 12px 0;
+                width: 186px;
                 background-color: white;
                 border: 1px solid $light-grey;
                 font-size: 15px;
@@ -177,6 +181,16 @@ header {
             border-right: none;
             padding-bottom: 36px;
             text-align: center;
+
+            #contact-form {
+                input, textarea {
+                    width: 90%;
+                }
+    
+                button {
+                    width: calc(90% + 6px);
+                }
+            }
         }
         
         aside {
