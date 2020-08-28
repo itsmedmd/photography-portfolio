@@ -21,6 +21,17 @@ html, body {
     animation: transitionIn 0.3s;
 }
 
+#go-back-to-homepage {
+    position: absolute;
+    top: 5px; 
+    left: 5px;
+    padding: 10px;
+    background-color: rgb(192, 14, 77);
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
 header {
     height: 300px;
     text-align: center;
@@ -200,6 +211,7 @@ footer {
    change header navigation to mobile design */
 @media only screen and (max-width: 768px) {
     header {
+        margin-top: 50px;
         text-align: left;
         height: 100px;
         border-bottom: 1px solid rgba(200, 200, 200, 0.4);
@@ -326,6 +338,8 @@ footer {
 @media only screen and (max-width: 170px) {
     header {
         padding-top: 100px;
+        border: none;
+        box-shadow: none;
 
         .mobile-navigation-bar {
             margin-top: -72px;

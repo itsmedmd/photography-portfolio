@@ -66,31 +66,42 @@ function createVideosPageContent(lines) {
           gtag('config', 'UA-175798206-1');
         </script>
         
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="A frontend development portfolio website of Deimantas Butėnas where you can see his work."/>
         <link rel="icon" type="image/png" sizes="32x32" href="../../../../favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="../../../../favicon-16x16.png" />
+
+        <meta name="title" content="Frontend developer Deimantas Butėnas" />
+        <meta name="description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
         <meta name="keywords" content="web development, frontend, portfolio, design, web design" />
-        <meta property="og:title" content="Frontend developer Deimantas Butėnas" />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content="A frontend development portfolio website of Deimantas Butėnas where you can see his work." />
-        <meta property="og:image" content="../../../../meta-og-img.png" />
-        <meta property="og:locale" content="en_US" />
-        <meta property="og:url" content="https://www.deimantasbutenas.lt/" />
         <link rel="canonical" href="https://www.deimantasbutenas.lt/" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.deimantasbutenas.lt/" />
+        <meta property="og:title" content="Frontend developer Deimantas Butėnas" />
+        <meta property="og:description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
+        <meta property="og:image" content="https://www.deimantasbutenas.lt/meta-og-image.png" />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.deimantasbutenas.lt/" />
+        <meta property="twitter:title" content="Frontend developer Deimantas Butėnas" />
+        <meta property="twitter:description" content="A portfolio website of Deimantas Butėnas where you can see his work!" />
+        <meta property="twitter:image" content="https://www.deimantasbutenas.lt/meta-og-image.png" />
         
         <link rel="stylesheet" type="text/css" href="../styles/video-gallery-style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="../styles/global-style.css" media="screen">
         <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-        <title>Videos - DMD</title>
+        <title>DMD - Project 1 - Videos</title>
       </head>
       <body>
         <div id="fb-root"></div>
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v7.0"></script>
         
+        <a href="../.." id="go-back-to-homepage">GO BACK TO HOME PAGE</a>
+        
         <header>
-            <a href="https://deimantasbutenas.lt/projects/1/preview/galleries/" class="page-logo">
+            <a href="https://deimantasbutenas.lt/projects/1/preview/" class="page-logo">
                 <img src="../logo.png" alt="Page logo" title="Go to home page" class="page-logo">
             </a>
             <div class="mobile-navigation-bar noSelect" onclick="toggleMobileNavigation()">
