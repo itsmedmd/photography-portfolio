@@ -7,7 +7,7 @@ const SENDER = 'deimantas200@gmail.com';
 exports.handler = function (event, context) {
     const data = JSON.parse(event.body);
     
-    if(event.headers.origin === "https://www.deimantasb.com" || event.headers.origin === "https://www.deimantasbutenas.lt") {
+    if(event.headers.origin === "https://www.deimantasb.com") {
         const params = {
             Destination: {
                 ToAddresses: [
